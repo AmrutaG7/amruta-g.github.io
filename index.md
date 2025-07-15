@@ -2,11 +2,11 @@
      style="width: 160px; height: 160px; border-radius: 50%; object-fit: cover; display: block; margin: 0 auto;">
 
 # 👩‍💻 Amruta Gandhe   
-
-
 **Data Analytics & BI | Data Strategy & Omnichannel Insights | SQL • Tableau | Cloud: Snowflake
 
+---
 🎓 MS in Business Analytics, University of North Texas | Denton | Texas | USA
+
 🎓 Post Graduate Diploma in Management Studies (PGDM), SIES College of Management Studies | India
 
 📍 Based in Canada | 5+ Years Experience across Banking, Healthcare, and Supply Chain
