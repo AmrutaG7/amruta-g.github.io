@@ -1,4 +1,5 @@
-![Amruta Gandhe](./profile.jpg)
+<img src="./assets/profile.jpg" alt="Amruta Gandhe" width="160" style="border-radius: 50%;">
+
 # 👩‍💻 Amruta Gandhe    
 
 
