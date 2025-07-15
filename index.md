@@ -1,4 +1,5 @@
-# 👩‍💻 Amruta Gandhe    ![Amruta Gandhe](./profile.jpg)
+![Amruta Gandhe](./profile.jpg)
+# 👩‍💻 Amruta Gandhe    
 
 
 **Data Analysis | Omnichannel Insights | SQL • Tableau • Python | SAS Certified**
