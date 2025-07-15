@@ -9,7 +9,7 @@
 
 🎓 Post Graduate Diploma in Management Studies (PGDM), SIES College of Management Studies | India
 
-📍 Based in Canada | 5+ Years Experience across Banking, Healthcare, and Supply Chain
+📍 Based in Canada 
 
 ---
 
