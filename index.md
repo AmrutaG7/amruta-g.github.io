@@ -1,4 +1,4 @@
-<img src="./assets/profile.jpg" alt="Amruta Gandhe" width="160" style="border-radius: 50%;">
+<img src="./assets/profile.jpg" alt="Amruta Gandhe" width="160" style="border-radius: 50%; display: block; margin: 0 auto;">
 
 # 👩‍💻 Amruta Gandhe   
 
