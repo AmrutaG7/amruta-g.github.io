@@ -5,9 +5,6 @@
 **Data Analytics & BI | Data Strategy & Omnichannel Insights | SQL • Tableau | Cloud: Snowflake
 
 ---
-🎓 MS in Business Analytics, University of North Texas | Denton | Texas | USA
-
-🎓 Post Graduate Diploma in Management Studies (PGDM), SIES College of Management Studies | India
 
 📍 Based in Canada 
 
@@ -21,6 +18,11 @@ With a strong foundation in business analytics, I focus on generating insights t
 
 **Professional Experience:**  
 At USAA, as part of the data strategy team, I support omni-channel marketing initiatives for banking products such as credit cards and deposits. I collaborate closely with analytics and engineering teams to support campaign performance measurement, audience segmentation, and data flow optimization across multiple channels. My experience enables me to act as a bridge between data analytics, business stakeholders, and engineering teams to drive data-informed decisions at scale.
+
+---
+🎓 MS in Business Analytics, University of North Texas | Denton | Texas | USA
+
+🎓 Post Graduate Diploma in Management Studies (PGDM), SIES College of Management Studies | India
 
 ---
 
