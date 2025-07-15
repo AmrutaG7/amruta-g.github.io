@@ -1,11 +1,13 @@
 <img src="./assets/profile.jpg" alt="Amruta Gandhe" width="160" style="border-radius: 50%;">
 
-# 👩‍💻 Amruta Gandhe    
+# 👩‍💻 Amruta Gandhe   
 
 
-**Data Analysis | Omnichannel Insights | SQL • Tableau • Python | SAS Certified**
+**Data Analytics & BI | Data Strategy & Omnichannel Insights | SQL • Tableau | Cloud: Snowflake
 
-🎓 MS in Business Analytics, University of North Texas  
+🎓 MS in Business Analytics, University of North Texas | Denton | Texas | USA
+🎓 Post Graduate Diploma in Management Studies (PGDM), SIES College of Management Studies | India
+
 📍 Based in Canada | 5+ Years Experience across Banking, Healthcare, and Supply Chain
 
 ---
