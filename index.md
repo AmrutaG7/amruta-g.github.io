@@ -2,12 +2,12 @@
      style="width: 160px; height: 160px; border-radius: 50%; object-fit: cover;
             display: block; margin: 0 auto; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); border: 2px solid #ddd;">
 
-# 👩‍💻 Amruta Gandhe   
-**Data Analytics & BI | Data Strategy & Omnichannel Insights | SQL • Tableau | Cloud: Snowflake
+# 👩‍💻 Amruta Gandhe  
+**Data Analytics & BI | Data Strategy & Omnichannel Insights | SQL • Tableau | Cloud: Snowflake**
 
 ---
 
-📍 Based in Canada 
+📍 Based in Canada
 
 ---
 
@@ -21,16 +21,16 @@ With a strong foundation in business analytics, I focus on generating insights t
 At USAA, as part of the data strategy team, I support omni-channel marketing initiatives for banking products such as credit cards and deposits. I collaborate closely with analytics and engineering teams to support campaign performance measurement, audience segmentation, and data flow optimization across multiple channels. My experience enables me to act as a bridge between data analytics, business stakeholders, and engineering teams to drive data-informed decisions at scale.
 
 ---
-🎓 MS in Business Analytics, University of North Texas | Denton | Texas | USA
 
-🎓 Post Graduate Diploma in Management Studies (PGDM), SIES College of Management Studies | India
+🎓 MS in Business Analytics, University of North Texas, Denton, TX, USA  
+🎓 Post Graduate Diploma in Management Studies (PGDM), SIES College of Management Studies, India
 
 ---
 
 ## 📊 Projects
 
-- **[MSBA UNT Projects Repository](https://github.com/amruta-gandhe/msba-unt-projects)** – Academic work from UNT: forecasting, classification, dashboarding, and cloud data flow projects  
-- **[Tableau Dashboards](https://public.tableau.com/app/profile/amruta.gandhe/vizzes)** – Interactive dashboards  
+- **[MSBA UNT Projects Repository](https://github.com/amruta-gandhe/msba-unt-projects)** – Academic projects including forecasting, classification, dashboarding, and cloud data pipelines  
+- **[Tableau Dashboards](https://public.tableau.com/app/profile/amruta.gandhe/vizzes)** – Interactive Tableau visualizations
 
 ---
 
