@@ -16,6 +16,9 @@ header_pages:
   
 footer:
   custom: footer_custom
+
+rss:
+  enabled: false
   
 plugins:
   - jekyll-include-cache
