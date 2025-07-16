@@ -3,16 +3,17 @@ layout: page
 title: "About"
 permalink: /about/
 ---
-<img src="./assets/profile.jpg" alt="Amruta Gandhe"
+
+<!-- 👤 Profile Image -->
+<img src="/assets/profile.jpg" alt="Amruta Gandhe"
      style="width: 160px; height: 160px; border-radius: 50%; object-fit: cover;
             display: block; margin: 0 auto; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); border: 2px solid #ddd;">
 
-# 👩‍💻 Amruta Gandhe  
-**Data Analytics & BI | Data Strategy & Omnichannel Insights | SQL • Tableau | Cloud: Snowflake**
-
----
-
-📍 Based in Canada
+<div style="text-align: center; margin-top: 10px;">
+  <h1>👩‍💻 Amruta Gandhe</h1>
+  <p><strong>Data Analytics & BI | Data Strategy & Omnichannel Insights | SQL • Tableau | Cloud: Snowflake</strong></p>
+  <p>📍 Based in Canada</p>
+</div>
 
 ---
 
