@@ -14,7 +14,7 @@ Welcome to my Data Analytics & BI portfolio.
 
 ## 👩‍💻 About Me
 
-I’m a versatile Business Data Analyst with over 5 years of experience across banking, healthcare, and supply chain domains. Skilled in **SQL**, **Python**, **Tableau**, and **Snowflake**, I specialize in translating data into actionable business insights through storytelling, dashboards, and cross-functional collaboration.
+I’m a versatile Business Data Analyst with experience across banking, healthcare, and supply chain domains. I specialize in translating data into actionable business insights through storytelling, dashboards, and cross-functional collaboration.
 
 🔗 [Learn more about me →](/about/)
 
