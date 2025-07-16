@@ -1,0 +1,11 @@
+title: "Amruta Gandhe"
+theme: jekyll-theme-minimal   # or your preferred theme
+navigation:
+  - title: Home
+    url: /
+  - title: About
+    url: /about/
+  - title: Projects
+    url: /projects/
+  - title: Contact
+    url: /contact/
