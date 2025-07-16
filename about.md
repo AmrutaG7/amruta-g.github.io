@@ -1,14 +1,7 @@
 ---
 <nav>
-  <a href="/">HOME</a>
-  <a href="/about/">ABOUT</a>
-  <a href="/projects/">PROJECTS</a>
-  <a href="/contact/">CONTACT</a>
+  <a href="/">HOME</a>     <a href="/about/">ABOUT</a>    <a href="/projects/">PROJECTS</a>   <a href="/contact/">CONTACT</a>  
 </nav>
----
-layout: page
-title: "About"
-permalink: /about/
 ---
 
 <img src="/assets/profile.jpg" alt="Amruta Gandhe"
