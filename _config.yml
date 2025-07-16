@@ -1,11 +1,21 @@
 title: "Amruta Gandhe"
-theme: jekyll-theme-minimal   # or your preferred theme
-navigation:
-  - title: Home
-    url: /
-  - title: About
-    url: /about/
-  - title: Projects
-    url: /projects/
-  - title: Contact
-    url: /contact/
+description: >-
+  Data Analytics & BI | Data Strategy & Omnichannel Insights
+baseurl: "" # for user site like username.github.io
+url: "https://amrutag7.github.io"
+
+# Theme settings
+remote_theme: "mmistakes/minimal-mistakes"
+
+# Navigation bar
+header_pages:
+  - index.md
+  - about.md
+  - projects.md
+  - contact.md
+
+plugins:
+  - jekyll-include-cache
+
+markdown: kramdown
+highlighter: rouge
