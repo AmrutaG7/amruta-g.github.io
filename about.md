@@ -12,7 +12,6 @@ permalink: /about/
 
 <p><strong>Data Analytics & BI | Data Strategy & Omnichannel Insights | SQL • Tableau | Cloud: Snowflake</strong></p>
   <p>📍 Based in Canada</p>
-</div>
 
 ---
 
