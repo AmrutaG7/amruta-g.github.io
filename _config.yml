@@ -14,8 +14,7 @@ header_pages:
   - projects.md
   - contact.md
   
-footer:
-  custom: footer_custom
+footer_include: footer_custom.html
 
 rss:
   enabled: false
