@@ -1,5 +1,7 @@
-layout: default
+---
+layout: page
 title: "About"
+permalink: /about/
 ---
 <img src="./assets/profile.jpg" alt="Amruta Gandhe"
      style="width: 160px; height: 160px; border-radius: 50%; object-fit: cover;
