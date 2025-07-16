@@ -1,4 +1,11 @@
 ---
+<nav>
+  <a href="/">HOME</a>
+  <a href="/about/">ABOUT</a>
+  <a href="/projects/">PROJECTS</a>
+  <a href="/contact/">CONTACT</a>
+</nav>
+---
 layout: page
 title: "About"
 permalink: /about/
@@ -35,14 +42,7 @@ At USAA, as part of the data strategy team, I support omni-channel marketing ini
 
 - **[MSBA UNT Projects Repository](https://github.com/amruta-gandhe/msba-unt-projects)** – Academic projects including forecasting, classification, dashboarding, and cloud data pipelines  
 - **[Tableau Dashboards](https://public.tableau.com/app/profile/amruta.gandhe/vizzes)** – Interactive Tableau visualizations
-
----
-<nav>
-  <a href="/">HOME</a>
-  <a href="/about/">ABOUT</a>
-  <a href="/projects/">PROJECTS</a>
-  <a href="/contact/">CONTACT</a>
-</nav>
+- 
 ----
 
 ## 📬 Connect
