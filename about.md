@@ -1,8 +1,11 @@
 ---
-<nav>
-  <a href="/">HOME</a>     <a href="/about/">ABOUT</a>    <a href="/projects/">PROJECTS</a>   <a href="/contact/">CONTACT</a>  
-</nav>
+title: About
+layout: page
 ---
+
+<nav>
+  <a href="/">HOME</a> <a href="/about/">ABOUT</a> <a href="/projects/">PROJECTS</a> <a href="/contact/">CONTACT</a>  
+</nav>
 
 <img src="/assets/profile.jpg" alt="Amruta Gandhe"
      style="width: 160px; height: 160px; border-radius: 50%; object-fit: cover;
@@ -32,10 +35,10 @@ At USAA, as part of the data strategy team, I support omni-channel marketing ini
 
 ## 📊 Projects 
 
-- **[MSBA UNT Projects Repository](https://github.com/amruta-gandhe/msba-unt-projects)** – Academic projects including forecasting, classification, dashboarding, and cloud data pipelines  
+- **[MSBA UNT Projects Repository](/projects/)** – Academic projects including forecasting, classification, dashboarding, and cloud data pipelines  
 - **[Tableau Dashboards](https://public.tableau.com/app/profile/amruta.gandhe/vizzes)** – Interactive Tableau visualization
-  
-----
+
+---
 
 ## 📬 Connect
 
