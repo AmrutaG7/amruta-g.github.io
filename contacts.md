@@ -79,8 +79,7 @@ permalink: /contact/
     <button type="submit">Send Message</button>
   </form>
 
-  <p style="margin-top: 2rem;">
-    📧 Or reach out directly via <a href="mailto:amrutagandhe@gmail.com">email</a> or connect on
-    <a href="https://www.linkedin.com/in/amruta-gandhe-1b1013207/">LinkedIn</a>.
-  </p>
-</div>
+ <p style="margin-top: 2rem;">
+  🤝 Connect with me on <a href="https://www.linkedin.com/in/amruta-gandhe-1b1013207/">LinkedIn</a>.
+</p>
+
