@@ -13,14 +13,14 @@ header_pages:
   - about.md
   - projects.md
   - contact.md
-  
+
 footer_include: footer_custom.html
 
 rss:
   enabled: false
 
 show_theme_credit: false
-  
+
 plugins:
   - jekyll-include-cache
 
