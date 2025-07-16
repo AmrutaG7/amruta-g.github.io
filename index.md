@@ -8,7 +8,18 @@ header:
   show_overlay_excerpt: false
 ---
 
-Welcome to my data analytics & BI portfolio.  
-Explore my projects below.
+Welcome to my Data Analytics & BI portfolio.
+
+---
+
+## 👩‍💻 About Me
+
+I’m a versatile Business Data Analyst with over 5 years of experience across banking, healthcare, and supply chain domains. Skilled in **SQL**, **Python**, **Tableau**, and **Snowflake**, I specialize in translating data into actionable business insights through storytelling, dashboards, and cross-functional collaboration.
+
+🔗 [Learn more about me →](/about/)
+
+---
+
+## 📁 Projects & Contact
 
 [📁 View Projects](/projects/) &nbsp; • &nbsp; [📬 Contact Me](/contact/)
