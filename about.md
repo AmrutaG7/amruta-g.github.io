@@ -37,6 +37,13 @@ At USAA, as part of the data strategy team, I support omni-channel marketing ini
 - **[Tableau Dashboards](https://public.tableau.com/app/profile/amruta.gandhe/vizzes)** – Interactive Tableau visualizations
 
 ---
+<nav>
+  <a href="/">HOME</a>
+  <a href="/about/">ABOUT</a>
+  <a href="/projects/">PROJECTS</a>
+  <a href="/contact/">CONTACT</a>
+</nav>
+----
 
 ## 📬 Connect
 
