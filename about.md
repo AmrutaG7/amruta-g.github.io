@@ -11,7 +11,6 @@
 # 👩‍💻 Amruta Gandhe
 
 <p><strong>Data Analytics & BI | Data Strategy & Omnichannel Insights | SQL • Tableau | Cloud: Snowflake</strong></p>
-  <p>📍 Based in Canada</p>
 
 ---
 
@@ -31,11 +30,11 @@ At USAA, as part of the data strategy team, I support omni-channel marketing ini
 
 ---
 
-## 📊 Projects
+## 📊 Projects 
 
 - **[MSBA UNT Projects Repository](https://github.com/amruta-gandhe/msba-unt-projects)** – Academic projects including forecasting, classification, dashboarding, and cloud data pipelines  
-- **[Tableau Dashboards](https://public.tableau.com/app/profile/amruta.gandhe/vizzes)** – Interactive Tableau visualizations
-- 
+- **[Tableau Dashboards](https://public.tableau.com/app/profile/amruta.gandhe/vizzes)** – Interactive Tableau visualization
+  
 ----
 
 ## 📬 Connect
