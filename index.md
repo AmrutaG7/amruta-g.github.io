@@ -1,6 +1,7 @@
 ---
-layout: default
-title: Home
+layout: page
+title: ""
+permalink: /about/
 ---
 
 # 👋 Welcome
