@@ -1,11 +1,12 @@
 ---
 layout: page
-title: ""
-permalink: /about/
+title: "Home"
 ---
 
-# 👋 Welcome
+# Welcome to My Portfolio
 
-This site highlights my background in data analytics and my academic & professional projects.
+Hi, I'm Amruta Gandhe — a Business Data Analyst passionate about turning data into actionable insights.
 
-👉 Visit the [About Me page](./about/) to learn more.
+👉 Learn more [About me](/about/)
+
+[View my projects](https://github.com/amruta-gandhe/msba-unt-projects)
