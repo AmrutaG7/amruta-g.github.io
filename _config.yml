@@ -13,7 +13,10 @@ header_pages:
   - about.md
   - projects.md
   - contact.md
-
+  
+footer:
+  custom: footer_custom
+  
 plugins:
   - jekyll-include-cache
 
