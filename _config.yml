@@ -18,6 +18,8 @@ footer_include: footer_custom.html
 
 rss:
   enabled: false
+
+show_theme_credit: false
   
 plugins:
   - jekyll-include-cache
