@@ -1,8 +1,10 @@
 ---
 layout: default
-title: "Welcome"
+title: Home
 ---
 
 # 👋 Welcome
 
-👉 Visit my [About page](./about/) to learn more about me and view my projects.
+This site highlights my background in data analytics and my academic & professional projects.
+
+👉 Visit the [About Me page](./about/) to learn more.
