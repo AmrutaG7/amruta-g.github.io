@@ -90,16 +90,7 @@
     a:hover {
       color: var(--secondary-color);
     }
-    ul.skills-list {
-      list-style-type: none;
-      padding-left: 0;
-      text-align: left;
-      max-width: 600px;
-      margin: 0 auto 2rem;
-    }
-    ul.skills-list li {
-      margin-bottom: 6px;
-    }
+
     footer {
       background: var(--bg-color);
       border-top: 1px solid var(--accent-color);
@@ -134,6 +125,20 @@
       fill: none;
       stroke-width: 2;
     }
+    .education, .skills {
+      text-align: left;
+      max-width: 700px;
+      margin: 0 auto 40px;
+    }
+    .education h3, .skills h3 {
+      color: var(--primary-color);
+      margin-bottom: 0.5rem;
+    }
+    .education ul, .skills ul {
+      list-style: disc inside;
+      padding-left: 0;
+      margin-top: 0;
+    }
   </style>
 </head>
 <body>
@@ -154,42 +159,41 @@
 
   <hr />
 
-  <h2>💡 About Me</h2>
-  <p>I began my career with a strong foundation in management, earning a Post Graduate Diploma in Management Studies. Early on, I realized that behind every business decision lies valuable data, which, when properly analyzed, can unlock insights and drive impactful strategies.</p>
-  <p>This curiosity led me to pursue a Master’s in Business Analytics at the University of North Texas, where I developed expertise in data science, statistics, and visualization tools. I discovered how raw data transforms into meaningful stories that empower organizations to make smarter decisions.</p>
-  <p>Transitioning into data analytics was more than mastering tools like SQL, Python, Tableau, and Snowflake — it was about blending business acumen with analytical skills to bridge the gap between complex data and practical business outcomes.</p>
-  <p>In my previous roles, I contributed to omni-channel marketing efforts for financial products, working closely with analytics and engineering teams to enhance campaign measurement, audience segmentation, and data pipeline efficiency. I specialize in bridging the gap between technical data analysis and business strategy, enabling data-driven decision-making and improving overall marketing performance.</p>
-  <p>I believe data is more than numbers — it’s the key to understanding customers, optimizing operations, and shaping business futures. Through storytelling with data, I strive to turn analytics into actionable strategies that create lasting impact.</p>
+  <h2>💡 My Journey Into Data Analytics</h2>
+  <p>I began my professional journey with a strong foundation in management and business, earning my Post Graduate Diploma in Management Studies. Early on, I realized that behind every business decision lies a wealth of untapped data that, when analyzed properly, can unlock powerful insights and drive impactful strategies.</p>
+  <p>This curiosity sparked my passion for data analytics and led me to pursue a Master’s degree in Business Analytics at the University of North Texas. Immersed in data science, statistics, and visualization tools, I discovered how raw data transforms into meaningful stories that empower organizations to make smarter decisions.</p>
+  <p>Transitioning into the data field wasn’t just about learning technical skills like SQL, Python, Tableau, or cloud platforms like Snowflake. It was about blending my business acumen with analytical expertise to act as a bridge between complex data and practical business outcomes. Over the years, I have worked across diverse sectors such as banking, healthcare, and supply chain, helping teams unlock value through omni-channel marketing insights, performance measurement, and audience segmentation.</p>
+  <p>I’m driven by a simple belief: data is more than numbers. It’s the key to understanding customers, optimizing operations, and ultimately shaping the future of business. Through storytelling with data, I strive to turn analytics into actionable strategies that create lasting impact.</p>
+  <p>In my previous roles, I have contributed to omni-channel marketing efforts for financial products, working closely with analytics and engineering teams to enhance campaign measurement, audience segmentation, and data pipeline efficiency. I specialize in bridging the gap between technical data analysis and business strategy, enabling data-driven decision-making and improving overall marketing performance.</p>
 
   <hr />
 
-  <h2>🎓 Education</h2>
-  <ul class="skills-list">
-    <li><strong>University of North Texas</strong> – MS in Business Analytics, Denton, TX</li>
-    <li><strong>SIES College of Management Studies</strong> – PGDM, Management Studies, Navi Mumbai, India</li>
-    <li><strong>Prin. L.N. Welingkar Institute</strong> – Diploma in Marketing Management, Mumbai, India</li>
-    <li><strong>University of Mumbai</strong> – Bachelor of Pharmacy, Mumbai, India</li>
-  </ul>
+  <section class="education">
+    <h2>🎓 Educational Background</h2>
+    <ul>
+      <li><strong>University of North Texas</strong> – MS in Business Analytics, Denton, TX</li>
+      <li><strong>SIES College of Management Studies</strong> – PGDM, Management Studies, Navi Mumbai, India</li>
+      <li><strong>Prin. L.N. Welingkar Institute</strong> – Diploma in Marketing Management, Mumbai, India</li>
+      <li><strong>University of Mumbai</strong> – Bachelor of Pharmacy, Mumbai, India</li>
+    </ul>
+  </section>
 
-  <hr />
-
-  <h2>🛠️ Technical Skills</h2>
-  <ul class="skills-list">
-    <li><strong>Languages &amp; Tools:</strong> SQL, Python, SAS, MySQL Workbench, Jupyter, VS Code</li>
-    <li><strong>BI &amp; Analytics:</strong> Tableau, QlikView, SAS Enterprise Miner, Mixpanel, Freshpaint</li>
-    <li><strong>Cloud &amp; Databases:</strong> Snowflake, AWS (S3, Athena), Azure ML Studio, Oracle APEX</li>
-    <li><strong>Project Management:</strong> Azure DevOps, JIRA</li>
-    <li><strong>Other:</strong> Open CDISC Validator, MS Office</li>
-    <li><strong>OS:</strong> Windows, Linux</li>
-  </ul>
+  <section class="skills">
+    <h2>🛠️ Technical Skills</h2>
+    <ul>
+      <li><strong>Languages &amp; Tools:</strong> SQL, Python, SAS, MySQL Workbench, Jupyter, VS Code</li>
+      <li><strong>BI &amp; Analytics:</strong> Tableau, QlikView, SAS Enterprise Miner, Mixpanel, Freshpaint</li>
+      <li><strong>Cloud &amp; Databases:</strong> Snowflake, AWS (S3, Athena), Azure ML Studio, Oracle APEX</li>
+      <li><strong>Project Management:</strong> Azure DevOps, JIRA</li>
+      <li><strong>Other:</strong> Open CDISC Validator, MS Office</li>
+      <li><strong>OS:</strong> Windows, Linux</li>
+    </ul>
+  </section>
 
   <hr />
 
   <h2>📊 Projects</h2>
-  <ul>
-    <li><a href="projects.html">MSBA UNT Projects Repository</a> – Academic projects including forecasting, classification, dashboarding, and cloud data pipelines</li>
-    <li><a href="https://public.tableau.com/app/profile/amruta.gandhe/vizzes">Tableau Dashboards</a> – Interactive Tableau visualization</li>
-  </ul>
+  <p>Explore my academic and professional projects on the <a href="projects.html">Projects page</a>.</p>
 
   <hr />
 
@@ -202,11 +206,11 @@
 
 <footer>
   <a href="mailto:asgandhe@hotmail.com" aria-label="Send email">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2">
-      <polyline points="22,6 12,13 2,6" />
-      <rect x="2" y="6" width="20" height="12" rx="2" ry="2" />
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <polyline points="22,6 12,13 2,6" fill="none" stroke="currentColor" stroke-width="2"/>
+      <rect x="2" y="6" width="20" height="12" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/>
     </svg>
-    asgandhe@hotmail.com
+    <span>Email Me</span>
   </a>
   <div>© Amruta Gandhe</div>
 </footer>
