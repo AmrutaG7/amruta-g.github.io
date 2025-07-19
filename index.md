@@ -1,5 +1,5 @@
 ---
-layout: splash
+layout: single
 title: "Amruta Gandhe"
 subtitle: "Business Analytics Projects"
 header:
