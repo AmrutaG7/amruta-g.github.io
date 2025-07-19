@@ -4,10 +4,6 @@ layout: single
 permalink: /about/
 ---
 
-<nav>
-  <a href="/">HOME</a> <a href="/about/">ABOUT</a> <a href="/projects/">PROJECTS</a> <a href="/contact/">CONTACT</a>  
-</nav>
-
 <img src="/assets/profile.jpg" alt="Amruta Gandhe"
      style="width: 160px; height: 160px; border-radius: 50%; object-fit: cover;
             display: block; margin: 0 auto; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); border: 2px solid #ddd;">
