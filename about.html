@@ -19,6 +19,7 @@
       color: var(--text-color);
       line-height: 1.6;
       padding-bottom: 80px; /* space for fixed footer */
+      text-align: center;
     }
     nav {
       position: fixed;
@@ -63,10 +64,6 @@
       max-width: 800px;
       margin: 100px auto 40px;
       padding: 0 20px;
-      text-align: center; /* CENTER ALIGNMENT */
-    }
-    main p, main ul {
-      margin-bottom: 1rem;
     }
     img.profile-pic {
       width: 160px;
@@ -92,6 +89,17 @@
     }
     a:hover {
       color: var(--secondary-color);
+    }
+
+    /* Remove bullets and center text for specific lists */
+    .education ul,
+    .skills ul,
+    .certifications ul,
+    .connect ul {
+      list-style: none;
+      padding-left: 0;
+      margin-left: 0;
+      text-align: center;
     }
 
     footer {
@@ -148,7 +156,7 @@
 
   <hr />
 
-  <h2>💡 My Journey Into Data Analytics</h2>
+  <h2>💡 About Me</h2>
   <p>With a foundation in business and management, I began my career understanding the strategic value behind every decision. My growing interest in data-driven insights led me to pursue a Master’s in Business Analytics at the University of North Texas.</p>
   <p>Since then, I’ve applied my skills across sectors like banking, healthcare, and supply chain—supporting omni-channel marketing through campaign analytics, audience segmentation, and data pipeline optimization. I specialize in bridging business goals with data strategy, ensuring insights translate into measurable outcomes.</p>
 
@@ -157,29 +165,27 @@
   <section class="education">
     <h2>🎓 Educational Background</h2>
     <ul>
-      <li><strong>University of North Texas</strong> – MS in Business Analytics, Denton, TX</li>
-      <li><strong>SIES College of Management Studies</strong> – PGDM, Management Studies, Navi Mumbai, India</li>
-      <li><strong>Prin. L.N. Welingkar Institute</strong> – Diploma in Marketing Management, Mumbai, India</li>
-      <li><strong>University of Mumbai</strong> – Bachelor of Pharmacy, Mumbai, India</li>
+      <li>University of North Texas – MS in Business Analytics, Denton, TX</li>
+      <li>SIES College of Management Studies – PGDM, Management Studies, Navi Mumbai, India</li>
+      <li>Prin. L.N. Welingkar Institute – Diploma in Marketing Management, Mumbai, India</li>
+      <li>University of Mumbai – Bachelor of Pharmacy, Mumbai, India</li>
     </ul>
   </section>
 
   <section class="skills">
     <h2>🛠️ Technical Skills</h2>
     <ul>
-      <li><strong>Languages &amp; Tools:</strong> SQL, Python, SAS, MySQL Workbench, Jupyter, VS Code</li>
-      <li><strong>BI &amp; Analytics:</strong> Tableau, QlikView, SAS Enterprise Miner, Mixpanel, Freshpaint</li>
-      <li><strong>Cloud &amp; Databases:</strong> Snowflake, AWS (S3, Athena), Azure ML Studio, Oracle APEX</li>
-      <li><strong>Project Management:</strong> Azure DevOps, JIRA</li>
-      <li><strong>Other:</strong> Open CDISC Validator, MS Office</li>
-      <li><strong>OS:</strong> Windows, Linux</li>
+      <li>Languages &amp; Tools: SQL, Python, SAS, MySQL Workbench, Jupyter, VS Code</li>
+      <li>BI &amp; Analytics: Tableau, QlikView, SAS Enterprise Miner, Mixpanel, Freshpaint</li>
+      <li>Cloud &amp; Databases: Snowflake, AWS (S3, Athena), Azure ML Studio, Oracle APEX</li>
+      <li>Project Management: Azure DevOps, JIRA</li>
+      <li>Other: Open CDISC Validator, MS Office</li>
+      <li>OS: Windows, Linux</li>
     </ul>
   </section>
 
-  <hr />
-
   <section class="certifications">
-    <h2>📜 Certifications & Publications</h2>
+    <h2>🎓 Certifications & Publications</h2>
     <ul>
       <li>SAS Certified Base Programmer for SAS 9.0</li>
       <li>Publication: Artificial Intelligence Role in Chronic Condition Decision Extrapolation, Dec 2022</li>
@@ -188,16 +194,13 @@
 
   <hr />
 
-  <h2>📊 Projects</h2>
-  <p>Explore my project portfolio on the <a href="projects.html">Projects page</a>.</p>
-
-  <hr />
-
-  <h2>📬 Connect</h2>
-  <ul>
-    <li><a href="https://www.linkedin.com/in/amruta-gandhe-1b1013207/">LinkedIn – Amruta Gandhe</a></li>
-    <li><a href="https://github.com/amruta-gandhe">GitHub – amruta-gandhe</a></li>
-  </ul>
+  <section class="connect">
+    <h2>📬 Connect</h2>
+    <ul>
+      <li><a href="https://www.linkedin.com/in/amruta-gandhe-1b1013207/">LinkedIn – Amruta Gandhe</a></li>
+      <li><a href="https://github.com/amruta-gandhe">GitHub – amruta-gandhe</a></li>
+    </ul>
+  </section>
 </main>
 
 <footer>
