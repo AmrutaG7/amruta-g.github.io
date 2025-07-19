@@ -90,18 +90,22 @@
     a:hover {
       color: var(--secondary-color);
     }
-
-    /* Remove bullets and center text for specific lists */
-    .education ul,
+    ul {
+      padding-left: 0;
+      margin-top: 0;
+      margin-bottom: 1.5rem;
+    }
+    /* Bullet-free lists for specific sections */
     .skills ul,
+    .education ul,
     .certifications ul,
     .connect ul {
       list-style: none;
       padding-left: 0;
-      margin-left: 0;
-      text-align: center;
+      margin: 0 auto 1.5rem;
+      max-width: 600px;
+      text-align: left;
     }
-
     footer {
       background: var(--bg-color);
       border-top: 1px solid var(--accent-color);
@@ -162,21 +166,6 @@
 
   <hr />
 
-  <h2>📊 Projects</h2>
-  <p>Explore my project portfolio on the <a href="projects.html">Projects page</a>.</p>
-
-  <hr />
-
-  <section class="education">
-    <h2>🎓 Educational Background</h2>
-    <ul>
-      <li>University of North Texas – MS in Business Analytics, Denton, TX</li>
-      <li>SIES College of Management Studies – PGDM, Management Studies, Navi Mumbai, India</li>
-      <li>Prin. L.N. Welingkar Institute – Diploma in Marketing Management, Mumbai, India</li>
-      <li>University of Mumbai – Bachelor of Pharmacy, Mumbai, India</li>
-    </ul>
-  </section>
-
   <section class="skills">
     <h2>🛠️ Technical Skills</h2>
     <ul>
@@ -188,6 +177,23 @@
       <li>OS: Windows, Linux</li>
     </ul>
   </section>
+
+  <section class="education">
+    <h2>🎓 Educational Background</h2>
+    <ul>
+      <li>University of North Texas – MS in Business Analytics, Denton, TX</li>
+      <li>SIES College of Management Studies – PGDM, Management Studies, Navi Mumbai, India</li>
+      <li>Prin. L.N. Welingkar Institute – Diploma in Marketing Management, Mumbai, India</li>
+      <li>University of Mumbai – Bachelor of Pharmacy, Mumbai, India</li>
+    </ul>
+  </section>
+
+  <hr />
+
+  <h2>📊 Projects</h2>
+  <p>Explore my project portfolio on the <a href="projects.html">Projects page</a>.</p>
+
+  <hr />
 
   <section class="certifications">
     <h2>🎓 Certifications & Publications</h2>
