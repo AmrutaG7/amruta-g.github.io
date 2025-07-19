@@ -14,8 +14,6 @@ header_pages:
   - projects.md
   - contact.md
 
-# footer_include: footer_custom.html commenting out this line since I am now using _layout/default.html file
-
 rss:
   enabled: false
 
