@@ -8,212 +8,152 @@
     :root {
       --bg-color: #eaf9f5;
       --primary-color: #6c8c84;
-      --secondary-color: #f4a261;
-      --accent-color: #b5ead7;
+      --accent-color: #f4a261;
       --text-color: #333;
     }
+
     body {
-      margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: var(--bg-color);
       color: var(--text-color);
-      line-height: 1.6;
-      padding-bottom: 80px; /* space for fixed footer */
+      margin: 0;
+      padding: 0;
     }
+
     nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
       background-color: var(--bg-color);
-      border-bottom: 1px solid var(--accent-color);
+      border-bottom: 1px solid #ccc;
       padding: 10px 20px;
       display: flex;
       justify-content: center;
-      z-index: 1000;
     }
+
     nav ul {
-      margin: 0;
-      padding: 0;
       list-style: none;
       display: flex;
       gap: 30px;
+      margin: 0;
+      padding: 0;
     }
+
     nav a {
       color: var(--primary-color);
       text-decoration: none;
-      font-size: 0.9rem;
-      font-weight: 600;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      font-weight: bold;
     }
-    nav a:hover {
-      color: var(--secondary-color);
+
+    .about-container {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
-    nav svg {
-      width: 24px;
-      height: 24px;
-      stroke: currentColor;
-      fill: none;
-      stroke-width: 2;
-      margin-bottom: 4px;
-    }
-    main {
-      max-width: 800px;
-      margin: 100px auto 40px;
-      padding: 0 20px;
-      text-align: center;
-    }
-    img.profile-pic {
-      width: 160px;
-      height: 160px;
-      border-radius: 50%;
-      object-fit: cover;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-      border: 2px solid #ddd;
-      display: block;
-      margin: 0 auto 20px;
-    }
-    hr {
-      border: none;
-      border-top: 1px solid var(--accent-color);
-      margin: 2rem 0;
-    }
+
     h1, h2 {
       color: var(--primary-color);
     }
-    a {
-      color: var(--primary-color);
-      text-decoration: none;
-    }
-    a:hover {
-      color: var(--secondary-color);
+
+    .section {
+      margin-bottom: 30px;
     }
 
-    footer {
-      background: var(--bg-color);
-      border-top: 1px solid var(--accent-color);
-      padding: 15px 20px;
+    .skills-list, .education-list {
+      list-style: none;
+      padding-left: 0;
+      line-height: 1.8;
+    }
+
+    .footer {
+      margin-top: 40px;
+      padding: 20px;
+      background-color: var(--bg-color);
       text-align: center;
       font-size: 0.9rem;
-      color: var(--primary-color);
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 15px;
-      flex-wrap: wrap;
     }
-    footer a {
+
+    .footer a {
+      margin: 0 10px;
       color: var(--primary-color);
       text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
     }
-    footer a:hover {
-      color: var(--secondary-color);
-    }
-    footer svg {
+
+    .icon-linkedin {
       width: 20px;
       height: 20px;
-      stroke: currentColor;
-      fill: none;
-      stroke-width: 2;
-    }
-    .education, .skills {
-      text-align: left;
-      max-width: 700px;
-      margin: 0 auto 40px;
-    }
-    .education h3, .skills h3 {
-      color: var(--primary-color);
-      margin-bottom: 0.5rem;
-    }
-    .education ul, .skills ul {
-      list-style: disc inside;
-      padding-left: 0;
-      margin-top: 0;
+      vertical-align: middle;
     }
   </style>
 </head>
 <body>
 
-<nav>
-  <ul>
-    <li><a href="index.html" title="Home"><svg viewBox="0 0 24 24"><path d="M3 12 L12 3 L21 12 V21 H15 V15 H9 V21 H3 Z" /></svg>Home</a></li>
-    <li><a href="about.html" title="About"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" /><path d="M6 20c0-3.33 5.34-5 6-5s6 1.67 6 5" /></svg>About</a></li>
-    <li><a href="projects.html" title="Projects"><svg viewBox="0 0 24 24"><path d="M3 7h6l2 3h10v9H3z" /></svg>Projects</a></li>
-    <li><a href="contact.html" title="Contact"><svg viewBox="0 0 24 24"><path d="M3 8l9 6 9-6" /><rect x="3" y="8" width="18" height="10" rx="2" ry="2" /></svg>Contact</a></li>
-  </ul>
-</nav>
-
-<main>
-  <img src="assets/profile.jpg" alt="Amruta Gandhe" class="profile-pic" />
-  <h1>👩‍💻 Amruta Gandhe</h1>
-  <p><strong>Data Analytics &amp; BI | Data Strategy &amp; Omnichannel Insights | SQL • Tableau | Cloud: Snowflake</strong></p>
-
-  <hr />
-
-  <h2>💡 My Journey Into Data Analytics</h2>
-  <p>I began my professional journey with a strong foundation in management and business, earning my Post Graduate Diploma in Management Studies. Early on, I realized that behind every business decision lies a wealth of untapped data that, when analyzed properly, can unlock powerful insights and drive impactful strategies.</p>
-  <p>This curiosity sparked my passion for data analytics and led me to pursue a Master’s degree in Business Analytics at the University of North Texas. Immersed in data science, statistics, and visualization tools, I discovered how raw data transforms into meaningful stories that empower organizations to make smarter decisions.</p>
-  <p>Transitioning into the data field wasn’t just about learning technical skills like SQL, Python, Tableau, or cloud platforms like Snowflake. It was about blending my business acumen with analytical expertise to act as a bridge between complex data and practical business outcomes. Over the years, I have worked across diverse sectors such as banking, healthcare, and supply chain, helping teams unlock value through omni-channel marketing insights, performance measurement, and audience segmentation.</p>
-  <p>I’m driven by a simple belief: data is more than numbers. It’s the key to understanding customers, optimizing operations, and ultimately shaping the future of business. Through storytelling with data, I strive to turn analytics into actionable strategies that create lasting impact.</p>
-  <p>In my previous roles, I have contributed to omni-channel marketing efforts for financial products, working closely with analytics and engineering teams to enhance campaign measurement, audience segmentation, and data pipeline efficiency. I specialize in bridging the gap between technical data analysis and business strategy, enabling data-driven decision-making and improving overall marketing performance.</p>
-
-  <hr />
-
-  <section class="education">
-    <h2>🎓 Educational Background</h2>
+  <nav>
     <ul>
-      <li><strong>University of North Texas</strong> – MS in Business Analytics, Denton, TX</li>
-      <li><strong>SIES College of Management Studies</strong> – PGDM, Management Studies, Navi Mumbai, India</li>
-      <li><strong>Prin. L.N. Welingkar Institute</strong> – Diploma in Marketing Management, Mumbai, India</li>
-      <li><strong>University of Mumbai</strong> – Bachelor of Pharmacy, Mumbai, India</li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
-  </section>
+  </nav>
 
-  <section class="skills">
-    <h2>🛠️ Technical Skills</h2>
-    <ul>
-      <li><strong>Languages &amp; Tools:</strong> SQL, Python, SAS, MySQL Workbench, Jupyter, VS Code</li>
-      <li><strong>BI &amp; Analytics:</strong> Tableau, QlikView, SAS Enterprise Miner, Mixpanel, Freshpaint</li>
-      <li><strong>Cloud &amp; Databases:</strong> Snowflake, AWS (S3, Athena), Azure ML Studio, Oracle APEX</li>
-      <li><strong>Project Management:</strong> Azure DevOps, JIRA</li>
-      <li><strong>Other:</strong> Open CDISC Validator, MS Office</li>
-      <li><strong>OS:</strong> Windows, Linux</li>
-    </ul>
-  </section>
+  <div class="about-container">
+    <h1>My Journey Into Data Analytics</h1>
+    <div class="section">
+      <p>
+        I began my career with a strong foundation in business and management, earning a Post Graduate Diploma in Management Studies. Early in my journey, I recognized the value of data in shaping effective business decisions, which sparked my interest in analytics and led me to pursue a Master’s in Business Analytics at the University of North Texas.
+      </p>
+      <p>
+        Since then, I’ve applied my skills across sectors like banking, healthcare, and supply chain—supporting omni-channel marketing through campaign analytics, audience segmentation, and data pipeline optimization. I specialize in bridging business goals with data strategy, ensuring insights translate into measurable outcomes.
+      </p>
+    </div>
 
-  <hr />
+    <div class="section">
+      <h2>🎓 Educational Background</h2>
+      <ul class="education-list">
+        <li>University of North Texas – MS in Business Analytics, Denton, TX</li>
+        <li>SIES College of Management Studies – PGDM, Management Studies, Navi Mumbai, India</li>
+        <li>Prin. L.N. Welingkar Institute – Diploma in Marketing Management, Mumbai, India</li>
+        <li>University of Mumbai – Bachelor of Pharmacy, Mumbai, India</li>
+      </ul>
+    </div>
 
-  <h2>📊 Projects</h2>
-  <p>Explore my project portfolio on the <a href="projects.html">Projects page</a>.</p>
+    <div class="section">
+      <h2>🛠 Technical Skills</h2>
+      <ul class="skills-list">
+        <li><strong>Languages & Tools:</strong> SQL, Python, SAS, MySQL Workbench, Jupyter, VS Code</li>
+        <li><strong>BI & Analytics:</strong> Tableau, QlikView, SAS Enterprise Miner, Mixpanel, Freshpaint</li>
+        <li><strong>Cloud & Databases:</strong> Snowflake, AWS (S3, Athena), Azure ML Studio, Oracle APEX</li>
+        <li><strong>Project Management:</strong> Azure DevOps, JIRA</li>
+        <li><strong>Other:</strong> Open CDISC Validator, MS Office</li>
+        <li><strong>OS:</strong> Windows, Linux</li>
+      </ul>
+    </div>
 
-  <hr />
+    <div class="section">
+      <h2>📁 Explore My Projects</h2>
+      <p>You can view my featured data and analytics projects on the <a href="projects.html">Projects</a> page.</p>
+    </div>
+  </div>
 
-  <h2>📬 Connect</h2>
-  <ul>
-    <li><a href="https://www.linkedin.com/in/amruta-gandhe-1b1013207/">LinkedIn – Amruta Gandhe</a></li>
-    <li><a href="https://github.com/amruta-gandhe">GitHub – amruta-gandhe</a></li>
-  </ul>
-</main>
-
-<footer>
-  <a href="mailto:asgandhe@hotmail.com" aria-label="Send email">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-      <polyline points="22,6 12,13 2,6" fill="none" stroke="currentColor" stroke-width="2"/>
-      <rect x="2" y="6" width="20" height="12" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/>
-    </svg>
-    <span>Email Me</span>
-  </a>
-  <div>© Amruta Gandhe</div>
-</footer>
+  <footer class="footer">
+    <a href="https://www.linkedin.com/in/amruta-gandhe-1b1013207/" target="_blank" aria-label="LinkedIn">
+      <svg class="icon-linkedin" xmlns="http://www.w3.org/2000/svg" fill="#6c8c84" viewBox="0 0 24 24">
+        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 
+        2.239 5 5 5h14c2.761 0 5-2.239 
+        5-5v-14c0-2.761-2.239-5-5-5zm-11 
+        19h-3v-10h3v10zm-1.5-11.268c-.966 
+        0-1.75-.784-1.75-1.75s.784-1.75 
+        1.75-1.75 1.75.784 
+        1.75 1.75-.784 1.75-1.75 
+        1.75zm13.5 11.268h-3v-5.604c0-1.337-.026-3.063-1.867-3.063-1.867 
+        0-2.153 1.46-2.153 
+        2.968v5.699h-3v-10h2.881v1.367h.041c.401-.761 
+        1.379-1.563 2.838-1.563 3.033 
+        0 3.593 1.996 3.593 4.591v5.605z"/>
+      </svg>
+    </a>
+  </footer>
 
 </body>
 </html>
