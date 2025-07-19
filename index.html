@@ -47,6 +47,39 @@
       text-decoration: none;
       font-size: 0.9rem;
       font-weight: 600;
-      display: flex;
-      flex-direction: column;
-      align-items: cen
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: var(--secondary-color);
+    }
+    .hero {
+      text-align: center;
+      padding: 160px 20px 60px;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      color: var(--primary-color);
+      margin-bottom: 10px;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      color: var(--text-color);
+      margin-bottom: 0;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+  <div class="hero">
+    <h1>Amruta Gandhe</h1>
+    <p>Data Analytics & BI | Data Strategy & Omnichannel Insights</p>
+  </div>
+</body>
+</html>
