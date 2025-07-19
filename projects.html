@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projects - Amruta Gandhe</title>
+  <style>
+    :root {
+      --bg-color: #eaf9f5;
+      --primary-color: #a8dadc;
+      --secondary-color: #f4a261;
+      --accent-color: #b5ead7;
+      --text-color: #333;
+    }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      background-color: var(--bg-color);
+      border-bottom: 1px solid var(--accent-color);
+      padding: 10px 20px;
+      display: flex;
+      justify-content: center;
+      z-index: 1000;
+    }
+    nav ul {
+      margin: 0; padding: 0;
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+    nav li {
+      display: flex;
+      align-items: center;
+    }
+    nav a {
+      color: var(--primary-color);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: color 0.3s ease;
+    }
+    nav a:hover,
+    nav a:focus {
+      color: var(--secondary-color);
+    }
+    nav svg {
+      width: 24px;
+      height: 24px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+      margin-bottom: 4px;
+    }
+    main {
+      max-width: 800px;
+      margin: 100px auto 40px;
+      padding: 0 20px;
+    }
+    h1, h2 {
+      color: var(--primary-color);
+    }
+    hr {
+      border: none;
+      border-top: 1px solid var(--accent-color);
+      margin: 2rem 0;
+    }
+    a {
+      color: var(--primary-color);
+      text-decoration: none;
+    }
+    a:hover {
+      color: var(--secondary-color);
+    }
+    ul {
+      padding-left: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <ul>
+    <li><a href="index.html" title="Home" aria-label="Home">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12 L12 3 L21 12 V21 H15 V15 H9 V21 H3 Z" /></svg>
+      Home
+    </a></li>
+    <li><a href="about.html" title="About" aria-label="About">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4" /><path d="M6 20c0-3.33 5.34-5 6-5s6 1.67 6 5" /></svg>
+      About
+    </a></li>
+    <li><a href="projects.html" title="Projects" aria-label="Projects">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h6l2 3h10v9H3z" /></svg>
+      Projects
+    </a></li>
+    <li><a href="contact.html" title="Contact" aria-label="Contact">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 8l9 6 9-6" /><rect x="3" y="8" width="18" height="10" rx="2" ry="2" /></svg>
+      Contact
+    </a></li>
+  </ul>
+</nav>
+
+<main>
+  <h1>📊 Projects</h1>
+
+  <h2>🐍 Python Projects</h2>
+  <ul>
+    <li><strong>Loan Analysis of Crowdfunding Platform Kiva.org using Python</strong><br>Analyzed loan data from Kiva.org to uncover trends and success factors in global micro-lending.</li>
+    <li><strong>Walmart Sales Prediction</strong><br>Developed forecasting models to predict Walmart sales using historical data and time series analysis.</li>
+    <li><strong>Loan Analysis: Understanding The Client and Business using Python</strong><br>Explored loan datasets to understand client behaviors and business impacts through data visualization and modeling.</li>
+  </ul>
+
+  <h2>📈 Tableau Projects</h2>
+  <ul>
+    <li><strong>Data Visualization Using Tableau: Police Arrests in Texas</strong><br>Created interactive dashboards to analyze police arrest records and crime statistics in Texas.</li>
+    <li><strong><a href="https://public.tableau.com/app/profile/amruta.gandhe/vizzes" target="_blank">Tableau Public Profile →</a></strong><br>Explore all my Tableau visualizations and dashboards.</li>
+  </ul>
+
+  <h2>🧠 Data Mining</h2>
+  <ul>
+    <li><strong>Prediction of New Car Prices Using SAS Enterprise Miner 15.1</strong><br>Built predictive models to estimate new car prices based on various features using SAS tools.</li>
+  </ul>
+
+  <h2>📉 Business Statistics Project</h2>
+  <ul>
+    <li><strong>Macroeconomic Analysis Across 204 Economies</strong><br>Conducted comparative statistical analysis of macroeconomic indicators such as GDP, inflation, and unemployment.</li>
+  </ul>
+
+  <h2>🧱 Foundations of Database Management</h2>
+  <ul>
+    <li>Designed a relational database for a consulting firm to capture details of ongoing projects, clients, and resources.</li>
+  </ul>
+
+  <h2>🗄️ Data Warehouse Project</h2>
+  <ul>
+    <li>Designed a relational database and data warehouse for an online portal (Fiverr), developing front-end and back-end dashboards using QlikView and Tableau.</li>
+  </ul>
+
+  <h2>🔮 Predictive Analytics</h2>
+  <ul>
+    <li><strong>Exponential Smoothing Using SAS 9.0</strong><br>Implemented time series forecasting using exponential smoothing techniques in SAS.</li>
+  </ul>
+</main>
+
+</body>
+</html>
