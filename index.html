@@ -18,6 +18,7 @@
       background-color: var(--bg-color);
       color: var(--text-color);
       line-height: 1.6;
+      padding-bottom: 80px; /* space for fixed footer */
     }
     nav {
       position: fixed;
@@ -66,6 +67,40 @@
       color: var(--text-color);
       margin-bottom: 0;
     }
+    footer {
+      background: var(--bg-color);
+      border-top: 1px solid var(--accent-color);
+      padding: 15px 20px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--primary-color);
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+    footer a {
+      color: var(--primary-color);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    footer a:hover {
+      color: var(--secondary-color);
+    }
+    footer svg {
+      width: 20px;
+      height: 20px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+    }
   </style>
 </head>
 <body>
@@ -81,5 +116,23 @@
     <h1>Amruta Gandhe</h1>
     <p>Welcome to my Business Analytics portfolio.</p>
   </div>
+
+  <footer>
+    <a href="mailto:gandhe.amruta@gmail.com" aria-label="Email gandhe.amruta@gmail.com">
+      <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" viewBox="0 0 24 24">
+        <path d="M4 4h16v16H4z" />
+        <polyline points="22,6 12,13 2,6" />
+      </svg>
+      gandhe.amruta@gmail.com
+    </a>
+    <a href="mailto:asgandhe@hotmail.com" aria-label="Email asgandhe@hotmail.com">
+      <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" viewBox="0 0 24 24">
+        <path d="M4 4h16v16H4z" />
+        <polyline points="22,6 12,13 2,6" />
+      </svg>
+      asgandhe@hotmail.com
+    </a>
+    <div>© Amruta Gandhe</div>
+  </footer>
 </body>
 </html>
