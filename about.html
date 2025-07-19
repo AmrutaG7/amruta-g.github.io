@@ -63,7 +63,10 @@
       max-width: 800px;
       margin: 100px auto 40px;
       padding: 0 20px;
-      text-align: center;
+      text-align: center; /* CENTER ALIGNMENT */
+    }
+    main p, main ul {
+      margin-bottom: 1rem;
     }
     img.profile-pic {
       width: 160px;
@@ -90,6 +93,7 @@
     a:hover {
       color: var(--secondary-color);
     }
+
     footer {
       background: var(--bg-color);
       border-top: 1px solid var(--accent-color);
@@ -124,20 +128,6 @@
       fill: none;
       stroke-width: 2;
     }
-    section.education, section.skills {
-      text-align: left;
-      max-width: 700px;
-      margin: 0 auto 40px;
-    }
-    section.education h2, section.skills h2 {
-      color: var(--primary-color);
-      margin-bottom: 0.5rem;
-    }
-    section.education ul, section.skills ul {
-      list-style: disc inside;
-      padding-left: 0;
-      margin-top: 0;
-    }
   </style>
 </head>
 <body>
@@ -158,7 +148,7 @@
 
   <hr />
 
-  <h2>💡 About Me</h2>
+  <h2>💡 My Journey Into Data Analytics</h2>
   <p>With a foundation in business and management, I began my career understanding the strategic value behind every decision. My growing interest in data-driven insights led me to pursue a Master’s in Business Analytics at the University of North Texas.</p>
   <p>Since then, I’ve applied my skills across sectors like banking, healthcare, and supply chain—supporting omni-channel marketing through campaign analytics, audience segmentation, and data pipeline optimization. I specialize in bridging business goals with data strategy, ensuring insights translate into measurable outcomes.</p>
 
@@ -167,7 +157,7 @@
   <section class="education">
     <h2>🎓 Educational Background</h2>
     <ul>
-      <li><strong>University of North Texas</strong> – MS in Business Analytics, Denton, TX, USA</li>
+      <li><strong>University of North Texas</strong> – MS in Business Analytics, Denton, TX</li>
       <li><strong>SIES College of Management Studies</strong> – PGDM, Management Studies, Navi Mumbai, India</li>
       <li><strong>Prin. L.N. Welingkar Institute</strong> – Diploma in Marketing Management, Mumbai, India</li>
       <li><strong>University of Mumbai</strong> – Bachelor of Pharmacy, Mumbai, India</li>
