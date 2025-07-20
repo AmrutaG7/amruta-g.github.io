@@ -2,45 +2,70 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About Me - Amruta Gandhe</title>
-  <link rel="stylesheet" href="styles.css" />
-  <script src="https://unpkg.com/feather-icons"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About - Amruta Gandhe</title>
   <style>
+    :root {
+      --bg-color: #eaf9f5;
+      --primary-color: #6c8c84;
+      --secondary-color: #f4a261;
+      --accent-color: #b5ead7;
+      --text-color: #333;
+    }
     body {
-      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+      padding-bottom: 80px;
+      text-align: center;
+    }
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background-color: var(--bg-color);
+      border-bottom: 1px solid var(--accent-color);
+      padding: 10px 20px;
+      display: flex;
+      justify-content: center;
+      z-index: 1000;
+    }
+    nav ul {
       margin: 0;
       padding: 0;
-      background-color: #f9f9f9;
-      color: #333;
+      list-style: none;
+      display: flex;
+      gap: 30px;
     }
-
-    header, footer {
-      background-color: #222;
-      color: white;
-      padding: 15px;
-      text-align: center;
-    }
-
     nav a {
-      color: white;
-      margin: 0 15px;
+      color: var(--primary-color);
       text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
-
-    .container {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 20px;
-      background: #fff;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    nav a:hover {
+      color: var(--secondary-color);
     }
-
-    h1, h2 {
-      text-align: center;
+    nav svg {
+      width: 24px;
+      height: 24px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+      margin-bottom: 4px;
     }
-
-    .profile-pic {
+    main {
+      max-width: 800px;
+      margin: 0 auto 40px;
+      padding: 120px 20px 0;
+    }
+    img.profile-pic {
       width: 160px;
       height: 160px;
       border-radius: 50%;
@@ -50,116 +75,155 @@
       display: block;
       margin: 0 auto 20px;
     }
-
-    section {
-      margin-bottom: 40px;
+    hr {
+      border: none;
+      border-top: 1px solid var(--accent-color);
+      margin: 2rem 0;
     }
-
-    .no-bullets {
-      list-style: none;
-      padding-left: 0;
+    h1, h2 {
+      color: var(--primary-color);
     }
-
-    .no-bullets li {
-      margin-bottom: 10px;
-      display: flex;
-      align-items: center;
-    }
-
-    .no-bullets li i {
-      margin-right: 8px;
-    }
-
     a {
-      color: #0077cc;
+      color: var(--primary-color);
       text-decoration: none;
     }
-
     a:hover {
-      text-decoration: underline;
+      color: var(--secondary-color);
+    }
+    ul {
+      padding-left: 0;
+      margin-top: 0;
+      margin-bottom: 1.5rem;
+    }
+    /* Bullet-free lists for specific sections */
+    .skills ul,
+    .education ul,
+    .certifications ul,
+    .connect ul {
+      list-style: none;
+      padding-left: 0;
+      margin: 0 auto 1.5rem;
+      max-width: 600px;
+      text-align: left;
+    }
+    footer {
+      background: var(--bg-color);
+      border-top: 1px solid var(--accent-color);
+      padding: 15px 20px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--primary-color);
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+    footer a {
+      color: var(--primary-color);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    footer a:hover {
+      color: var(--secondary-color);
+    }
+    footer svg {
+      width: 20px;
+      height: 20px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="projects.html">Projects</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
+<nav>
+  <ul>
+    <li><a href="index.html" title="Home"><svg viewBox="0 0 24 24"><path d="M3 12 L12 3 L21 12 V21 H15 V15 H9 V21 H3 Z" /></svg>Home</a></li>
+    <li><a href="about.html" title="About"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" /><path d="M6 20c0-3.33 5.34-5 6-5s6 1.67 6 5" /></svg>About</a></li>
+    <li><a href="projects.html" title="Projects"><svg viewBox="0 0 24 24"><path d="M3 7h6l2 3h10v9H3z" /></svg>Projects</a></li>
+    <li><a href="contact.html" title="Contact"><svg viewBox="0 0 24 24"><path d="M3 8l9 6 9-6" /><rect x="3" y="8" width="18" height="10" rx="2" ry="2" /></svg>Contact</a></li>
+  </ul>
+</nav>
 
-  <div class="container">
-    <img src="profile.jpg" alt="Amruta Gandhe" class="profile-pic" />
+<main>
+  <img src="assets/profile.jpg" alt="Amruta Gandhe" class="profile-pic" />
+  <h1>👩‍💻 Amruta Gandhe</h1>
+  <p><strong>Data Analytics &amp; BI | Data Strategy &amp; Omnichannel Insights | SQL • Tableau | Cloud: Snowflake</strong></p>
 
-    <h1>About Me</h1>
+  <hr />
 
-    <section class="bio fade-in">
-      <p>
-        My Journey Into Data Analytics
-        <br><br>
-        I began my career with a strong foundation in business and management, earning a Post Graduate Diploma in Management Studies. Early in my journey, I recognized the value of data in shaping effective business decisions, which sparked my interest in analytics. 
-        <br><br>
-        This led me to pursue a Master’s in Business Analytics at the University of North Texas. Since then, I’ve worked across sectors like banking, healthcare, and supply chain—supporting omni-channel marketing through campaign analytics, audience segmentation, and data pipeline optimization.
-        <br><br>
-        I specialize in bridging business goals with data strategy, ensuring insights translate into measurable outcomes.
-      </p>
-    </section>
+  <h2>💡 About Me</h2>
+  <p>With a foundation in business and management, I began my career understanding the strategic value behind every decision. My growing interest in data-driven insights led me to pursue a Master’s in Business Analytics at the University of North Texas.</p>
+  <p>Since then, I’ve applied my skills across sectors like banking, healthcare, and supply chain—supporting omni-channel marketing through campaign analytics, audience segmentation, and data pipeline optimization. I specialize in bridging business goals with data strategy, ensuring insights translate into measurable outcomes.</p>
 
-    <section class="skills fade-in">
-      <h2>🛠️ Technical Skills</h2>
-      <ul class="no-bullets">
-        <li><i data-feather="code"></i> Languages & Tools: SQL, Python, SAS, MySQL Workbench, Jupyter, VS Code</li>
-        <li><i data-feather="bar-chart-2"></i> BI & Analytics: Tableau, QlikView, SAS Enterprise Miner, Mixpanel, Freshpaint</li>
-        <li><i data-feather="cloud"></i> Cloud & Databases: Snowflake, AWS (S3, Athena), Azure ML Studio, Oracle APEX</li>
-        <li><i data-feather="settings"></i> Project Management: Azure DevOps, JIRA</li>
-        <li><i data-feather="tool"></i> Other: Open CDISC Validator, MS Office</li>
-        <li><i data-feather="cpu"></i> OS: Windows, Linux</li>
-      </ul>
-    </section>
+  <hr />
 
-    <section class="education fade-in">
-      <h2>🎓 Educational Background</h2>
-      <ul class="no-bullets">
-        <li><i data-feather="book"></i> University of North Texas – MS in Business Analytics, Denton, TX</li>
-        <li><i data-feather="book-open"></i> SIES College of Management Studies – PGDM, Navi Mumbai, India</li>
-        <li><i data-feather="award"></i> Prin. L.N. Welingkar Institute – Diploma in Marketing Management, Mumbai, India</li>
-        <li><i data-feather="clipboard"></i> University of Mumbai – Bachelor of Pharmacy, Mumbai, India</li>
-      </ul>
-    </section>
+  <section class="skills">
+    <h2>🛠️ Technical Skills</h2>
+    <ul>
+      <li>Languages &amp; Tools: SQL, Python, SAS, MySQL Workbench, Jupyter, VS Code</li>
+      <li>BI &amp; Analytics: Tableau, QlikView, SAS Enterprise Miner, Mixpanel, Freshpaint</li>
+      <li>Cloud &amp; Databases: Snowflake, AWS (S3, Athena), Azure ML Studio, Oracle APEX</li>
+      <li>Project Management: Azure DevOps, JIRA</li>
+      <li>Other: Open CDISC Validator, MS Office</li>
+      <li>OS: Windows, Linux</li>
+    </ul>
+  </section>
 
-    <section class="certifications fade-in">
-      <h2>🏅 Certifications & Publications</h2>
-      <ul class="no-bullets">
-        <li><i data-feather="check-circle"></i> SAS Certified Base Programmer for SAS 9.0</li>
-        <li><i data-feather="file-text"></i> Publication: <em>Artificial Intelligence Role in Chronic Condition Decision Extrapolation</em>, Dec 2022</li>
-      </ul>
-    </section>
+  <section class="education">
+    <h2>🎓 Educational Background</h2>
+    <ul>
+      <li>University of North Texas – MS in Business Analytics, Denton, TX</li>
+      <li>SIES College of Management Studies – PGDM, Management Studies, Navi Mumbai, India</li>
+      <li>Prin. L.N. Welingkar Institute – Diploma in Marketing Management, Mumbai, India</li>
+      <li>University of Mumbai – Bachelor of Pharmacy, Mumbai, India</li>
+    </ul>
+  </section>
 
-    <section class="projects fade-in">
-      <h2>📊 Projects</h2>
-      <p>Explore my project portfolio on the <a href="projects.html">Projects page</a>.</p>
-      <hr />
-    </section>
+  <hr />
 
-    <section class="connect fade-in">
-      <h2>📫 Connect</h2>
-      <ul class="no-bullets">
-        <li><i data-feather="mail"></i> Email: amruta.gandhe@gmail.com</li>
-        <li><i data-feather="linkedin"></i> <a href="https://www.linkedin.com/in/amruta-gandhe-1b1013207/" target="_blank">LinkedIn</a></li>
-        <li><i data-feather="github"></i> <a href="https://github.com/amrutag7" target="_blank">GitHub</a></li>
-      </ul>
-    </section>
-  </div>
+  <h2>📊 Projects</h2>
+  <p>Explore my project portfolio on the <a href="projects.html">Projects page</a>.</p>
 
-  <footer>
-    <p>&copy; 2025 Amruta Gandhe</p>
-  </footer>
+  <hr />
 
-  <script>
-    feather.replace();
-  </script>
+  <section class="certifications">
+    <h2>🎓 Certifications & Publications</h2>
+    <ul>
+      <li>SAS Certified Base Programmer for SAS 9.0</li>
+      <li>Publication: Artificial Intelligence Role in Chronic Condition Decision Extrapolation, Dec 2022</li>
+    </ul>
+  </section>
+
+  <hr />
+
+  <section class="connect">
+    <h2>📬 Connect</h2>
+    <ul>
+      <li><a href="https://www.linkedin.com/in/amruta-gandhe-1b1013207/">LinkedIn – Amruta Gandhe</a></li>
+      <li><a href="https://github.com/amruta-gandhe">GitHub – amruta-gandhe</a></li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <a href="mailto:asgandhe@hotmail.com" aria-label="Send email">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <polyline points="22,6 12,13 2,6" fill="none" stroke="currentColor" stroke-width="2"/>
+      <rect x="2" y="6" width="20" height="12" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/>
+    </svg>
+    <span>Email Me</span>
+  </a>
+  <div>© Amruta Gandhe</div>
+</footer>
+
 </body>
 </html>
