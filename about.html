@@ -4,6 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>About - Amruta Gandhe</title>
+
+  <!-- FontAwesome CDN for lightbulb icon -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+
   <style>
     :root {
       --bg-color: #eaf9f5;
@@ -85,13 +89,12 @@
     h1, h2 {
       color: var(--primary-color);
     }
-    h1 i[data-feather] {
+    h1 i.fa-lightbulb {
       vertical-align: middle;
       margin-right: 8px;
-      stroke-width: 1.5;
       color: var(--secondary-color);
-      height: 24px;
-      width: 24px;
+      font-size: 24px;
+      line-height: 1;
     }
     a {
       color: var(--primary-color);
@@ -184,63 +187,65 @@
 
   <hr />
 
-  <h1><i data-feather="user"></i> About Me</h1>
+  <h1>
+    <i class="fas fa-lightbulb"></i> About Me
+  </h1>
 
-    <section class="bio fade-in">
-      <p>
-        My Journey Into Data Analytics
-        <br><br>
-        I began my career with a strong foundation in business and management, earning a Post Graduate Diploma in Management Studies. Early in my journey, I recognized the value of data in shaping effective business decisions, which sparked my interest in analytics. 
-        <br><br>
-        This led me to pursue a Master’s in Business Analytics at the University of North Texas. Since then, I’ve worked across sectors like banking, healthcare, and supply chain—supporting omni-channel marketing through campaign analytics, audience segmentation, and data pipeline optimization.
-        <br><br>
-        I specialize in bridging business goals with data strategy, ensuring insights translate into measurable outcomes.
-      </p>
-    </section>
+  <section class="bio fade-in">
+    <p>
+      My Journey Into Data Analytics
+      <br><br>
+      I began my career with a strong foundation in business and management, earning a Post Graduate Diploma in Management Studies. Early in my journey, I recognized the value of data in shaping effective business decisions, which sparked my interest in analytics. 
+      <br><br>
+      This led me to pursue a Master’s in Business Analytics at the University of North Texas. Since then, I’ve worked across sectors like banking, healthcare, and supply chain—supporting omni-channel marketing through campaign analytics, audience segmentation, and data pipeline optimization.
+      <br><br>
+      I specialize in bridging business goals with data strategy, ensuring insights translate into measurable outcomes.
+    </p>
+  </section>
 
-    <section class="skills fade-in">
-      <h2>🛠️ Technical Skills</h2>
-      <ul class="no-bullets">
-        <li><i data-feather="code"></i> Languages & Tools: SQL, Python, SAS, MySQL Workbench, Jupyter, VS Code</li>
-        <li><i data-feather="bar-chart-2"></i> BI & Analytics: Tableau, QlikView, SAS Enterprise Miner, Mixpanel, Freshpaint</li>
-        <li><i data-feather="cloud"></i> Cloud & Databases: Snowflake, AWS (S3, Athena), Azure ML Studio, Oracle APEX</li>
-        <li><i data-feather="settings"></i> Project Management: Azure DevOps, JIRA</li>
-        <li><i data-feather="tool"></i> Other: Open CDISC Validator, MS Office</li>
-        <li><i data-feather="cpu"></i> OS: Windows, Linux</li>
-      </ul>
-    </section>
+  <section class="skills fade-in">
+    <h2>🛠️ Technical Skills</h2>
+    <ul class="no-bullets">
+      <li><i data-feather="code"></i> Languages & Tools: SQL, Python, SAS, MySQL Workbench, Jupyter, VS Code</li>
+      <li><i data-feather="bar-chart-2"></i> BI & Analytics: Tableau, QlikView, SAS Enterprise Miner, Mixpanel, Freshpaint</li>
+      <li><i data-feather="cloud"></i> Cloud & Databases: Snowflake, AWS (S3, Athena), Azure ML Studio, Oracle APEX</li>
+      <li><i data-feather="settings"></i> Project Management: Azure DevOps, JIRA</li>
+      <li><i data-feather="tool"></i> Other: Open CDISC Validator, MS Office</li>
+      <li><i data-feather="cpu"></i> OS: Windows, Linux</li>
+    </ul>
+  </section>
 
-    <section class="education fade-in">
-      <h2>🎓 Educational Background</h2>
-      <ul class="no-bullets">
-        <li><i data-feather="book"></i> University of North Texas – MS in Business Analytics, Denton, TX</li>
-        <li><i data-feather="book-open"></i> SIES College of Management Studies – PGDM, Navi Mumbai, India</li>
-        <li><i data-feather="award"></i> Prin. L.N. Welingkar Institute – Diploma in Marketing Management, Mumbai, India</li>
-        <li><i data-feather="clipboard"></i> University of Mumbai – Bachelor of Pharmacy, Mumbai, India</li>
-      </ul>
-    </section>
+  <section class="education fade-in">
+    <h2>🎓 Educational Background</h2>
+    <ul class="no-bullets">
+      <li><i data-feather="book"></i> University of North Texas – MS in Business Analytics, Denton, TX</li>
+      <li><i data-feather="book-open"></i> SIES College of Management Studies – PGDM, Navi Mumbai, India</li>
+      <li><i data-feather="award"></i> Prin. L.N. Welingkar Institute – Diploma in Marketing Management, Mumbai, India</li>
+      <li><i data-feather="clipboard"></i> University of Mumbai – Bachelor of Pharmacy, Mumbai, India</li>
+    </ul>
+  </section>
 
-    <section class="certifications fade-in">
-      <h2>🏅 Certifications & Publications</h2>
-      <ul class="no-bullets">
-        <li><i data-feather="check-circle"></i> SAS Certified Base Programmer for SAS 9.0</li>
-        <li><i data-feather="file-text"></i> Publication: <em>Artificial Intelligence Role in Chronic Condition Decision Extrapolation</em>, Dec 2022</li>
-      </ul>
-    </section>
+  <section class="certifications fade-in">
+    <h2>🏅 Certifications & Publications</h2>
+    <ul class="no-bullets">
+      <li><i data-feather="check-circle"></i> SAS Certified Base Programmer for SAS 9.0</li>
+      <li><i data-feather="file-text"></i> Publication: <em>Artificial Intelligence Role in Chronic Condition Decision Extrapolation</em>, Dec 2022</li>
+    </ul>
+  </section>
 
-    <section class="projects fade-in">
-      <h2>📊 Projects</h2>
-      <p>Explore my project portfolio on the <a href="projects.html">Projects page</a>.</p>
-      <hr />
-    </section>
+  <section class="projects fade-in">
+    <h2>📊 Projects</h2>
+    <p>Explore my project portfolio on the <a href="projects.html">Projects page</a>.</p>
+    <hr />
+  </section>
 
-    <section class="connect fade-in">
-      <h2>📫 Connect</h2>
-      <ul class="no-bullets">
-        <li><i data-feather="linkedin"></i> <a href="https://www.linkedin.com/in/amruta-gandhe-1b1013207/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-        <li><i data-feather="github"></i> <a href="https://github.com/amrutag7" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-      </ul>
-    </section>
+  <section class="connect fade-in">
+    <h2>📫 Connect</h2>
+    <ul class="no-bullets">
+      <li><i data-feather="linkedin"></i> <a href="https://www.linkedin.com/in/amruta-gandhe-1b1013207/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+      <li><i data-feather="github"></i> <a href="https://github.com/amrutag7" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+    </ul>
+  </section>
 </main>
 
 <footer>
