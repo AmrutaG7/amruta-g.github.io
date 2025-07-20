@@ -69,12 +69,13 @@
       width: 160px;
       height: 160px;
       border-radius: 50%;
-      object-fit: contain; /* fix cropping */
-      background-color: #fff; /* optional */
+      object-fit: cover;         /* fill circle without distortion */
+      object-position: center;   /* center focal point */
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
       border: 2px solid #ddd;
       display: block;
       margin: 0 auto 20px;
+      background-color: #fff;    /* optional white bg behind image */
     }
     hr {
       border: none;
@@ -114,7 +115,7 @@
       margin: 0 auto 1.5rem;
       max-width: 600px;
     }
-    /* Fix for Connect section: flex center with spacing */
+    /* Connect section: center and spacing */
     .connect ul {
       display: flex;
       justify-content: center;
@@ -267,4 +268,3 @@
 </script>
 </body>
 </html>
-
