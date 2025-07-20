@@ -4,7 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Home - Amruta Gandhe</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-papb3QKJ9X2XQ7tGzq3lV8kZQ9fU6Qtmrq/N2P5yfL6Lsp6u+7O9aSOTc7R0V4xj5cg6+o1VnjYlfKN3kf0Kzw=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
   <style>
     :root {
       --bg-color: #eaf9f5;
@@ -40,6 +46,10 @@
       display: flex;
       gap: 30px;
     }
+    nav li {
+      display: flex;
+      align-items: center;
+    }
     nav a {
       color: var(--primary-color);
       text-decoration: none;
@@ -52,7 +62,7 @@
     }
     .hero {
       text-align: center;
-      padding: 160px 20px 40px;
+      padding: 160px 20px 60px;
     }
     .hero h1 {
       font-size: 3rem;
@@ -61,37 +71,51 @@
     }
     .hero p {
       font-size: 1.2rem;
+      color: var(--text-color);
       margin-bottom: 0;
     }
+    /* Project grid styles */
     .project-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
       gap: 20px;
+      padding: 40px 20px;
       max-width: 1000px;
-      margin: 40px auto;
-      padding: 0 20px;
+      margin: 0 auto 60px;
     }
     .project-card {
-      text-decoration: none;
+      flex: 1 1 140px;
+      max-width: 160px;
+      background-color: var(--accent-color);
       color: var(--text-color);
       padding: 20px;
-      border-radius: 15px;
-      text-align: center;
-      transition: transform 0.2s ease;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      border-radius: 12px;
+      font-weight: 600;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
     .project-card:hover {
       transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
     }
     .project-card i {
-      font-size: 2rem;
-      margin-bottom: 10px;
-      color: var(--primary-color);
+      font-size: 3rem;
+      color: inherit;
     }
-    .project-card h3 {
-      margin: 0;
-      font-size: 1.1rem;
-    }
+    /* Pastel background colors for each category */
+    .python { background-color: #ffebd6; color: #de7a2f; }
+    .tableau { background-color: #d0f4de; color: #2f8f7c; }
+    .data-mining { background-color: #fde2e4; color: #d46a6a; }
+    .statistics { background-color: #e0bbf3; color: #6a4ad4; }
+    .database { background-color: #cce2cb; color: #3d6b35; }
+    .warehouse { background-color: #ffcbf2; color: #a24c80; }
+    .predictive { background-color: #fff3b0; color: #a68f1f; }
     footer {
       background: var(--bg-color);
       border-top: 1px solid var(--accent-color);
@@ -136,7 +160,6 @@
   </style>
 </head>
 <body>
-
   <nav>
     <ul>
       <li><a href="index.html">Home</a></li>
@@ -150,37 +173,43 @@
     <h1>Amruta Gandhe</h1>
     <p>Welcome to my Business Analytics portfolio.</p>
   </div>
-
-  <div class="project-grid">
-    <a href="projects/python.html" class="project-card" style="background-color: #ffebd6;">
-      <i class="fab fa-python"></i>
-      <h3>Python</h3>
-    </a>
-    <a href="projects/tableau.html" class="project-card" style="background-color: #d0f4de;">
-      <i class="fas fa-chart-bar"></i>
-      <h3>Tableau</h3>
-    </a>
-    <a href="projects/data-mining.html" class="project-card" style="background-color: #fde2e4;">
-      <i class="fas fa-database"></i>
-      <h3>Data Mining</h3>
-    </a>
-    <a href="projects/statistics.html" class="project-card" style="background-color: #e0bbf3;">
-      <i class="fas fa-percent"></i>
-      <h3>Business Statistics</h3>
-    </a>
-    <a href="projects/database.html" class="project-card" style="background-color: #cce2cb;">
-      <i class="fas fa-server"></i>
-      <h3>Database Management</h3>
-    </a>
-    <a href="projects/warehouse.html" class="project-card" style="background-color: #ffcbf2;">
-      <i class="fas fa-warehouse"></i>
-      <h3>Data Warehouse</h3>
-    </a>
-    <a href="projects/predictive.html" class="project-card" style="background-color: #fff3b0;">
-      <i class="fas fa-lightbulb"></i>
-      <h3>Predictive Analytics</h3>
-    </a>
-  </div>
+  
+  <section id="projects">
+    <h2 style="text-align:center; color: var(--primary-color); font-size: 2rem;">Explore My Projects</h2>
+    <p style="text-align:center; margin-bottom: 40px; font-size: 1rem;">
+      Click a category below to explore related projects and download full reports.
+    </p>
+    <div class="project-grid">
+      <a href="projects.html" class="project-card python">
+        <i class="fab fa-python"></i>
+        <h3>Python / SQL</h3>
+      </a>
+      <a href="projects.html" class="project-card tableau">
+        <i class="fas fa-chart-bar"></i>
+        <h3>Tableau</h3>
+      </a>
+      <a href="projects.html" class="project-card data-mining">
+        <i class="fas fa-database"></i>
+        <h3>Data Mining</h3>
+      </a>
+      <a href="projects.html" class="project-card statistics">
+        <i class="fas fa-percent"></i>
+        <h3>Business Statistics</h3>
+      </a>
+      <a href="projects.html" class="project-card database">
+        <i class="fas fa-server"></i>
+        <h3>Database Management</h3>
+      </a>
+      <a href="projects.html" class="project-card warehouse">
+        <i class="fas fa-warehouse"></i>
+        <h3>Data Warehouse</h3>
+      </a>
+      <a href="projects.html" class="project-card predictive">
+        <i class="fas fa-lightbulb"></i>
+        <h3>Predictive Analytics</h3>
+      </a>
+    </div>
+  </section>
 
   <footer>
     <div class="social-links">
@@ -200,6 +229,5 @@
     </div>
     <div>© Amruta Gandhe</div>
   </footer>
-
 </body>
 </html>
