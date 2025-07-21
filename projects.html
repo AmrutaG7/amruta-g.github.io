@@ -4,7 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Projects - Amruta Gandhe</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-papb3QKJ9X2XQ7tGzq3lV8kZQ9fU6Qtmrq/N2P5yfL6Lsp6u+7O9aSOTc7R0V4xj5cg6+o1VnjYlfKN3kf0Kzw=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
   <style>
     :root {
       --bg-color: #eaf9f5;
@@ -13,15 +19,14 @@
       --accent-color: #b5ead7;
       --text-color: #333;
     }
-
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: var(--bg-color);
       color: var(--text-color);
+      line-height: 1.6;
       padding-bottom: 100px;
     }
-
     nav {
       position: fixed;
       top: 0;
@@ -34,7 +39,6 @@
       justify-content: center;
       z-index: 1000;
     }
-
     nav ul {
       margin: 0;
       padding: 0;
@@ -42,69 +46,96 @@
       display: flex;
       gap: 30px;
     }
-
     nav a {
       color: var(--primary-color);
       text-decoration: none;
       font-weight: 600;
-      font-size: 0.9rem;
+      transition: color 0.3s ease;
     }
-
     nav a:hover {
       color: var(--secondary-color);
+    }
+
+    .project-section {
+      padding: 140px 20px 40px;
+      max-width: 1000px;
+      margin: 0 auto;
     }
 
     h2 {
       text-align: center;
       color: var(--primary-color);
-      font-size: 2rem;
-      margin-top: 120px;
+      margin-bottom: 30px;
     }
 
-    .accordion-section {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-
-    .accordion-item {
-      border-radius: 10px;
-      margin-bottom: 20px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    .project-category {
+      margin-bottom: 40px;
+      border-radius: 12px;
       overflow: hidden;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: box-shadow 0.3s ease;
     }
-
-    .accordion-header {
-      padding: 20px;
+    .project-category:hover {
+      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    }
+    .project-header {
       display: flex;
       align-items: center;
       gap: 12px;
-      cursor: pointer;
+      padding: 16px 20px;
+      font-size: 1.3rem;
+      color: var(--primary-color);
       font-weight: 600;
-      font-size: 1.1rem;
-    }
-
-    .accordion-content {
-      display: none;
-      padding: 20px;
+      user-select: none;
       background-color: #fff;
+      border-bottom: 1px solid var(--accent-color);
     }
-
-    .accordion-header i {
-      font-size: 1.5rem;
+    .project-header i {
+      font-size: 1.8rem;
     }
-
-    .python { background-color: #ffebd6; color: #de7a2f; }
-    .tableau { background-color: #d0f4de; color: #2f8f7c; }
-    .data-mining { background-color: #fde2e4; color: #d46a6a; }
-    .database { background-color: #cce2cb; color: #3d6b35; }
-    .warehouse { background-color: #ffcbf2; color: #a24c80; }
-
+    .toggle-icon {
+      margin-left: auto;
+      transition: transform 0.3s ease;
+    }
+    .project-category.open .toggle-icon {
+      transform: rotate(90deg);
+    }
+    .project-content {
+      display: none;
+      background-color: #fff;
+      padding: 20px;
+    }
+    .project-category.open .project-content {
+      display: block;
+    }
     iframe {
       width: 100%;
-      height: 500px;
+      height: 480px;
       border: none;
-      margin-top: 10px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    /* Colors matching index.html */
+    .python .project-header {
+      background-color: #ffebd6;
+      color: #de7a2f;
+    }
+    .tableau .project-header {
+      background-color: #d0f4de;
+      color: #2f8f7c;
+    }
+    .data-mining .project-header {
+      background-color: #fde2e4;
+      color: #d46a6a;
+    }
+    .database .project-header {
+      background-color: #cce2cb;
+      color: #3d6b35;
+    }
+    .warehouse .project-header {
+      background-color: #ffcbf2;
+      color: #a24c80;
     }
 
     footer {
@@ -123,12 +154,10 @@
       align-items: center;
       gap: 10px;
     }
-
     footer .social-links {
       display: flex;
       gap: 20px;
     }
-
     footer a {
       color: var(--primary-color);
       text-decoration: none;
@@ -136,11 +165,9 @@
       align-items: center;
       gap: 6px;
     }
-
     footer a:hover {
       color: var(--secondary-color);
     }
-
     footer svg {
       width: 20px;
       height: 20px;
@@ -148,7 +175,6 @@
       fill: none;
       stroke-width: 2;
     }
-
     .linkedin-icon svg {
       fill: currentColor;
       stroke: none;
@@ -156,7 +182,6 @@
   </style>
 </head>
 <body>
-
   <nav>
     <ul>
       <li><a href="index.html">Home</a></li>
@@ -166,56 +191,65 @@
     </ul>
   </nav>
 
-  <h2>My Project Reports</h2>
+  <main class="project-section" role="main">
+    <h2>Project Reports</h2>
 
-  <div class="accordion-section">
+    <section class="project-category python" tabindex="0" aria-expanded="false" aria-controls="python-content">
+      <header class="project-header" role="button" aria-controls="python-content" aria-expanded="false" tabindex="0">
+        <i class="fab fa-python"></i>
+        Python
+        <i class="fas fa-chevron-right toggle-icon" aria-hidden="true"></i>
+      </header>
+      <div id="python-content" class="project-content" hidden>
+        <iframe src="https://amrutag7.github.io/assets/KivaLoanAnalysisReport.pdf" aria-label="Python project report"></iframe>
+      </div>
+    </section>
 
-    <div class="accordion-item">
-      <div class="accordion-header python" onclick="toggleAccordion(this)">
-        <i class="fab fa-python"></i> Python
+    <section class="project-category tableau" tabindex="0" aria-expanded="false" aria-controls="tableau-content">
+      <header class="project-header" role="button" aria-controls="tableau-content" aria-expanded="false" tabindex="0">
+        <i class="fas fa-chart-bar"></i>
+        Tableau
+        <i class="fas fa-chevron-right toggle-icon" aria-hidden="true"></i>
+      </header>
+      <div id="tableau-content" class="project-content" hidden>
+        <p><a href="https://public.tableau.com/app/profile/amruta.gandhe/viz/Project_Amruta_Gandhe/Figure1-YearwiseArrestTrend" target="_blank" rel="noopener noreferrer">Police Arrests in Dallas, Texas</a></p>
+        <p><a href="https://public.tableau.com/app/profile/amruta.gandhe/vizzes" target="_blank" rel="noopener noreferrer">Visit Tableau Public Profile</a></p>
       </div>
-      <div class="accordion-content">
-        <iframe src="https://docs.google.com/document/d/e/2PACX-1vRZ0DX7xFjEzrFaCB0QeE4Q-fake-link/pub?embedded=true"></iframe>
-      </div>
-    </div>
+    </section>
 
-    <div class="accordion-item">
-      <div class="accordion-header tableau" onclick="toggleAccordion(this)">
-        <i class="fas fa-chart-bar"></i> Tableau
+    <section class="project-category data-mining" tabindex="0" aria-expanded="false" aria-controls="mining-content">
+      <header class="project-header" role="button" aria-controls="mining-content" aria-expanded="false" tabindex="0">
+        <i class="fas fa-database"></i>
+        Data Mining
+        <i class="fas fa-chevron-right toggle-icon" aria-hidden="true"></i>
+      </header>
+      <div id="mining-content" class="project-content" hidden>
+        <iframe src="https://amrutag7.github.io/assets/DataMining_Classification_Report.pdf" aria-label="Data mining project report"></iframe>
       </div>
-      <div class="accordion-content">
-        <iframe src="https://docs.google.com/document/d/e/2PACX-1vSOMELINK123/pub?embedded=true"></iframe>
-      </div>
-    </div>
+    </section>
 
-    <div class="accordion-item">
-      <div class="accordion-header data-mining" onclick="toggleAccordion(this)">
-        <i class="fas fa-database"></i> Data Mining
+    <section class="project-category database" tabindex="0" aria-expanded="false" aria-controls="database-content">
+      <header class="project-header" role="button" aria-controls="database-content" aria-expanded="false" tabindex="0">
+        <i class="fas fa-server"></i>
+        Database Management
+        <i class="fas fa-chevron-right toggle-icon" aria-hidden="true"></i>
+      </header>
+      <div id="database-content" class="project-content" hidden>
+        <iframe src="https://amrutag7.github.io/assets/ER_Modeling_Project.pdf" aria-label="Database management project report"></iframe>
       </div>
-      <div class="accordion-content">
-        <iframe src="https://docs.google.com/document/d/e/2PACX-1vRANDOM_LINK/pub?embedded=true"></iframe>
-      </div>
-    </div>
+    </section>
 
-    <div class="accordion-item">
-      <div class="accordion-header database" onclick="toggleAccordion(this)">
-        <i class="fas fa-server"></i> Database Management
+    <section class="project-category warehouse" tabindex="0" aria-expanded="false" aria-controls="warehouse-content">
+      <header class="project-header" role="button" aria-controls="warehouse-content" aria-expanded="false" tabindex="0">
+        <i class="fas fa-warehouse"></i>
+        Data Warehouse
+        <i class="fas fa-chevron-right toggle-icon" aria-hidden="true"></i>
+      </header>
+      <div id="warehouse-content" class="project-content" hidden>
+        <iframe src="https://amrutag7.github.io/assets/DataWarehouse_BusSchema_Report.pdf" aria-label="Data warehouse project report"></iframe>
       </div>
-      <div class="accordion-content">
-        <iframe src="https://docs.google.com/document/d/e/2PACX-1vXYZ123/pub?embedded=true"></iframe>
-      </div>
-    </div>
-
-    <div class="accordion-item">
-      <div class="accordion-header warehouse" onclick="toggleAccordion(this)">
-        <i class="fas fa-warehouse"></i> Data Warehouse
-      </div>
-      <div class="accordion-content">
-        <iframe src="https://docs.google.com/document/d/e/2PACX-1vDATAWAREHOUSE/pub?embedded=true"></iframe>
-      </div>
-    </div>
-
-  </div>
+    </section>
+  </main>
 
   <footer>
     <div class="social-links">
@@ -237,14 +271,25 @@
   </footer>
 
   <script>
-    function toggleAccordion(header) {
-      const content = header.nextElementSibling;
-      const allContents = document.querySelectorAll('.accordion-content');
-      allContents.forEach(c => {
-        if (c !== content) c.style.display = 'none';
+    // Toggle expand/collapse for each project category
+    document.querySelectorAll('.project-header').forEach(header => {
+      header.addEventListener('click', () => {
+        const section = header.parentElement;
+        const content = section.querySelector('.project-content');
+        const isOpen = section.classList.toggle('open');
+
+        content.hidden = !isOpen;
+        header.setAttribute('aria-expanded', isOpen);
+        section.setAttribute('aria-expanded', isOpen);
       });
-      content.style.display = content.style.display === 'block' ? 'none' : 'block';
-    }
+
+      header.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          header.click();
+        }
+      });
+    });
   </script>
 </body>
 </html>
