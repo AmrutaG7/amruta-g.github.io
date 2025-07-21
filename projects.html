@@ -4,20 +4,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Projects - Amruta Gandhe</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <!-- Font Awesome for icons -->
+  <script src="https://kit.fontawesome.com/a2d2a1c6b1.js" crossorigin="anonymous"></script>
+
   <style>
     :root {
       --bg-color: #eaf9f5;
-      --text-color: #333;
       --primary-color: #6c8c84;
+      --secondary-color: #f4a261;
       --accent-color: #b5ead7;
-      --tableau-color: #d0e6ff;
-      --python-color: #ffe0b2;
-      --mining-color: #fce1e4;
-      --stats-color: #e1ecf4;
-      --db-color: #f5e1ff;
-      --warehouse-color: #e2ffe1;
-      --predictive-color: #fff4cc;
+      --text-color: #333;
+      --badge-bg: #f4a261;
+      --badge-color: white;
+      --filter-active-bg: var(--secondary-color);
+      --filter-active-color: white;
     }
 
     body {
@@ -25,6 +26,8 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: var(--bg-color);
       color: var(--text-color);
+      line-height: 1.6;
+      padding-bottom: 100px;
     }
 
     nav {
@@ -48,77 +51,115 @@
       gap: 30px;
     }
 
+    nav li {
+      display: flex;
+      align-items: center;
+    }
+
     nav a {
       color: var(--primary-color);
       text-decoration: none;
       font-size: 0.9rem;
       font-weight: 600;
+      transition: color 0.3s ease;
     }
 
     nav a:hover {
-      color: var(--text-color);
+      color: var(--secondary-color);
     }
 
-    .hero {
+    .content {
+      max-width: 1000px;
+      margin: 120px auto 40px;
+      padding: 0 20px;
+    }
+
+    h1 {
       text-align: center;
-      padding: 100px 20px 40px;
-    }
-
-    .hero h1 {
-      font-size: 2.5rem;
       color: var(--primary-color);
+      font-size: 2.5rem;
     }
 
-    .cards {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-      padding: 20px;
-    }
-
-    .card {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-decoration: none;
-      border-radius: 12px;
-      padding: 20px;
-      width: 180px;
-      font-weight: 600;
-      color: var(--text-color);
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-      transition: transform 0.2s ease;
-    }
-
-    .card i {
-      font-size: 2rem;
-      margin-bottom: 10px;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-    }
-
-    .python { background-color: var(--python-color); }
-    .tableau { background-color: var(--tableau-color); }
-    .mining { background-color: var(--mining-color); }
-    .statistics { background-color: var(--stats-color); }
-    .database { background-color: var(--db-color); }
-    .warehouse { background-color: var(--warehouse-color); }
-    .predictive { background-color: var(--predictive-color); }
-
-    .report-preview {
-      padding: 40px 20px;
+    /* Filter Buttons */
+    .filter-buttons {
       text-align: center;
+      margin-bottom: 30px;
+    }
+    .filter-buttons button {
+      background-color: var(--accent-color);
+      border: none;
+      padding: 10px 20px;
+      margin: 0 8px 12px;
+      font-size: 1rem;
+      border-radius: 25px;
+      cursor: pointer;
+      color: var(--text-color);
+      font-weight: 600;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    .filter-buttons button.active,
+    .filter-buttons button:hover {
+      background-color: var(--filter-active-bg);
+      color: var(--filter-active-color);
     }
 
-    iframe {
-      width: 90%;
-      height: 500px;
-      border: none;
+    .project-category {
+      margin-top: 60px;
+    }
+
+    .project-category h2 {
+      color: var(--primary-color);
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* Badge style */
+    .badge {
+      background-color: var(--badge-bg);
+      color: var(--badge-color);
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 2px 8px;
       border-radius: 12px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+      margin-left: 10px;
+      white-space: nowrap;
+    }
+
+    /* Project item container */
+    .project-item {
+      margin-bottom: 40px;
+      border: 1px solid var(--accent-color);
+      border-radius: 10px;
+      padding: 15px;
+      box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+      background: white;
+      transition: transform 0.3s ease;
+    }
+    .project-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .iframe-wrapper {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%;
+      margin-top: 15px;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .iframe-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
     }
 
     footer {
@@ -128,6 +169,37 @@
       text-align: center;
       font-size: 0.9rem;
       color: var(--primary-color);
+      position: relative;
+      bottom: 0;
+      width: 100%;
+    }
+
+    footer a {
+      color: var(--primary-color);
+      text-decoration: none;
+      margin: 0 10px;
+      font-size: 1.3rem;
+    }
+
+    footer a:hover {
+      color: var(--secondary-color);
+    }
+
+    /* Responsive */
+    @media (max-width: 700px) {
+      .iframe-wrapper {
+        padding-top: 75%; /* taller for small screens */
+      }
+      nav ul {
+        gap: 15px;
+      }
+      .filter-buttons button {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+      }
+      .project-category h2 {
+        font-size: 1.5rem;
+      }
     }
   </style>
 </head>
@@ -137,33 +209,129 @@
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
-      <li><a href="projects.html">Projects</a></li>
+      <li><a href="projects.html" aria-current="page">Projects</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
 
-  <div class="hero">
-    <h1>Explore Projects</h1>
-    <p>Click a category to view detailed work and case reports.</p>
+  <div class="content">
+    <h1>Project Showcase</h1>
+
+    <!-- Filter Buttons -->
+    <div class="filter-buttons" role="group" aria-label="Project category filters">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="ml">ML</button>
+      <button class="filter-btn" data-filter="sql">SQL</button>
+      <button class="filter-btn" data-filter="visualization">Visualization</button>
+    </div>
+
+    <!-- Python Projects -->
+    <div class="project-category" data-category="sql ml">
+      <h2><i class="fas fa-code"></i> Python Projects</h2>
+
+      <div class="project-item" data-tags="sql ml">
+        <p><strong>Loan analysis of crowd funding platform Kiva.org using Python</strong>
+          <span class="badge">Completed: Dec 2021</span>
+        </p>
+        <div class="iframe-wrapper">
+          <iframe src="https://docs.google.com/viewer?url=https://amrutag7.github.io/reports/python-report1.pdf&embedded=true"></iframe>
+        </div>
+      </div>
+
+      <div class="project-item" data-tags="ml">
+        <p><strong>Walmart Sales Forecasting using Python</strong>
+          <span class="badge">Completed: Jan 2022</span>
+        </p>
+        <div class="iframe-wrapper">
+          <iframe src="https://docs.google.com/viewer?url=https://amrutag7.github.io/reports/python-report2.pdf&embedded=true"></iframe>
+        </div>
+      </div>
+
+      <div class="project-item" data-tags="sql ml">
+        <p><strong>Loan Analysis: Understanding The Client And Business using Python</strong>
+          <span class="badge">Completed: Feb 2022</span>
+        </p>
+        <div class="iframe-wrapper">
+          <iframe src="https://docs.google.com/viewer?url=https://amrutag7.github.io/reports/python-report3.pdf&embedded=true"></iframe>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tableau Projects -->
+    <div class="project-category" data-category="visualization">
+      <h2><i class="fas fa-chart-bar"></i> Tableau Dashboards</h2>
+      <p>Interactive dashboards created using Tableau for visual insights.</p>
+      <div class="iframe-wrapper">
+        <iframe src="https://public.tableau.com/views/YOUR_DASHBOARD_LINK_HERE?:embed=yes"></iframe>
+      </div>
+    </div>
+
+    <!-- Data Mining -->
+    <div class="project-category" data-category="ml">
+      <h2><i class="fas fa-database"></i> Data Mining</h2>
+      <p>Prediction of New Car Prices Using SAS Enterprise Miner 15.1.</p>
+      <div class="iframe-wrapper">
+        <iframe src="https://docs.google.com/viewer?url=https://amrutag7.github.io/reports/datamining-report.pdf&embedded=true"></iframe>
+      </div>
+    </div>
+
+    <!-- Database Management -->
+    <div class="project-category" data-category="sql">
+      <h2><i class="fas fa-database"></i> Database Management</h2>
+      <p>Designed a relational database for a consulting firm for capturing details of ongoing projects.</p>
+      <div class="iframe-wrapper">
+        <iframe src="https://docs.google.com/viewer?url=https://amrutag7.github.io/reports/databasemanagement.pdf&embedded=true"></iframe>
+      </div>
+    </div>
+
+    <!-- Data Warehouse -->
+    <div class="project-category" data-category="sql visualization">
+      <h2><i class="fas fa-database"></i> Data Warehouse</h2>
+      <p>Designed a relational database for online portal (Fiverr) and generated frontend, backend in QlikView and Tableau.</p>
+      <div class="iframe-wrapper">
+        <iframe src="https://docs.google.com/viewer?url=https://amrutag7.github.io/reports/datawarehouse-report.pdf&embedded=true"></iframe>
+      </div>
+    </div>
+
   </div>
 
-  <div class="cards">
-    <a class="card python" href="python.html"><i class="fab fa-python"></i>Python / SQL</a>
-    <a class="card tableau" href="tableau.html"><i class="fas fa-chart-bar"></i>Tableau</a>
-    <a class="card mining" href="data-mining.html"><i class="fas fa-search"></i>Data Mining</a>
-    <a class="card statistics" href="statistics.html"><i class="fas fa-percentage"></i>Business Statistics</a>
-    <a class="card database" href="database.html"><i class="fas fa-database"></i>Database Mgmt</a>
-    <a class="card warehouse" href="warehouse.html"><i class="fas fa-warehouse"></i>Data Warehouse</a>
-    <a class="card predictive" href="predictive.html"><i class="fas fa-lightbulb"></i>Predictive Analytics</a>
-  </div>
+  <footer>
+    <p>© Amruta Gandhe</p>
+    <p>
+      <a href="mailto:asgandhe@hotmail.com" target="_blank" aria-label="Email">
+        <i class="fas fa-envelope"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/amruta-gandhe-1b1013207/" target="_blank" aria-label="LinkedIn">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </p>
+  </footer>
 
-  <div class="report-preview">
-    <h2>Sample Report Preview</h2>
-    <!-- Replace this with your actual PDF file -->
-    <iframe src="files/sample-report.pdf" title="Sample Project Report Preview"></iframe>
-    <p style="margin-top: 10px; font-size: 0.9rem;">This preview is view-only. Downloading is restricted.</p>
-  </div>
+  <script>
+    // Filter projects based on button click
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projects = document.querySelectorAll('.project-item');
 
-  <footer>© Amruta Gandhe</footer>
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        // Remove active class from all buttons
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        // Add active class to clicked button
+        button.classList.add('active');
+
+        const filter = button.getAttribute('data-filter');
+
+        projects.forEach(project => {
+          const tags = project.getAttribute('data-tags').split(' ');
+          if(filter === 'all' || tags.includes(filter)) {
+            project.style.display = 'block';
+          } else {
+            project.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+
 </body>
 </html>
