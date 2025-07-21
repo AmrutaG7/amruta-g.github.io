@@ -2,14 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Projects | Amruta Gandhe</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
+    /* Page Background aligned with GitHub home tab */
     body {
       font-family: Arial, sans-serif;
       margin: 0;
-      background-color: #f7f9fc;
+      background-color: #f0f4f8; /* light pastel blue-gray similar to GitHub home tab */
       color: #333;
     }
 
@@ -22,6 +23,7 @@
     h1 {
       margin: 0;
       font-size: 2rem;
+      color: #222;
     }
 
     .project-container {
@@ -30,31 +32,41 @@
       padding: 0 1rem;
     }
 
+    /* Base styling for all categories */
     .project-category {
-      border: 1px solid #ccc;
       border-radius: 10px;
       margin-bottom: 1.5rem;
-      background-color: #fff;
       overflow: hidden;
+      box-shadow: 0 2px 6px rgb(0 0 0 / 0.1);
+      color: #222;
     }
 
     .project-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background-color: #e6f0ff;
       padding: 1rem;
       font-size: 1.2rem;
       cursor: pointer;
+      user-select: none;
+      color: #222;
+      transition: background-color 0.3s ease;
     }
-
     .project-header:hover {
-      background-color: #d0e4ff;
+      filter: brightness(95%);
+    }
+    .toggle-icon {
+      transition: transform 0.3s ease;
+    }
+    .project-header[aria-expanded="true"] .toggle-icon {
+      transform: rotate(90deg);
     }
 
     .project-content {
       padding: 1rem;
       display: none;
+      background-color: #fff;
+      border-top: 1px solid #ccc;
     }
 
     .project-item {
@@ -74,31 +86,82 @@
       width: 100%;
       height: 400px;
       border: none;
+      border-radius: 6px;
+      box-shadow: 0 2px 4px rgb(0 0 0 / 0.1);
     }
 
     .completion-date {
       display: block;
       font-size: 0.9rem;
-      color: #666;
+      color: #555;
       margin-top: 0.2rem;
+      font-style: italic;
     }
 
     .category-icon {
       margin-right: 0.5rem;
     }
 
-    .toggle-icon {
-      transition: transform 0.3s ease;
+    /* Distinct pastel background colors and header colors for categories */
+
+    /* Python: pastel yellow background */
+    .project-category:nth-of-type(1) {
+      background-color: #fff9db;
+      border: 1px solid #f7e48b;
+    }
+    .project-category:nth-of-type(1) .project-header {
+      background-color: #f7e48b;
+      color: #5a4a00;
     }
 
-    .project-header[aria-expanded="true"] .toggle-icon {
-      transform: rotate(90deg);
+    /* Tableau: pastel teal */
+    .project-category:nth-of-type(2) {
+      background-color: #dbf0f0;
+      border: 1px solid #7ed8d8;
+    }
+    .project-category:nth-of-type(2) .project-header {
+      background-color: #7ed8d8;
+      color: #004d4d;
+    }
+
+    /* Data Mining: pastel lavender */
+    .project-category:nth-of-type(3) {
+      background-color: #f0e9ff;
+      border: 1px solid #b59fff;
+    }
+    .project-category:nth-of-type(3) .project-header {
+      background-color: #b59fff;
+      color: #3e2e7e;
+    }
+
+    /* Database Management: pastel pink */
+    .project-category:nth-of-type(4) {
+      background-color: #ffe3e3;
+      border: 1px solid #ff9fa6;
+    }
+    .project-category:nth-of-type(4) .project-header {
+      background-color: #ff9fa6;
+      color: #660012;
+    }
+
+    /* Data Warehouse: pastel mint green */
+    .project-category:nth-of-type(5) {
+      background-color: #e7fff4;
+      border: 1px solid #7fedb2;
+    }
+    .project-category:nth-of-type(5) .project-header {
+      background-color: #7fedb2;
+      color: #14532d;
     }
 
     footer a {
       margin: 0 0.5rem;
       color: #333;
       text-decoration: none;
+      font-size: 1.4rem;
+    }
+    footer a:hover {
+      color: #0073e6;
     }
 
     @media (max-width: 600px) {
@@ -117,8 +180,8 @@
   <main class="project-container">
 
     <!-- Python Projects -->
-    <section class="project-category">
-      <header class="project-header" onclick="toggleSection(this)">
+    <section class="project-category" aria-expanded="false">
+      <header class="project-header" aria-expanded="false" onclick="toggleSection(this)">
         <span><i class="fab fa-python category-icon"></i>Python Projects</span>
         <i class="fas fa-chevron-right toggle-icon"></i>
       </header>
@@ -130,10 +193,9 @@
           </div>
           <p class="project-desc">Exploratory data analysis, visualization, and ML algorithms using Python.</p>
           <div class="iframe-wrapper">
-            <iframe src="https://docs.google.com/viewer?url=https://amrutag7.github.io/reports/python-report1.pdf&embedded=true"></iframe>
+            <iframe src="https://docs.google.com/viewer?url=https://amrutag7.github.io/reports/python-report1.pdf&embedded=true" aria-label="Loan analysis report"></iframe>
           </div>
         </article>
-
         <article class="project-item">
           <div class="project-title">
             Walmart Sales Forecasting using Python
@@ -141,10 +203,9 @@
           </div>
           <p class="project-desc">Time series forecasting models with Python on Walmart sales data.</p>
           <div class="iframe-wrapper">
-            <iframe src="https://docs.google.com/viewer?url=https://amrutag7.github.io/reports/python-report2.pdf&embedded=true"></iframe>
+            <iframe src="https://docs.google.com/viewer?url=https://amrutag7.github.io/reports/python-report2.pdf&embedded=true" aria-label="Walmart sales forecasting report"></iframe>
           </div>
         </article>
-
         <article class="project-item">
           <div class="project-title">
             Loan Analysis: Understanding The Client And Business using Python
@@ -152,15 +213,15 @@
           </div>
           <p class="project-desc">Client and business insights from loan datasets via visualization and modeling.</p>
           <div class="iframe-wrapper">
-            <iframe src="https://docs.google.com/viewer?url=https://amrutag7.github.io/reports/python-report3.pdf&embedded=true"></iframe>
+            <iframe src="https://docs.google.com/viewer?url=https://amrutag7.github.io/reports/python-report3.pdf&embedded=true" aria-label="Loan analysis client and business report"></iframe>
           </div>
         </article>
       </div>
     </section>
 
     <!-- Tableau Projects -->
-    <section class="project-category">
-      <header class="project-header" onclick="toggleSection(this)">
+    <section class="project-category" aria-expanded="false">
+      <header class="project-header" aria-expanded="false" onclick="toggleSection(this)">
         <span><i class="fas fa-chart-bar category-icon"></i>Tableau Dashboards</span>
         <i class="fas fa-chevron-right toggle-icon"></i>
       </header>
@@ -172,8 +233,8 @@
           </div>
           <p class="project-desc">Interactive dashboard analyzing police arrest data in Dallas.</p>
           <p>
-            <a href="https://public.tableau.com/views/Project_Amruta_Gandhe/Figure1-YearwiseArrestTrend?:embed=yes" target="_blank">
-              View Tableau Report
+            <a href="https://public.tableau.com/views/Project_Amruta_Gandhe/Figure1-YearwiseArrestTrend?:embed=yes" target="_blank" rel="noopener noreferrer">
+              View Police Arrests Tableau Report
             </a>
           </p>
         </article>
@@ -182,10 +243,10 @@
           <div class="project-title">
             My Tableau Public Profile
           </div>
-          <p class="project-desc">Explore more dashboards and visualizations.</p>
+          <p class="project-desc">Explore more dashboards and visualizations on my Tableau Public profile.</p>
           <p>
-            <a href="https://public.tableau.com/app/profile/amruta.gandhe/vizzes" target="_blank">
-              Visit Tableau Public
+            <a href="https://public.tableau.com/app/profile/amruta.gandhe/vizzes" target="_blank" rel="noopener noreferrer">
+              Visit Tableau Public Profile
             </a>
           </p>
         </article>
@@ -193,8 +254,8 @@
     </section>
 
     <!-- Data Mining -->
-    <section class="project-category">
-      <header class="project-header" onclick="toggleSection(this)">
+    <section class="project-category" aria-expanded="false">
+      <header class="project-header" aria-expanded="false" onclick="toggleSection(this)">
         <span><i class="fas fa-search category-icon"></i>Data Mining</span>
         <i class="fas fa-chevron-right toggle-icon"></i>
       </header>
@@ -206,15 +267,15 @@
           </div>
           <p class="project-desc">Built models estimating new car prices using SAS.</p>
           <div class="iframe-wrapper">
-            <iframe src="https://docs.google.com/viewer?url=https://amrutag7.github.io/reports/datamining-report.pdf&embedded=true"></iframe>
+            <iframe src="https://docs.google.com/viewer?url=https://amrutag7.github.io/reports/datamining-report.pdf&embedded=true" aria-label="Data mining report"></iframe>
           </div>
         </article>
       </div>
     </section>
 
     <!-- Database Management -->
-    <section class="project-category">
-      <header class="project-header" onclick="toggleSection(this)">
+    <section class="project-category" aria-expanded="false">
+      <header class="project-header" aria-expanded="false" onclick="toggleSection(this)">
         <span><i class="fas fa-database category-icon"></i>Database Management</span>
         <i class="fas fa-chevron-right toggle-icon"></i>
       </header>
@@ -226,15 +287,15 @@
           </div>
           <p class="project-desc">Designed a relational database to capture ongoing project details.</p>
           <div class="iframe-wrapper">
-            <iframe src="https://docs.google.com/viewer?url=https://amrutag7.github.io/reports/databasemanagement.pdf&embedded=true"></iframe>
+            <iframe src="https://docs.google.com/viewer?url=https://amrutag7.github.io/reports/databasemanagement.pdf&embedded=true" aria-label="Database management report"></iframe>
           </div>
         </article>
       </div>
     </section>
 
     <!-- Data Warehouse -->
-    <section class="project-category">
-      <header class="project-header" onclick="toggleSection(this)">
+    <section class="project-category" aria-expanded="false">
+      <header class="project-header" aria-expanded="false" onclick="toggleSection(this)">
         <span><i class="fas fa-warehouse category-icon"></i>Data Warehouse</span>
         <i class="fas fa-chevron-right toggle-icon"></i>
       </header>
@@ -246,11 +307,12 @@
           </div>
           <p class="project-desc">Developed front-end and back-end dashboards using QlikView and Tableau.</p>
           <div class="iframe-wrapper">
-            <iframe src="https://docs.google.com/viewer?url=https://amrutag7.github.io/reports/datawarehouse-report.pdf&embedded=true"></iframe>
+            <iframe src="https://docs.google.com/viewer?url=https://amrutag7.github.io/reports/datawarehouse-report.pdf&embedded=true" aria-label="Data warehouse report"></iframe>
           </div>
         </article>
       </div>
     </section>
+
   </main>
 
   <footer>
@@ -260,13 +322,19 @@
 
   <script>
     function toggleSection(header) {
+      const expanded = header.getAttribute('aria-expanded') === 'true';
       const section = header.nextElementSibling;
       const icon = header.querySelector('.toggle-icon');
-      const expanded = header.getAttribute('aria-expanded') === 'true';
 
-      header.setAttribute('aria-expanded', !expanded);
-      section.style.display = expanded ? 'none' : 'block';
-      icon.style.transform = expanded ? 'rotate(0deg)' : 'rotate(90deg)';
+      if (expanded) {
+        header.setAttribute('aria-expanded', 'false');
+        section.style.display = 'none';
+        icon.style.transform = 'rotate(0deg)';
+      } else {
+        header.setAttribute('aria-expanded', 'true');
+        section.style.display = 'block';
+        icon.style.transform = 'rotate(90deg)';
+      }
     }
   </script>
 </body>
