@@ -6,26 +6,12 @@
   <title>Project Showcase</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   <style>
-    :root {
-      --bg-light: #f9f9f9;
-      --bg-dark: #1e1e1e;
-      --text-light: #222;
-      --text-dark: #f0f0f0;
-      --accent: #a1c4fd;
-    }
-
     body {
       font-family: 'Segoe UI', sans-serif;
-      background-color: var(--bg-light);
-      color: var(--text-light);
-      transition: all 0.3s ease;
+      background-color: #f9f9f9;
+      color: #222;
       margin: 0;
       padding: 1rem;
-    }
-
-    body.dark-mode {
-      background-color: var(--bg-dark);
-      color: var(--text-dark);
     }
 
     header {
@@ -33,23 +19,15 @@
       margin-bottom: 1rem;
     }
 
-    .theme-toggle, .expand-btn {
+    .expand-btn {
       margin: 0.5rem;
       padding: 0.5rem 1rem;
       border: none;
       border-radius: 8px;
       cursor: pointer;
-      background-color: var(--accent);
+      background-color: #a1c4fd;
       color: #000;
       font-weight: bold;
-    }
-
-    .search-bar {
-      display: block;
-      margin: 1rem auto;
-      padding: 0.5rem;
-      width: 90%;
-      max-width: 500px;
     }
 
     .project-category {
@@ -58,11 +36,6 @@
       border-radius: 10px;
       padding: 0.5rem;
       background-color: #fff;
-    }
-
-    body.dark-mode .project-category {
-      background-color: #2c2c2c;
-      border-color: #555;
     }
 
     .project-header {
@@ -143,16 +116,11 @@
 <body>
   <header>
     <h1>📊 Project Showcase</h1>
-    <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
-    <button class="expand-btn" onclick="toggleAll()">Expand All</button>
-    <input type="text" class="search-bar" placeholder="🔎 Search projects..." oninput="searchProjects(this.value)" />
+    <button class="expand-btn" onclick="toggleAll()">Expand All / Collapse All</button>
   </header>
 
   <main id="projects-container">
-    <!-- All your collapsible sections from your last message go here -->
-    <!-- Paste your Python, Tableau, Data Mining, etc. sections here (already styled) -->
-    <!-- I’ve kept them unchanged as per your last input for clarity -->
-    <!-- Your code already included <section class="project-category" ...> blocks for each -->
+    <!-- Your collapsible project sections like Python, Tableau, etc. go here -->
   </main>
 
   <footer>
@@ -165,16 +133,11 @@
   </footer>
 
   <script>
-    function toggleTheme() {
-      document.body.classList.toggle("dark-mode");
-    }
-
     function toggleAll() {
       const categories = document.querySelectorAll(".project-category");
       const shouldExpand = ![...categories].some(cat => cat.classList.contains("expanded"));
       categories.forEach(cat => {
         const content = cat.querySelector(".project-content");
-        const icon = cat.querySelector(".toggle-icon");
         if (shouldExpand) {
           cat.classList.add("expanded");
           content.hidden = false;
@@ -182,22 +145,6 @@
           cat.classList.remove("expanded");
           content.hidden = true;
         }
-      });
-    }
-
-    function searchProjects(query) {
-      query = query.toLowerCase();
-      document.querySelectorAll(".project-category").forEach(section => {
-        const projects = section.querySelectorAll(".project-item");
-        let matchFound = false;
-        projects.forEach(item => {
-          const title = item.querySelector(".project-title").textContent.toLowerCase();
-          const desc = item.querySelector(".project-desc").textContent.toLowerCase();
-          const visible = title.includes(query) || desc.includes(query);
-          item.style.display = visible ? "" : "none";
-          if (visible) matchFound = true;
-        });
-        section.style.display = matchFound ? "" : "none";
       });
     }
 
@@ -210,7 +157,6 @@
       });
     });
 
-    // Add badges for each category
     window.addEventListener("DOMContentLoaded", () => {
       document.querySelectorAll(".project-category").forEach(section => {
         const projectCount = section.querySelectorAll(".project-item").length;
