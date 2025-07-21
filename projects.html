@@ -431,7 +431,9 @@
           </div>
           <p class="project-desc">Interactive dashboard analyzing police arrest data in Dallas.</p>
           <p>
-            <a href="https://public.tableau.com/app/profile/amruta.gandhe/vizzes" target="_blank" rel="noopener noreferrer">Visit Tableau Public Profile</a>
+            <a href="https://public.tableau.com/app/profile/amruta.gandhe/viz/Project_Amruta_Gandhe/Figure1-YearwiseArrestTrend" target="_blank" rel="noopener noreferrer">
+              Visit Police Arrests Dashboard
+            </a>
           </p>
         </article>
 
@@ -439,7 +441,9 @@
           <div class="project-title">My Tableau Public Profile</div>
           <p class="project-desc">Explore more dashboards and visualizations on my Tableau Public profile.</p>
           <p>
-            <a href="https://public.tableau.com/app/profile/amruta.gandhe/vizzes" target="_blank" rel="noopener noreferrer">Visit Tableau Public Profile</a>
+            <a href="https://public.tableau.com/app/profile/amruta.gandhe/vizzes" target="_blank" rel="noopener noreferrer">
+              Visit Tableau Public Profile
+            </a>
           </p>
         </article>
       </div>
@@ -494,95 +498,76 @@
       <div id="datawarehouse-content" class="project-content" hidden>
         <article class="project-item datawarehouse">
           <div class="project-title">
-            Created a Data Warehouse for Sales and Inventory Data
-            <span class="timeframe" aria-label="Timeframe">May 2021 - Aug 2021</span>
+            Data warehouse design for retail sales with star schema model
+            <span class="timeframe" aria-label="Timeframe">Mar 2021 - May 2021</span>
           </div>
-          <p class="project-desc">Built a data warehouse for sales and inventory analysis.</p>
+          <p class="project-desc">Created a star schema and ETL process for retail sales data warehouse.</p>
           <div class="iframe-wrapper">
             <iframe src="https://docs.google.com/viewer?url=https://amrutag7.github.io/reports/datawarehouse-report.pdf&embedded=true" aria-label="Data warehouse report"></iframe>
           </div>
         </article>
       </div>
     </section>
-
   </main>
 
   <footer>
-    <p>Contact me: <a href="mailto:amruta.gandhe@gmail.com">amruta.gandhe@gmail.com</a></p>
+    <div>© 2025 Amruta Gandhe</div>
     <div class="social-links">
-      <a href="https://www.linkedin.com/in/amruta-gandhe-1b1013207/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile" class="linkedin-icon">
-        <i class="fab fa-linkedin"></i> LinkedIn
-      </a>
-      <a href="mailto:amruta.gandhe@gmail.com" aria-label="Send Email">
+      <a href="mailto:amrutag7@gmail.com" aria-label="Send email to Amruta Gandhe">
         <i class="fas fa-envelope"></i> Email
+      </a>
+      <a href="https://www.linkedin.com/in/amruta-gandhe-1b1013207/" target="_blank" rel="noopener noreferrer" aria-label="Visit LinkedIn profile of Amruta Gandhe">
+        <i class="fab fa-linkedin"></i> LinkedIn
       </a>
     </div>
   </footer>
 
   <script>
-    // Toggle project category content on header click or keyboard enter/space
+    // Expand/Collapse functionality for project categories
     document.querySelectorAll('.project-header').forEach(header => {
       header.addEventListener('click', () => {
-        toggleCategory(header);
+        const contentId = header.getAttribute('aria-controls');
+        const content = document.getElementById(contentId);
+        const isOpen = content.classList.toggle('open');
+        content.hidden = !isOpen;
+        header.classList.toggle('active', isOpen);
+        header.setAttribute('aria-expanded', isOpen);
+        header.parentElement.setAttribute('aria-expanded', isOpen);
       });
-      header.addEventListener('keydown', e => {
+
+      header.addEventListener('keydown', (e) => {
         if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();
-          toggleCategory(header);
+          header.click();
         }
       });
     });
 
-    function toggleCategory(header) {
-      const contentId = header.getAttribute('aria-controls');
-      const content = document.getElementById(contentId);
-      const isOpen = content.classList.contains('open');
-      if (isOpen) {
-        content.classList.remove('open');
-        content.hidden = true;
-        header.setAttribute('aria-expanded', 'false');
-        header.classList.remove('active');
-        header.parentElement.setAttribute('aria-expanded', 'false');
-      } else {
+    // Expand All / Collapse All buttons
+    const expandAllBtn = document.getElementById('expandAllBtn');
+    const collapseAllBtn = document.getElementById('collapseAllBtn');
+
+    expandAllBtn.addEventListener('click', () => {
+      document.querySelectorAll('.project-content').forEach(content => {
         content.classList.add('open');
         content.hidden = false;
-        header.setAttribute('aria-expanded', 'true');
+      });
+      document.querySelectorAll('.project-header').forEach(header => {
         header.classList.add('active');
+        header.setAttribute('aria-expanded', 'true');
         header.parentElement.setAttribute('aria-expanded', 'true');
-      }
-    }
-
-    // Expand All and Collapse All buttons
-    const expandBtn = document.getElementById('expandAllBtn');
-    const collapseBtn = document.getElementById('collapseAllBtn');
-
-    expandBtn.addEventListener('click', () => {
-      document.querySelectorAll('.project-category').forEach(section => {
-        const header = section.querySelector('.project-header');
-        const contentId = header.getAttribute('aria-controls');
-        const content = document.getElementById(contentId);
-        if (!content.classList.contains('open')) {
-          content.classList.add('open');
-          content.hidden = false;
-          header.setAttribute('aria-expanded', 'true');
-          header.classList.add('active');
-          section.setAttribute('aria-expanded', 'true');
-        }
       });
     });
 
-    collapseBtn.addEventListener('click', () => {
-      document.querySelectorAll('.project-category').forEach(section => {
-        const header = section.querySelector('.project-header');
-        const contentId = header.getAttribute('aria-controls');
-        const content = document.getElementById(contentId);
-        if (content.classList.contains('open')) {
-          content.classList.remove('open');
-          content.hidden = true;
-          header.setAttribute('aria-expanded', 'false');
-          header.classList.remove('active');
-          section.setAttribute('aria-expanded', 'false');
-        }
+    collapseAllBtn.addEventListener('click', () => {
+      document.querySelectorAll('.project-content').forEach(content => {
+        content.classList.remove('open');
+        content.hidden = true;
+      });
+      document.querySelectorAll('.project-header').forEach(header => {
+        header.classList.remove('active');
+        header.setAttribute('aria-expanded', 'false');
+        header.parentElement.setAttribute('aria-expanded', 'false');
       });
     });
   </script>
