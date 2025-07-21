@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Projects - Amruta Gandhe</title>
+
+  <!-- Font Awesome CDN -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -11,6 +13,7 @@
     crossorigin="anonymous"
     referrerpolicy="no-referrer"
   />
+
   <style>
     :root {
       --bg-color: #eaf9f5;
@@ -18,7 +21,25 @@
       --secondary-color: #f4a261;
       --accent-color: #b5ead7;
       --text-color: #333;
+
+      /* Pastel category colors from your home page */
+      --python-bg: #ffebd6;
+      --python-color: #de7a2f;
+
+      --tableau-bg: #d0f4de;
+      --tableau-color: #2f8f7c;
+
+      --datamining-bg: #fde2e4;
+      --datamining-color: #d46a6a;
+
+      --dbmanagement-bg: #cce2cb;
+      --dbmanagement-color: #3d6b35;
+
+      --datawarehouse-bg: #ffcbf2;
+      --datawarehouse-color: #a24c80;
     }
+
+    /* General page styles */
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -26,7 +47,20 @@
       color: var(--text-color);
       line-height: 1.6;
       padding-bottom: 100px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
+
+    a {
+      color: var(--primary-color);
+      text-decoration: none;
+    }
+    a:hover {
+      color: var(--secondary-color);
+    }
+
+    /* Navigation */
     nav {
       position: fixed;
       top: 0;
@@ -46,117 +80,246 @@
       display: flex;
       gap: 30px;
     }
+    nav li {
+      display: flex;
+      align-items: center;
+    }
     nav a {
       color: var(--primary-color);
       text-decoration: none;
+      font-size: 0.9rem;
       font-weight: 600;
       transition: color 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 6px;
     }
-    nav a:hover {
+    nav a:hover,
+    nav a[aria-current="page"] {
       color: var(--secondary-color);
     }
 
-    .project-section {
-      padding: 140px 20px 40px;
-      max-width: 1000px;
-      margin: 0 auto;
+    /* Content container */
+    main.content {
+      max-width: 900px;
+      margin: 100px auto 60px; /* account for fixed nav */
+      padding: 0 20px;
+      flex-grow: 1;
     }
 
-    h2 {
+    h1 {
       text-align: center;
       color: var(--primary-color);
-      margin-bottom: 30px;
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
     }
 
-    .project-category {
-      margin-bottom: 40px;
-      border-radius: 12px;
-      overflow: hidden;
+    /* Expand/Collapse Buttons */
+    .controls {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+    .btn {
+      background-color: var(--primary-color);
+      border: none;
+      color: var(--bg-color);
+      padding: 0.6rem 1.2rem;
+      border-radius: 25px;
+      font-weight: 600;
       cursor: pointer;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      transition: box-shadow 0.3s ease;
-    }
-    .project-category:hover {
-      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
-    }
-    .project-header {
+      transition: background-color 0.3s ease;
       display: flex;
       align-items: center;
-      gap: 12px;
-      padding: 16px 20px;
-      font-size: 1.3rem;
-      color: var(--primary-color);
-      font-weight: 600;
-      user-select: none;
-      background-color: #fff;
-      border-bottom: 1px solid var(--accent-color);
+      gap: 0.5rem;
+      font-size: 0.95rem;
     }
-    .project-header i {
-      font-size: 1.8rem;
-    }
-    .toggle-icon {
-      margin-left: auto;
-      transition: transform 0.3s ease;
-    }
-    .project-category.open .toggle-icon {
-      transform: rotate(90deg);
-    }
-    .project-content {
-      display: none;
-      background-color: #fff;
-      padding: 20px;
-    }
-    .project-category.open .project-content {
-      display: block;
-    }
-    iframe {
-      width: 100%;
-      height: 480px;
-      border: none;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-    /* Colors matching index.html */
-    .python .project-header {
-      background-color: #ffebd6;
-      color: #de7a2f;
-    }
-    .tableau .project-header {
-      background-color: #d0f4de;
-      color: #2f8f7c;
-    }
-    .data-mining .project-header {
-      background-color: #fde2e4;
-      color: #d46a6a;
-    }
-    .database .project-header {
-      background-color: #cce2cb;
-      color: #3d6b35;
-    }
-    .warehouse .project-header {
-      background-color: #ffcbf2;
-      color: #a24c80;
+    .btn:hover {
+      background-color: var(--secondary-color);
     }
 
+    /* Project category container */
+    .project-category {
+      margin-bottom: 2rem;
+      border-radius: 12px;
+      background-color: var(--bg-color);
+      border: 1px solid var(--accent-color);
+      box-shadow: 0 2px 6px rgb(0 0 0 / 0.1);
+      overflow: hidden;
+    }
+
+    /* Header with toggle icon */
+    .project-header {
+      cursor: pointer;
+      padding: 1rem 1.5rem;
+      font-size: 1.3rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      user-select: none;
+      border-radius: 12px;
+      transition: background-color 0.3s ease;
+      background-color: var(--primary-color);
+      color: var(--bg-color);
+    }
+
+    /* Category icon in header */
+    .project-header i.category-icon {
+      font-size: 1.6rem;
+      margin-right: 0.8rem;
+    }
+
+    /* Individual colors for icons matching home page text colors */
+    .project-header.python {
+      background-color: var(--python-bg);
+      color: var(--python-color);
+    }
+    .project-header.tableau {
+      background-color: var(--tableau-bg);
+      color: var(--tableau-color);
+    }
+    .project-header.datamining {
+      background-color: var(--datamining-bg);
+      color: var(--datamining-color);
+    }
+    .project-header.dbmanagement {
+      background-color: var(--dbmanagement-bg);
+      color: var(--dbmanagement-color);
+    }
+    .project-header.datawarehouse {
+      background-color: var(--datawarehouse-bg);
+      color: var(--datawarehouse-color);
+    }
+
+    /* Arrow toggle icon */
+    .toggle-icon {
+      transition: transform 0.3s ease;
+      font-size: 1.2rem;
+    }
+    .project-header.active .toggle-icon {
+      transform: rotate(90deg);
+    }
+
+    /* Project content hidden/shown */
+    .project-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+      padding: 0 1.5rem;
+      background-color: var(--bg-color);
+      border-top: 1px solid var(--accent-color);
+    }
+    .project-content.open {
+      max-height: 3000px; /* big enough */
+      padding: 1rem 1.5rem 1.5rem;
+    }
+
+    /* Project item */
+    .project-item {
+      border-bottom: 1px solid var(--accent-color);
+      padding: 1rem 0;
+    }
+    .project-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    /* Project title and timeframe badge */
+    .project-title {
+      font-weight: 700;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .timeframe {
+      background-color: var(--secondary-color);
+      color: var(--bg-color);
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 2px 10px;
+      border-radius: 20px;
+      margin-left: auto;
+      white-space: nowrap;
+    }
+
+    /* Project description */
+    .project-desc {
+      margin: 0.3rem 0 0 0;
+    }
+
+    /* iframe wrapper */
+    .iframe-wrapper {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%; /* 16:9 aspect */
+      margin-top: 8px;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 6px rgb(0 0 0 / 0.15);
+    }
+    .iframe-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* Category-specific colors for icons and text in project items */
+    .project-item.python .project-title,
+    .project-item.python i.category-icon {
+      color: var(--python-color);
+    }
+    .project-item.tableau .project-title,
+    .project-item.tableau i.category-icon {
+      color: var(--tableau-color);
+    }
+    .project-item.datamining .project-title,
+    .project-item.datamining i.category-icon {
+      color: var(--datamining-color);
+    }
+    .project-item.dbmanagement .project-title,
+    .project-item.dbmanagement i.category-icon {
+      color: var(--dbmanagement-color);
+    }
+    .project-item.datawarehouse .project-title,
+    .project-item.datawarehouse i.category-icon {
+      color: var(--datawarehouse-color);
+    }
+
+    /* Footer */
     footer {
       background: var(--bg-color);
       border-top: 1px solid var(--accent-color);
-      padding: 20px;
+      padding: 10px 0;
       text-align: center;
       font-size: 0.9rem;
-      color: var(--primary-color);
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
+      color: var(--primary-color); 
+	/* Remove fixed positioning */
+      position: static;
+      bottom: auto;
+      left: auto;
+      right: auto;
+	  
+	 /* Align content horizontally */
+	 
       display: flex;
-      flex-direction: column;
-      align-items: center;
+	  justify-content: center;
       gap: 10px;
+	  align-items: center;
+	  flex-wrap: wrap;
     }
+	
     footer .social-links {
       display: flex;
-      gap: 20px;
+      gap: 15px;
     }
     footer a {
       color: var(--primary-color);
@@ -164,6 +327,7 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
+      font-size: 0.9rem;
     }
     footer a:hover {
       color: var(--secondary-color);
@@ -179,108 +343,200 @@
       fill: currentColor;
       stroke: none;
     }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      main.content {
+        margin: 80px 10px 60px;
+      }
+      .project-header {
+        font-size: 1.1rem;
+        padding: 0.75rem 1rem;
+      }
+      .btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+      }
+    }
   </style>
 </head>
 <body>
+
+  <!-- Navigation (exactly like index.html) -->
   <nav>
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
-      <li><a href="projects.html">Projects</a></li>
+      <li><a href="projects.html" aria-current="page">Projects</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
 
-  <main class="project-section" role="main">
-    <h2>Project Reports</h2>
+  <main class="content" role="main">
+    <h1>My Projects</h1>
 
-    <section class="project-category python" tabindex="0" aria-expanded="false" aria-controls="python-content">
-      <header class="project-header" role="button" aria-controls="python-content" aria-expanded="false" tabindex="0">
-        <i class="fab fa-python"></i>
-        Python
-        <i class="fas fa-chevron-right toggle-icon" aria-hidden="true"></i>
+    <div class="controls">
+      <button id="expandAllBtn" class="btn" aria-label="Expand all projects"><i class="fas fa-plus-square"></i> Expand All</button>
+      <button id="collapseAllBtn" class="btn" aria-label="Collapse all projects"><i class="fas fa-minus-square"></i> Collapse All</button>
+    </div>
+
+    <!-- Python Projects -->
+    <section class="project-category" data-category="python" aria-expanded="false" tabindex="0">
+      <header class="project-header python" role="button" aria-controls="python-content" aria-expanded="false" tabindex="0">
+        <span><i class="fab fa-python category-icon"></i> Python Projects</span>
+        <i class="fas fa-chevron-right toggle-icon"></i>
       </header>
       <div id="python-content" class="project-content" hidden>
-        <iframe src="https://amrutag7.github.io/assets/KivaLoanAnalysisReport.pdf" aria-label="Python project report"></iframe>
+        <article class="project-item python">
+          <div class="project-title">
+            Loan analysis of crowd funding platform Kiva.org using Python
+            <span class="timeframe" aria-label="Timeframe">Sept 2021 - Dec 2021</span>
+          </div>
+          <p class="project-desc">Exploratory data analysis, visualization, and ML algorithms using Python.</p>
+          <div class="iframe-wrapper">
+            <iframe src="https://docs.google.com/viewer?url=https://amrutag7.github.io/reports/python-report1.pdf&embedded=true" aria-label="Loan analysis report"></iframe>
+          </div>
+        </article>
+
+        <article class="project-item python">
+          <div class="project-title">
+            Walmart Sales Forecasting using Python
+            <span class="timeframe" aria-label="Timeframe">Oct 2021</span>
+          </div>
+          <p class="project-desc">Time series forecasting models with Python on Walmart sales data.</p>
+          <div class="iframe-wrapper">
+            <iframe src="https://docs.google.com/viewer?url=https://amrutag7.github.io/reports/python-report2.pdf&embedded=true" aria-label="Walmart sales forecasting report"></iframe>
+          </div>
+        </article>
+
+        <article class="project-item python">
+          <div class="project-title">
+            Loan Analysis: Understanding The Client And Business using Python
+            <span class="timeframe" aria-label="Timeframe">May 2020 - June 2020</span>
+          </div>
+          <p class="project-desc">Client and business insights from loan datasets via visualization and modeling.</p>
+          <div class="iframe-wrapper">
+            <iframe src="https://docs.google.com/viewer?url=https://amrutag7.github.io/reports/python-report3.pdf&embedded=true" aria-label="Loan analysis client and business report"></iframe>
+          </div>
+        </article>
       </div>
     </section>
 
-    <section class="project-category tableau" tabindex="0" aria-expanded="false" aria-controls="tableau-content">
-      <header class="project-header" role="button" aria-controls="tableau-content" aria-expanded="false" tabindex="0">
-        <i class="fas fa-chart-bar"></i>
-        Tableau
-        <i class="fas fa-chevron-right toggle-icon" aria-hidden="true"></i>
+    <!-- Tableau Projects -->
+    <section class="project-category" data-category="tableau" aria-expanded="false" tabindex="0">
+      <header class="project-header tableau" role="button" aria-controls="tableau-content" aria-expanded="false" tabindex="0">
+        <span><i class="fas fa-chart-bar category-icon"></i> Tableau Dashboards</span>
+        <i class="fas fa-chevron-right toggle-icon"></i>
       </header>
       <div id="tableau-content" class="project-content" hidden>
-        <p><a href="https://public.tableau.com/app/profile/amruta.gandhe/viz/Project_Amruta_Gandhe/Figure1-YearwiseArrestTrend" target="_blank" rel="noopener noreferrer">Police Arrests in Dallas, Texas</a></p>
-        <p><a href="https://public.tableau.com/app/profile/amruta.gandhe/vizzes" target="_blank" rel="noopener noreferrer">Visit Tableau Public Profile</a></p>
+        <article class="project-item tableau">
+          <div class="project-title">
+            Police Arrests in Dallas, Texas - Tableau Report
+            <span class="timeframe" aria-label="Timeframe">May 2020 - June 2020</span>
+          </div>
+          <p class="project-desc">Interactive dashboard analyzing police arrest data in Dallas.</p>
+          <p>
+            <a href="https://public.tableau.com/app/profile/amruta.gandhe/viz/Project_Amruta_Gandhe/Figure1-YearwiseArrestTrend" target="_blank" rel="noopener noreferrer">
+              Visit Police Arrests Dashboard
+            </a>
+          </p>
+        </article>
+
+        <article class="project-item tableau">
+          <div class="project-title">My Tableau Public Profile</div>
+          <p class="project-desc">Explore more dashboards and visualizations on my Tableau Public profile.</p>
+          <p>
+            <a href="https://public.tableau.com/app/profile/amruta.gandhe/vizzes" target="_blank" rel="noopener noreferrer">
+              Visit Tableau Public Profile
+            </a>
+          </p>
+        </article>
       </div>
     </section>
 
-    <section class="project-category data-mining" tabindex="0" aria-expanded="false" aria-controls="mining-content">
-      <header class="project-header" role="button" aria-controls="mining-content" aria-expanded="false" tabindex="0">
-        <i class="fas fa-database"></i>
-        Data Mining
-        <i class="fas fa-chevron-right toggle-icon" aria-hidden="true"></i>
+    <!-- Data Mining -->
+    <section class="project-category" data-category="datamining" aria-expanded="false" tabindex="0">
+      <header class="project-header datamining" role="button" aria-controls="datamining-content" aria-expanded="false" tabindex="0">
+        <span><i class="fas fa-database category-icon"></i> Data Mining</span>
+        <i class="fas fa-chevron-right toggle-icon"></i>
       </header>
-      <div id="mining-content" class="project-content" hidden>
-        <iframe src="https://amrutag7.github.io/assets/DataMining_Classification_Report.pdf" aria-label="Data mining project report"></iframe>
+      <div id="datamining-content" class="project-content" hidden>
+        <article class="project-item datamining">
+          <div class="project-title">
+            Prediction of New Car Prices Using SAS Enterprise Miner 15.1
+            <span class="timeframe" aria-label="Timeframe">Sept 2020 - Dec 2020</span>
+          </div>
+          <p class="project-desc">Built models estimating new car prices using SAS.</p>
+          <div class="iframe-wrapper">
+            <iframe src="https://docs.google.com/viewer?url=https://amrutag7.github.io/reports/datamining-report.pdf&embedded=true" aria-label="Data mining report"></iframe>
+          </div>
+        </article>
       </div>
     </section>
 
-    <section class="project-category database" tabindex="0" aria-expanded="false" aria-controls="database-content">
-      <header class="project-header" role="button" aria-controls="database-content" aria-expanded="false" tabindex="0">
-        <i class="fas fa-server"></i>
-        Database Management
-        <i class="fas fa-chevron-right toggle-icon" aria-hidden="true"></i>
+    <!-- Database Management -->
+    <section class="project-category" data-category="dbmanagement" aria-expanded="false" tabindex="0">
+      <header class="project-header dbmanagement" role="button" aria-controls="dbmanagement-content" aria-expanded="false" tabindex="0">
+        <span><i class="fas fa-server category-icon"></i> Database Management</span>
+        <i class="fas fa-chevron-right toggle-icon"></i>
       </header>
-      <div id="database-content" class="project-content" hidden>
-        <iframe src="https://amrutag7.github.io/assets/ER_Modeling_Project.pdf" aria-label="Database management project report"></iframe>
+      <div id="dbmanagement-content" class="project-content" hidden>
+        <article class="project-item dbmanagement">
+          <div class="project-title">
+            Designed a relational database for a consulting firm capturing ongoing projects
+            <span class="timeframe" aria-label="Timeframe">Jan 2021 - Apr 2021</span>
+          </div>
+          <p class="project-desc">Designed a relational database to capture ongoing project details.</p>
+          <div class="iframe-wrapper">
+            <iframe src="https://docs.google.com/viewer?url=https://amrutag7.github.io/reports/databasemanagement.pdf&embedded=true" aria-label="Database management report"></iframe>
+          </div>
+        </article>
       </div>
     </section>
 
-    <section class="project-category warehouse" tabindex="0" aria-expanded="false" aria-controls="warehouse-content">
-      <header class="project-header" role="button" aria-controls="warehouse-content" aria-expanded="false" tabindex="0">
-        <i class="fas fa-warehouse"></i>
-        Data Warehouse
-        <i class="fas fa-chevron-right toggle-icon" aria-hidden="true"></i>
+    <!-- Data Warehouse -->
+    <section class="project-category" data-category="datawarehouse" aria-expanded="false" tabindex="0">
+      <header class="project-header datawarehouse" role="button" aria-controls="datawarehouse-content" aria-expanded="false" tabindex="0">
+        <span><i class="fas fa-warehouse category-icon"></i> Data Warehouse</span>
+        <i class="fas fa-chevron-right toggle-icon"></i>
       </header>
-      <div id="warehouse-content" class="project-content" hidden>
-        <iframe src="https://amrutag7.github.io/assets/DataWarehouse_BusSchema_Report.pdf" aria-label="Data warehouse project report"></iframe>
+      <div id="datawarehouse-content" class="project-content" hidden>
+        <article class="project-item datawarehouse">
+          <div class="project-title">
+            Data warehouse design for retail sales with star schema model
+            <span class="timeframe" aria-label="Timeframe">Mar 2021 - May 2021</span>
+          </div>
+          <p class="project-desc">Created a star schema and ETL process for retail sales data warehouse.</p>
+          <div class="iframe-wrapper">
+            <iframe src="https://docs.google.com/viewer?url=https://amrutag7.github.io/reports/datawarehouse-report.pdf&embedded=true" aria-label="Data warehouse report"></iframe>
+          </div>
+        </article>
       </div>
     </section>
   </main>
 
   <footer>
     <div class="social-links">
-      <a href="mailto:asgandhe@hotmail.com" aria-label="Send email">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-          <polyline points="22,6 12,13 2,6" fill="none" stroke="currentColor" stroke-width="2"/>
-          <rect x="2" y="6" width="20" height="12" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/>
-        </svg>
-        <span>Email Me</span>
+      <a href="mailto:amrutag7@gmail.com" aria-label="Send email to Amruta Gandhe">
+        <i class="fas fa-envelope"></i> Email
       </a>
-
-      <a class="linkedin-icon" href="https://www.linkedin.com/in/amruta-gandhe-1b1013207/" target="_blank" aria-label="LinkedIn">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-          <path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83 0 53.4 0 23.3 24.55 0 53.79 0s53.79 23.3 53.79 53.4c0 29.6-24.09 54.7-53.79 54.7zM447.9 448h-92.7V302.4c0-34.7-.7-79.3-48.3-79.3-48.3 0-55.7 37.8-55.7 76.9V448h-92.6V148.9h88.9v40.8h1.3c12.4-23.5 42.5-48.3 87.5-48.3 93.6 0 110.8 61.6 110.8 141.7V448z"/>
-        </svg>
+      <a href="https://www.linkedin.com/in/amruta-gandhe-1b1013207/" target="_blank" rel="noopener noreferrer" aria-label="Visit LinkedIn profile of Amruta Gandhe">
+        <i class="fab fa-linkedin"></i> LinkedIn
       </a>
-    </div>
-    <div>© Amruta Gandhe</div>
+	<div>© 2025 Amruta Gandhe</div>
   </footer>
 
   <script>
-    // Toggle expand/collapse for each project category
+    // Expand/Collapse functionality for project categories
     document.querySelectorAll('.project-header').forEach(header => {
       header.addEventListener('click', () => {
-        const section = header.parentElement;
-        const content = section.querySelector('.project-content');
-        const isOpen = section.classList.toggle('open');
-
+        const contentId = header.getAttribute('aria-controls');
+        const content = document.getElementById(contentId);
+        const isOpen = content.classList.toggle('open');
         content.hidden = !isOpen;
+        header.classList.toggle('active', isOpen);
         header.setAttribute('aria-expanded', isOpen);
-        section.setAttribute('aria-expanded', isOpen);
+        header.parentElement.setAttribute('aria-expanded', isOpen);
       });
 
       header.addEventListener('keydown', (e) => {
@@ -288,6 +544,34 @@
           e.preventDefault();
           header.click();
         }
+      });
+    });
+
+    // Expand All / Collapse All buttons
+    const expandAllBtn = document.getElementById('expandAllBtn');
+    const collapseAllBtn = document.getElementById('collapseAllBtn');
+
+    expandAllBtn.addEventListener('click', () => {
+      document.querySelectorAll('.project-content').forEach(content => {
+        content.classList.add('open');
+        content.hidden = false;
+      });
+      document.querySelectorAll('.project-header').forEach(header => {
+        header.classList.add('active');
+        header.setAttribute('aria-expanded', 'true');
+        header.parentElement.setAttribute('aria-expanded', 'true');
+      });
+    });
+
+    collapseAllBtn.addEventListener('click', () => {
+      document.querySelectorAll('.project-content').forEach(content => {
+        content.classList.remove('open');
+        content.hidden = true;
+      });
+      document.querySelectorAll('.project-header').forEach(header => {
+        header.classList.remove('active');
+        header.setAttribute('aria-expanded', 'false');
+        header.parentElement.setAttribute('aria-expanded', 'false');
       });
     });
   </script>
