@@ -4,8 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Projects - Amruta Gandhe</title>
-
-  <!-- Font Awesome CDN -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -13,7 +11,6 @@
     crossorigin="anonymous"
     referrerpolicy="no-referrer"
   />
-
   <style>
     :root {
       --bg-color: #eaf9f5;
@@ -21,25 +18,7 @@
       --secondary-color: #f4a261;
       --accent-color: #b5ead7;
       --text-color: #333;
-
-      /* Pastel category colors from your home page */
-      --python-bg: #ffebd6;
-      --python-color: #de7a2f;
-
-      --tableau-bg: #d0f4de;
-      --tableau-color: #2f8f7c;
-
-      --datamining-bg: #fde2e4;
-      --datamining-color: #d46a6a;
-
-      --dbmanagement-bg: #cce2cb;
-      --dbmanagement-color: #3d6b35;
-
-      --datawarehouse-bg: #ffcbf2;
-      --datawarehouse-color: #a24c80;
     }
-
-    /* General page styles */
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -47,20 +26,7 @@
       color: var(--text-color);
       line-height: 1.6;
       padding-bottom: 100px;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
     }
-
-    a {
-      color: var(--primary-color);
-      text-decoration: none;
-    }
-    a:hover {
-      color: var(--secondary-color);
-    }
-
-    /* Navigation */
     nav {
       position: fixed;
       top: 0;
@@ -80,221 +46,42 @@
       display: flex;
       gap: 30px;
     }
-    nav li {
-      display: flex;
-      align-items: center;
-    }
     nav a {
       color: var(--primary-color);
       text-decoration: none;
-      font-size: 0.9rem;
       font-weight: 600;
       transition: color 0.3s ease;
-      display: flex;
-      align-items: center;
-      gap: 6px;
     }
-    nav a:hover,
-    nav a[aria-current="page"] {
+    nav a:hover {
       color: var(--secondary-color);
     }
-
-    /* Content container */
-    main.content {
-      max-width: 900px;
-      margin: 100px auto 60px; /* account for fixed nav */
-      padding: 0 20px;
-      flex-grow: 1;
+    .project-section {
+      padding: 140px 20px 40px;
+      max-width: 1000px;
+      margin: 0 auto;
     }
-
-    h1 {
+    h2 {
       text-align: center;
       color: var(--primary-color);
-      font-size: 2.5rem;
-      margin-bottom: 2rem;
     }
-
-    /* Expand/Collapse Buttons */
-    .controls {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin-bottom: 2rem;
-      flex-wrap: wrap;
-    }
-    .btn {
-      background-color: var(--primary-color);
-      border: none;
-      color: var(--bg-color);
-      padding: 0.6rem 1.2rem;
-      border-radius: 25px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: 0.95rem;
-    }
-    .btn:hover {
-      background-color: var(--secondary-color);
-    }
-
-    /* Project category container */
     .project-category {
-      margin-bottom: 2rem;
-      border-radius: 12px;
-      background-color: var(--bg-color);
-      border: 1px solid var(--accent-color);
-      box-shadow: 0 2px 6px rgb(0 0 0 / 0.1);
-      overflow: hidden;
+      margin-bottom: 40px;
     }
-
-    /* Header with toggle icon */
-    .project-header {
-      cursor: pointer;
-      padding: 1rem 1.5rem;
-      font-size: 1.3rem;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      user-select: none;
-      border-radius: 12px;
-      transition: background-color 0.3s ease;
-      background-color: var(--primary-color);
-      color: var(--bg-color);
+    .project-category h3 {
+      color: var(--primary-color);
+      font-size: 1.5rem;
+      margin-bottom: 10px;
     }
-
-    /* Category icon in header */
-    .project-header i.category-icon {
-      font-size: 1.6rem;
-      margin-right: 0.8rem;
-    }
-
-    /* Individual colors for icons matching home page text colors */
-    .project-header.python {
-      background-color: var(--python-bg);
-      color: var(--python-color);
-    }
-    .project-header.tableau {
-      background-color: var(--tableau-bg);
-      color: var(--tableau-color);
-    }
-    .project-header.datamining {
-      background-color: var(--datamining-bg);
-      color: var(--datamining-color);
-    }
-    .project-header.dbmanagement {
-      background-color: var(--dbmanagement-bg);
-      color: var(--dbmanagement-color);
-    }
-    .project-header.datawarehouse {
-      background-color: var(--datawarehouse-bg);
-      color: var(--datawarehouse-color);
-    }
-
-    /* Arrow toggle icon */
-    .toggle-icon {
-      transition: transform 0.3s ease;
-      font-size: 1.2rem;
-    }
-    .project-header.active .toggle-icon {
-      transform: rotate(90deg);
-    }
-
-    /* Project content hidden/shown */
-    .project-content {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.4s ease;
-      padding: 0 1.5rem;
-      background-color: var(--bg-color);
-      border-top: 1px solid var(--accent-color);
-    }
-    .project-content.open {
-      max-height: 3000px; /* big enough */
-      padding: 1rem 1.5rem 1.5rem;
-    }
-
-    /* Project item */
-    .project-item {
-      border-bottom: 1px solid var(--accent-color);
-      padding: 1rem 0;
-    }
-    .project-item:last-child {
-      border-bottom: none;
-      margin-bottom: 0;
-      padding-bottom: 0;
-    }
-
-    /* Project title and timeframe badge */
-    .project-title {
-      font-weight: 700;
-      font-size: 1.1rem;
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-    .timeframe {
-      background-color: var(--secondary-color);
-      color: var(--bg-color);
-      font-size: 0.85rem;
-      font-weight: 600;
-      padding: 2px 10px;
-      border-radius: 20px;
-      margin-left: auto;
-      white-space: nowrap;
-    }
-
-    /* Project description */
-    .project-desc {
-      margin: 0.3rem 0 0 0;
-    }
-
-    /* iframe wrapper */
-    .iframe-wrapper {
-      position: relative;
+    .project-category iframe {
       width: 100%;
-      padding-top: 56.25%; /* 16:9 aspect */
-      margin-top: 8px;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 2px 6px rgb(0 0 0 / 0.15);
-    }
-    .iframe-wrapper iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      height: 480px;
       border: none;
+      margin-bottom: 20px;
     }
-
-    /* Category-specific colors for icons and text in project items */
-    .project-item.python .project-title,
-    .project-item.python i.category-icon {
-      color: var(--python-color);
+    .project-category a {
+      color: var(--secondary-color);
+      font-weight: bold;
     }
-    .project-item.tableau .project-title,
-    .project-item.tableau i.category-icon {
-      color: var(--tableau-color);
-    }
-    .project-item.datamining .project-title,
-    .project-item.datamining i.category-icon {
-      color: var(--datamining-color);
-    }
-    .project-item.dbmanagement .project-title,
-    .project-item.dbmanagement i.category-icon {
-      color: var(--dbmanagement-color);
-    }
-    .project-item.datawarehouse .project-title,
-    .project-item.datawarehouse i.category-icon {
-      color: var(--datawarehouse-color);
-    }
-
-    /* Footer */
     footer {
       background: var(--bg-color);
       border-top: 1px solid var(--accent-color);
@@ -310,7 +97,6 @@
       flex-direction: column;
       align-items: center;
       gap: 10px;
-      z-index: 1000;
     }
     footer .social-links {
       display: flex;
@@ -322,7 +108,6 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      font-size: 1.2rem;
     }
     footer a:hover {
       color: var(--secondary-color);
@@ -338,178 +123,47 @@
       fill: currentColor;
       stroke: none;
     }
-
-    /* Responsive */
-    @media (max-width: 600px) {
-      main.content {
-        margin: 80px 10px 60px;
-      }
-      .project-header {
-        font-size: 1.1rem;
-        padding: 0.75rem 1rem;
-      }
-      .btn {
-        padding: 0.5rem 1rem;
-        font-size: 0.9rem;
-      }
-    }
   </style>
 </head>
 <body>
-
-  <!-- Navigation (exactly like index.html) -->
   <nav>
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
-      <li><a href="projects.html" aria-current="page">Projects</a></li>
+      <li><a href="projects.html">Projects</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
 
-  <main class="content" role="main">
-    <h1>My Projects</h1>
+  <section class="project-section">
+    <h2>Project Reports</h2>
 
-    <div class="controls">
-      <button id="expandAllBtn" class="btn" aria-label="Expand all projects"><i class="fas fa-plus-square"></i> Expand All</button>
-      <button id="collapseAllBtn" class="btn" aria-label="Collapse all projects"><i class="fas fa-minus-square"></i> Collapse All</button>
+    <div class="project-category">
+      <h3>Python</h3>
+      <iframe src="https://docs.google.com/gview?url=https://amrutag7.github.io/assets/KivaLoanAnalysisReport.pdf&embedded=true"></iframe>
     </div>
 
-    <!-- Python Projects -->
-    <section class="project-category" data-category="python" aria-expanded="false" tabindex="0">
-      <header class="project-header python" role="button" aria-controls="python-content" aria-expanded="false" tabindex="0">
-        <span><i class="fab fa-python category-icon"></i> Python Projects</span>
-        <i class="fas fa-chevron-right toggle-icon"></i>
-      </header>
-      <div id="python-content" class="project-content" hidden>
-        <article class="project-item python">
-          <div class="project-title">
-            Loan analysis of crowd funding platform Kiva.org using Python
-            <span class="timeframe" aria-label="Timeframe">Sept 2021 - Dec 2021</span>
-          </div>
-          <p class="project-desc">Exploratory data analysis, visualization, and ML algorithms using Python.</p>
-          <div class="iframe-wrapper">
-            <iframe src="https://docs.google.com/viewer?url=https://amrutag7.github.io/reports/python-report1.pdf&embedded=true" aria-label="Loan analysis report"></iframe>
-          </div>
-        </article>
+    <div class="project-category">
+      <h3>Tableau</h3>
+      <p><a href="https://public.tableau.com/app/profile/amruta.gandhe/viz/Project_Amruta_Gandhe/Figure1-YearwiseArrestTrend" target="_blank">Police Arrests in Dallas, Texas</a></p>
+      <p><a href="https://public.tableau.com/app/profile/amruta.gandhe/vizzes" target="_blank">Visit Tableau Public Profile</a></p>
+    </div>
 
-        <article class="project-item python">
-          <div class="project-title">
-            Walmart Sales Forecasting using Python
-            <span class="timeframe" aria-label="Timeframe">Oct 2021</span>
-          </div>
-          <p class="project-desc">Time series forecasting models with Python on Walmart sales data.</p>
-          <div class="iframe-wrapper">
-            <iframe src="https://docs.google.com/viewer?url=https://amrutag7.github.io/reports/python-report2.pdf&embedded=true" aria-label="Walmart sales forecasting report"></iframe>
-          </div>
-        </article>
+    <div class="project-category">
+      <h3>Data Mining</h3>
+      <iframe src="https://docs.google.com/gview?url=https://amrutag7.github.io/assets/DataMining_Classification_Report.pdf&embedded=true"></iframe>
+    </div>
 
-        <article class="project-item python">
-          <div class="project-title">
-            Loan Analysis: Understanding The Client And Business using Python
-            <span class="timeframe" aria-label="Timeframe">May 2020 - June 2020</span>
-          </div>
-          <p class="project-desc">Client and business insights from loan datasets via visualization and modeling.</p>
-          <div class="iframe-wrapper">
-            <iframe src="https://docs.google.com/viewer?url=https://amrutag7.github.io/reports/python-report3.pdf&embedded=true" aria-label="Loan analysis client and business report"></iframe>
-          </div>
-        </article>
-      </div>
-    </section>
+    <div class="project-category">
+      <h3>Database Management</h3>
+      <iframe src="https://docs.google.com/gview?url=https://amrutag7.github.io/assets/ER_Modeling_Project.pdf&embedded=true"></iframe>
+    </div>
 
-    <!-- Tableau Projects -->
-    <section class="project-category" data-category="tableau" aria-expanded="false" tabindex="0">
-      <header class="project-header tableau" role="button" aria-controls="tableau-content" aria-expanded="false" tabindex="0">
-        <span><i class="fas fa-chart-bar category-icon"></i> Tableau Dashboards</span>
-        <i class="fas fa-chevron-right toggle-icon"></i>
-      </header>
-      <div id="tableau-content" class="project-content" hidden>
-        <article class="project-item tableau">
-          <div class="project-title">
-            Police Arrests in Dallas, Texas - Tableau Report
-            <span class="timeframe" aria-label="Timeframe">May 2020 - June 2020</span>
-          </div>
-          <p class="project-desc">Interactive dashboard analyzing police arrest data in Dallas.</p>
-          <p>
-            <a href="https://public.tableau.com/app/profile/amruta.gandhe/viz/Project_Amruta_Gandhe/Figure1-YearwiseArrestTrend" target="_blank" rel="noopener noreferrer">
-              Visit Police Arrests Dashboard
-            </a>
-          </p>
-        </article>
-
-        <article class="project-item tableau">
-          <div class="project-title">My Tableau Public Profile</div>
-          <p class="project-desc">Explore more dashboards and visualizations on my Tableau Public profile.</p>
-          <p>
-            <a href="https://public.tableau.com/app/profile/amruta.gandhe/vizzes" target="_blank" rel="noopener noreferrer">
-              Visit Tableau Public Profile
-            </a>
-          </p>
-        </article>
-      </div>
-    </section>
-
-    <!-- Data Mining -->
-    <section class="project-category" data-category="datamining" aria-expanded="false" tabindex="0">
-      <header class="project-header datamining" role="button" aria-controls="datamining-content" aria-expanded="false" tabindex="0">
-        <span><i class="fas fa-database category-icon"></i> Data Mining</span>
-        <i class="fas fa-chevron-right toggle-icon"></i>
-      </header>
-      <div id="datamining-content" class="project-content" hidden>
-        <article class="project-item datamining">
-          <div class="project-title">
-            Prediction of New Car Prices Using SAS Enterprise Miner 15.1
-            <span class="timeframe" aria-label="Timeframe">Sept 2020 - Dec 2020</span>
-          </div>
-          <p class="project-desc">Built models estimating new car prices using SAS.</p>
-          <div class="iframe-wrapper">
-            <iframe src="https://docs.google.com/viewer?url=https://amrutag7.github.io/reports/datamining-report.pdf&embedded=true" aria-label="Data mining report"></iframe>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- Database Management -->
-    <section class="project-category" data-category="dbmanagement" aria-expanded="false" tabindex="0">
-      <header class="project-header dbmanagement" role="button" aria-controls="dbmanagement-content" aria-expanded="false" tabindex="0">
-        <span><i class="fas fa-server category-icon"></i> Database Management</span>
-        <i class="fas fa-chevron-right toggle-icon"></i>
-      </header>
-      <div id="dbmanagement-content" class="project-content" hidden>
-        <article class="project-item dbmanagement">
-          <div class="project-title">
-            Designed a relational database for a consulting firm capturing ongoing projects
-            <span class="timeframe" aria-label="Timeframe">Jan 2021 - Apr 2021</span>
-          </div>
-          <p class="project-desc">Designed a relational database to capture ongoing project details.</p>
-          <div class="iframe-wrapper">
-            <iframe src="https://docs.google.com/viewer?url=https://amrutag7.github.io/reports/databasemanagement.pdf&embedded=true" aria-label="Database management report"></iframe>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- Data Warehouse -->
-    <section class="project-category" data-category="datawarehouse" aria-expanded="false" tabindex="0">
-      <header class="project-header datawarehouse" role="button" aria-controls="datawarehouse-content" aria-expanded="false" tabindex="0">
-        <span><i class="fas fa-warehouse category-icon"></i> Data Warehouse</span>
-        <i class="fas fa-chevron-right toggle-icon"></i>
-      </header>
-      <div id="datawarehouse-content" class="project-content" hidden>
-        <article class="project-item datawarehouse">
-          <div class="project-title">
-            Data warehouse design for retail sales with star schema model
-            <span class="timeframe" aria-label="Timeframe">Mar 2021 - May 2021</span>
-          </div>
-          <p class="project-desc">Created a star schema and ETL process for retail sales data warehouse.</p>
-          <div class="iframe-wrapper">
-            <iframe src="https://docs.google.com/viewer?url=https://amrutag7.github.io/reports/datawarehouse-report.pdf&embedded=true" aria-label="Data warehouse report"></iframe>
-          </div>
-        </article>
-      </div>
-    </section>
-
-  </main>
+    <div class="project-category">
+      <h3>Data Warehouse</h3>
+      <iframe src="https://docs.google.com/gview?url=https://amrutag7.github.io/assets/DataWarehouse_BusSchema_Report.pdf&embedded=true"></iframe>
+    </div>
+  </section>
 
   <footer>
     <div class="social-links">
@@ -555,7 +209,7 @@
     const expandAllBtn = document.getElementById('expandAllBtn');
     const collapseAllBtn = document.getElementById('collapseAllBtn');
 
-    expandAllBtn.addEventListener('click', () => {
+    expandAllBtn?.addEventListener('click', () => {
       document.querySelectorAll('.project-content').forEach(content => {
         content.classList.add('open');
         content.hidden = false;
@@ -567,7 +221,7 @@
       });
     });
 
-    collapseAllBtn.addEventListener('click', () => {
+    collapseAllBtn?.addEventListener('click', () => {
       document.querySelectorAll('.project-content').forEach(content => {
         content.classList.remove('open');
         content.hidden = true;
