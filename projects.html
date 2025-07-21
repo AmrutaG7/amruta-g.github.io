@@ -301,47 +301,29 @@
       padding: 10px 0;
       text-align: center;
       font-size: 0.9rem;
-      color: var(--primary-color); 
-	/* Remove fixed positioning */
+      color: var(--primary-color);
       position: static;
-      bottom: auto;
-      left: auto;
-      right: auto;
-	  
-	 /* Align content horizontally */
-	 
       display: flex;
-	  justify-content: center;
-      gap: 10px;
-	  align-items: center;
-	  flex-wrap: wrap;
+      justify-content: center;
     }
-	
+
     footer .social-links {
       display: flex;
-      gap: 15px;
+      gap: 20px;
+      align-items: center;
     }
+
     footer a {
       color: var(--primary-color);
       text-decoration: none;
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      font-size: 0.9rem;
+      font-weight: 600;
     }
+
     footer a:hover {
       color: var(--secondary-color);
-    }
-    footer svg {
-      width: 20px;
-      height: 20px;
-      stroke: currentColor;
-      fill: none;
-      stroke-width: 2;
-    }
-    .linkedin-icon svg {
-      fill: currentColor;
-      stroke: none;
     }
 
     /* Responsive */
@@ -356,6 +338,10 @@
       .btn {
         padding: 0.5rem 1rem;
         font-size: 0.9rem;
+      }
+      footer {
+        flex-direction: column;
+        gap: 10px;
       }
     }
   </style>
@@ -503,45 +489,54 @@
       <div id="datawarehouse-content" class="project-content" hidden>
         <article class="project-item datawarehouse">
           <div class="project-title">
-            Data warehouse design for retail sales with star schema model
-            <span class="timeframe" aria-label="Timeframe">Mar 2021 - May 2021</span>
+            Data Warehouse Concept Design Project
+            <span class="timeframe" aria-label="Timeframe">Mar 2021 - Jun 2021</span>
           </div>
-          <p class="project-desc">Created a star schema and ETL process for retail sales data warehouse.</p>
+          <p class="project-desc">Developed concept design and star schema for a retail data warehouse.</p>
           <div class="iframe-wrapper">
-            <iframe src="https://docs.google.com/viewer?url=https://amrutag7.github.io/reports/datawarehouse-report.pdf&embedded=true" aria-label="Data warehouse report"></iframe>
+            <iframe src="https://docs.google.com/viewer?url=https://amrutag7.github.io/reports/datawarehouse.pdf&embedded=true" aria-label="Data warehouse report"></iframe>
           </div>
         </article>
       </div>
     </section>
+
   </main>
 
   <footer>
-  <div class="social-links">
-    <a href="mailto:amrutag7@gmail.com" aria-label="Send email to Amruta Gandhe">
-      <i class="fas fa-envelope"></i> Email
-    </a>
-    <a href="https://www.linkedin.com/in/amruta-gandhe-1b1013207/" target="_blank" rel="noopener noreferrer" aria-label="Visit LinkedIn profile of Amruta Gandhe">
-      <i class="fab fa-linkedin"></i> LinkedIn
-    </a>
-  </div>
-
-  <div class="copyright">© 2025 Amruta Gandhe</div>
-</footer>
-
+    <div class="social-links">
+      <a href="mailto:asgandhe@hotmail.com" aria-label="Send email to Amruta Gandhe">
+        <i class="fas fa-envelope"></i> Email Me
+      </a>
+      <a href="https://www.linkedin.com/in/amruta-gandhe-1b1013207/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile of Amruta Gandhe">
+        <i class="fab fa-linkedin"></i> LinkedIn
+      </a>
+      <span>© 2025 Amruta Gandhe</span>
+    </div>
+  </footer>
 
   <script>
-    // Expand/Collapse functionality for project categories
+    // Toggle project categories
     document.querySelectorAll('.project-header').forEach(header => {
       header.addEventListener('click', () => {
-        const contentId = header.getAttribute('aria-controls');
-        const content = document.getElementById(contentId);
-        const isOpen = content.classList.toggle('open');
-        content.hidden = !isOpen;
-        header.classList.toggle('active', isOpen);
-        header.setAttribute('aria-expanded', isOpen);
-        header.parentElement.setAttribute('aria-expanded', isOpen);
+        const content = header.nextElementSibling;
+        const isOpen = content.classList.contains('open');
+
+        if (isOpen) {
+          content.classList.remove('open');
+          content.hidden = true;
+          header.setAttribute('aria-expanded', 'false');
+          header.parentElement.setAttribute('aria-expanded', 'false');
+          header.classList.remove('active');
+        } else {
+          content.classList.add('open');
+          content.hidden = false;
+          header.setAttribute('aria-expanded', 'true');
+          header.parentElement.setAttribute('aria-expanded', 'true');
+          header.classList.add('active');
+        }
       });
 
+      // Keyboard accessibility: toggle on Enter or Space
       header.addEventListener('keydown', (e) => {
         if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();
@@ -550,33 +545,30 @@
       });
     });
 
-    // Expand All / Collapse All buttons
-    const expandAllBtn = document.getElementById('expandAllBtn');
-    const collapseAllBtn = document.getElementById('collapseAllBtn');
-
-    expandAllBtn.addEventListener('click', () => {
+    // Expand all / Collapse all buttons
+    document.getElementById('expandAllBtn').addEventListener('click', () => {
       document.querySelectorAll('.project-content').forEach(content => {
         content.classList.add('open');
         content.hidden = false;
       });
       document.querySelectorAll('.project-header').forEach(header => {
-        header.classList.add('active');
         header.setAttribute('aria-expanded', 'true');
         header.parentElement.setAttribute('aria-expanded', 'true');
+        header.classList.add('active');
       });
     });
-
-    collapseAllBtn.addEventListener('click', () => {
+    document.getElementById('collapseAllBtn').addEventListener('click', () => {
       document.querySelectorAll('.project-content').forEach(content => {
         content.classList.remove('open');
         content.hidden = true;
       });
       document.querySelectorAll('.project-header').forEach(header => {
-        header.classList.remove('active');
         header.setAttribute('aria-expanded', 'false');
         header.parentElement.setAttribute('aria-expanded', 'false');
+        header.classList.remove('active');
       });
     });
   </script>
+
 </body>
 </html>
