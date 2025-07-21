@@ -431,7 +431,7 @@
           </div>
           <p class="project-desc">Interactive dashboard analyzing police arrest data in Dallas.</p>
           <p>
-          <a href="https://public.tableau.com/app/profile/amruta.gandhe/vizzes" target="_blank" rel="noopener noreferrer">Visit Tableau Public Profile</a>
+            <a href="https://public.tableau.com/app/profile/amruta.gandhe/vizzes" target="_blank" rel="noopener noreferrer">Visit Tableau Public Profile</a>
           </p>
         </article>
 
@@ -439,8 +439,7 @@
           <div class="project-title">My Tableau Public Profile</div>
           <p class="project-desc">Explore more dashboards and visualizations on my Tableau Public profile.</p>
           <p>
-            <a href="https://public.tableau.com/app/profile/https://public.tableau.com/app/profile/amruta.gandhe/vizzes"
-              target="_blank" rel="noopener noreferrer">Visit Tableau Public Profile</a>
+            <a href="https://public.tableau.com/app/profile/amruta.gandhe/vizzes" target="_blank" rel="noopener noreferrer">Visit Tableau Public Profile</a>
           </p>
         </article>
       </div>
@@ -495,90 +494,97 @@
       <div id="datawarehouse-content" class="project-content" hidden>
         <article class="project-item datawarehouse">
           <div class="project-title">
-            Data Warehouse Design & Dashboards for Online Portal (Fiverr)
-            <span class="timeframe" aria-label="Timeframe">Feb 2021 - Apr 2021</span>
+            Created a Data Warehouse for Sales and Inventory Data
+            <span class="timeframe" aria-label="Timeframe">May 2021 - Aug 2021</span>
           </div>
-          <p class="project-desc">Developed front-end and back-end dashboards using QlikView and Tableau.</p>
+          <p class="project-desc">Built a data warehouse for sales and inventory analysis.</p>
           <div class="iframe-wrapper">
             <iframe src="https://docs.google.com/viewer?url=https://amrutag7.github.io/reports/datawarehouse-report.pdf&embedded=true" aria-label="Data warehouse report"></iframe>
           </div>
         </article>
       </div>
     </section>
+
   </main>
 
-  <!-- Footer (exactly like index.html) -->
   <footer>
+    <p>Contact me: <a href="mailto:amruta.gandhe@gmail.com">amruta.gandhe@gmail.com</a></p>
     <div class="social-links">
-      <a href="mailto:asgandhe@hotmail.com" aria-label="Send email">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-          <polyline points="22,6 12,13 2,6" fill="none" stroke="currentColor" stroke-width="2"/>
-          <rect x="2" y="6" width="20" height="12" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/>
-        </svg>
+      <a href="https://www.linkedin.com/in/amruta-gandhe-1b1013207/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile" class="linkedin-icon">
+        <i class="fab fa-linkedin"></i> LinkedIn
       </a>
-
-      <a class="linkedin-icon" href="https://www.linkedin.com/in/amruta-gandhe-1b1013207/" target="_blank" aria-label="LinkedIn">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-          <path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83 0 53.4 0 23.3 24.55 0 53.79 0s53.79 23.3 53.79 53.4c0 29.6-24.09 54.7-53.79 54.7zM447.9 448h-92.7V302.4c0-34.7-.7-79.3-48.3-79.3-48.3 0-55.7 37.8-55.7 76.9V448h-92.6V148.9h88.9v40.8h1.3c12.4-23.5 42.5-48.3 87.5-48.3 93.6 0 110.8 61.6 110.8 141.7V448z"/>
-        </svg>
+      <a href="mailto:amruta.gandhe@gmail.com" aria-label="Send Email">
+        <i class="fas fa-envelope"></i> Email
       </a>
     </div>
-    <div>© Amruta Gandhe</div>
   </footer>
 
   <script>
-    // Accordion toggle
-    const headers = document.querySelectorAll('.project-header');
-    headers.forEach(header => {
+    // Toggle project category content on header click or keyboard enter/space
+    document.querySelectorAll('.project-header').forEach(header => {
       header.addEventListener('click', () => {
-        const content = document.getElementById(header.getAttribute('aria-controls'));
-        const expanded = header.getAttribute('aria-expanded') === 'true';
-
-        header.setAttribute('aria-expanded', !expanded);
-        if (!expanded) {
-          content.classList.add('open');
-          content.removeAttribute('hidden');
-          header.classList.add('active');
-        } else {
-          content.classList.remove('open');
-          content.setAttribute('hidden', '');
-          header.classList.remove('active');
-        }
+        toggleCategory(header);
       });
-
-      // keyboard accessibility
       header.addEventListener('keydown', e => {
         if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();
-          header.click();
+          toggleCategory(header);
         }
       });
     });
 
-    // Expand all / Collapse all buttons
+    function toggleCategory(header) {
+      const contentId = header.getAttribute('aria-controls');
+      const content = document.getElementById(contentId);
+      const isOpen = content.classList.contains('open');
+      if (isOpen) {
+        content.classList.remove('open');
+        content.hidden = true;
+        header.setAttribute('aria-expanded', 'false');
+        header.classList.remove('active');
+        header.parentElement.setAttribute('aria-expanded', 'false');
+      } else {
+        content.classList.add('open');
+        content.hidden = false;
+        header.setAttribute('aria-expanded', 'true');
+        header.classList.add('active');
+        header.parentElement.setAttribute('aria-expanded', 'true');
+      }
+    }
+
+    // Expand All and Collapse All buttons
     const expandBtn = document.getElementById('expandAllBtn');
     const collapseBtn = document.getElementById('collapseAllBtn');
 
     expandBtn.addEventListener('click', () => {
-      headers.forEach(header => {
-        const content = document.getElementById(header.getAttribute('aria-controls'));
-        header.setAttribute('aria-expanded', 'true');
-        content.classList.add('open');
-        content.removeAttribute('hidden');
-        header.classList.add('active');
+      document.querySelectorAll('.project-category').forEach(section => {
+        const header = section.querySelector('.project-header');
+        const contentId = header.getAttribute('aria-controls');
+        const content = document.getElementById(contentId);
+        if (!content.classList.contains('open')) {
+          content.classList.add('open');
+          content.hidden = false;
+          header.setAttribute('aria-expanded', 'true');
+          header.classList.add('active');
+          section.setAttribute('aria-expanded', 'true');
+        }
       });
     });
 
     collapseBtn.addEventListener('click', () => {
-      headers.forEach(header => {
-        const content = document.getElementById(header.getAttribute('aria-controls'));
-        header.setAttribute('aria-expanded', 'false');
-        content.classList.remove('open');
-        content.setAttribute('hidden', '');
-        header.classList.remove('active');
+      document.querySelectorAll('.project-category').forEach(section => {
+        const header = section.querySelector('.project-header');
+        const contentId = header.getAttribute('aria-controls');
+        const content = document.getElementById(contentId);
+        if (content.classList.contains('open')) {
+          content.classList.remove('open');
+          content.hidden = true;
+          header.setAttribute('aria-expanded', 'false');
+          header.classList.remove('active');
+          section.setAttribute('aria-expanded', 'false');
+        }
       });
     });
   </script>
-
 </body>
 </html>
