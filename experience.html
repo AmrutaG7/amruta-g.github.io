@@ -2,182 +2,89 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Professional Experience - Amruta Gandhe</title>
-
-  <!-- Font Awesome for icons -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    integrity="sha512-papb6CQmPZMRkxY4KQZ9Aju0LZ7bEXWkqQ+dFYu8bQGhUV5ZRAxXaqPej6fDQGslcHsM2m3zzZVDPHz9rN6iZw=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  />
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
-    /* Reset and base styles */
+    :root {
+      --bg-color: #faf9f9;
+      --header-color: #afeeee;
+      --card-bg: #e0ffff;
+      --primary-color: #333;
+    }
+
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #fffafc;
-      color: #2a2a2a;
       margin: 0;
-      padding: 0;
-      line-height: 1.6;
+      background-color: var(--bg-color);
+      color: var(--primary-color);
     }
 
-    a {
-      color: #5a2a83;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    /* Header & Navigation */
     header {
-      background-color: #f4e9f6;
+      background-color: var(--header-color);
       padding: 1rem 2rem;
-      box-shadow: 0 2px 4px rgb(0 0 0 / 0.1);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      max-width: 1000px;
-      margin: 0 auto;
     }
 
-    nav > a {
-      font-weight: 700;
-      font-size: 1.3rem;
-      color: #3b1153;
+    header a:first-child {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: var(--primary-color);
+      text-decoration: none;
+      margin-right: auto;
     }
 
-    nav > div a {
-      margin-left: 1.5rem;
-      font-weight: 600;
-      font-size: 1rem;
-      color: #5a2a83;
-      position: relative;
+    nav div a {
+      margin-left: 1rem;
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: 500;
     }
 
-    nav > div a[aria-current="page"] {
-      font-weight: 700;
-      color: #2e0854;
-      border-bottom: 2px solid #5a2a83;
-      padding-bottom: 2px;
-    }
-
-    /* Main container */
     main {
-      max-width: 900px;
-      margin: 2rem auto 4rem;
-      padding: 0 1rem;
-    }
-
-    main h1 {
-      text-align: center;
-      font-size: 2.2rem;
-      color: #3b1153;
-      margin-bottom: 2rem;
-      font-weight: 700;
-    }
-
-    /* Experience Section */
-    .experience-section {
-      display: flex;
-      flex-direction: column;
-      gap: 3rem;
+      padding: 2rem;
     }
 
     .job-entry {
-      background-color: #f9f2fb;
-      border-radius: 10px;
-      padding: 1.8rem 2rem;
-      box-shadow: 0 1px 5px rgb(90 42 131 / 0.15);
-      transition: box-shadow 0.3s ease;
+      background-color: var(--card-bg);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
     }
 
-    .job-entry:hover {
-      box-shadow: 0 4px 15px rgb(90 42 131 / 0.3);
+    .job-entry h2 {
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: #111;
     }
 
     .job-entry h3 {
-      color: #4b1c7f;
-      font-weight: 700;
-      font-size: 1.5rem;
-      margin-bottom: 0.3rem;
-    }
-
-    .company {
-      font-weight: 700;
-      font-size: 1.15rem;
-      color: #38115a;
-      margin-bottom: 0.2rem;
-    }
-
-    .location {
-      font-style: italic;
-      color: #6d5481;
-      margin-bottom: 0.8rem;
-    }
-
-    .job-entry p,
-    .job-entry ul {
-      margin: 0.4rem 0 1rem 0;
-      color: #3a264b;
-    }
-
-    .job-entry ul {
-      list-style-type: disc;
-      padding-left: 1.4rem;
-    }
-
-    .job-entry ul li {
-      margin-bottom: 0.4rem;
-    }
-
-    h4 {
-      color: #5a2a83;
-      font-size: 1.15rem;
+      font-size: 1.1rem;
       margin-top: 1rem;
-      margin-bottom: 0.5rem;
-      font-weight: 700;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
+      color: #222;
     }
 
-    .icon {
+    .job-entry ul {
+      padding-left: 1.5rem;
+    }
+
+    .job-entry li::marker {
       font-size: 1.2rem;
-      color: #7a51b3;
-      line-height: 1;
     }
 
-    /* Footer */
-    footer {
-      background-color: #f4e9f6;
+    .footer {
+      background-color: var(--header-color);
       padding: 1rem 2rem;
       text-align: center;
       font-size: 0.9rem;
-      color: #4b1c7f;
-      box-shadow: inset 0 1px 3px rgb(90 42 131 / 0.1);
     }
 
-    footer a {
-      margin: 0 0.8rem;
-      color: #5a2a83;
-      font-size: 1.2rem;
-      vertical-align: middle;
-    }
-
-    footer a:hover {
-      color: #38115a;
+    .footer a {
+      color: var(--primary-color);
+      margin: 0 0.5rem;
     }
   </style>
 </head>
@@ -196,235 +103,120 @@
   </header>
 
   <main>
-    <h1>Professional Experience</h1>
+    <!-- USAA Experience -->
+    <section class="job-entry">
+      <h2>📌 USAA (Contract) - Enabling Compliant, Data-Driven Banking Campaigns at USAA</h2>
+      <h3>📝 Overview</h3>
+      <ul>
+        <li>Built and maintained cloud-based omni-channel marketing data warehouse to enable compliant and effective campaign execution.</li>
+      </ul>
+      <h3>⚙️ Challenge & Context</h3>
+      <ul>
+        <li>Legacy data pipeline and slow-performing SQL queries were hindering campaign effectiveness and regulatory audit-readiness.</li>
+      </ul>
+      <h3>🔍 My Approach</h3>
+      <ul>
+        <li>Created SQL logic for Audience Generation Process (AGP).</li>
+        <li>Collaborated with data engineering and modeling teams to transform raw data into a structured analytical layer.</li>
+        <li>Optimized Tableau dashboard SQLs, improving performance significantly.</li>
+        <li>Co-designed data models for campaign management and CRM workflows.</li>
+      </ul>
+      <h3>🎯 Impact</h3>
+      <ul>
+        <li>Enabled data-driven campaign strategies.</li>
+        <li>Improved report performance and campaign traceability.</li>
+      </ul>
+    </section>
 
-    <section class="experience-section">
+    <!-- Porter Experience -->
+    <section class="job-entry">
+      <h2>📌 Porter (Contract) – Data & Analytics Enablement for Healthcare E-Commerce</h2>
+      <h3>📝 Overview</h3>
+      <ul>
+        <li>Supported Porter’s healthcare data strategy for journey analytics, event tracking, supplier onboarding, and delivery optimization.</li>
+      </ul>
+      <h3>⚙️ Challenge & Context</h3>
+      <ul>
+        <li>Needed to unify fragmented healthcare claims data and enable scalable analytics for durable medical equipment (DME) journeys.</li>
+      </ul>
+      <h3>🔍 My Approach</h3>
+      <ul>
+        <li>Assisted with event instrumentation (Freshpaint/Mixpanel), KPIs, A/B testing, and customer journey analysis.</li>
+        <li>Performed exploratory analysis and predictive modeling on Change Healthcare Platform (CDS) and AHRQ claims data.</li>
+        <li>Collaborated with supply chain team to define onboarding KPIs and delivery metrics.</li>
+      </ul>
+      <h3>🎯 Impact</h3>
+      <ul>
+        <li>Improved funnel conversion visibility and optimized supplier onboarding metrics.</li>
+        <li>Enabled future rollout of personalization and ML-based targeting.</li>
+      </ul>
+    </section>
 
-      <div class="job-entry">
-        <h3>📌 Data & Analytics Engineer</h3>
-        <p class="company">USAA (Contract) - Enabling Compliant, Data-Driven Banking Campaigns at USAA</p>
-        <p class="location">United States</p>
-        <p><strong>Domain:</strong> Banking, Omnichannel Marketing, Compliance Analytics</p>
-        <p><strong>Tools:</strong> SQL • Snowflake • Data Warehousing • Tableau • Reporting • Campaign Analytics • Cross-functional Collaboration • JIRA</p>
+    <!-- Gathi Analytics Experience -->
+    <section class="job-entry">
+      <h2>📌 Gathi Analytics (an Apexon Company) – Data Analytics Enablement Program</h2>
+      <h3>📝 Overview</h3>
+      <ul>
+        <li>Worked with client’s healthcare claims platform to deliver data transformations and analytics enablement.</li>
+      </ul>
+      <h3>⚙️ Challenge & Context</h3>
+      <ul>
+        <li>Needed to enable longitudinal patient cohorting and metric standardization using AHRQ and CDS claims data.</li>
+      </ul>
+      <h3>🔍 My Approach</h3>
+      <ul>
+        <li>Analyzed claims data for hospitalization trends, DME usage, and patient journeys.</li>
+        <li>Created NLP-based diagnosis filtering and cohort logic for machine learning use cases.</li>
+      </ul>
+      <h3>🎯 Impact</h3>
+      <ul>
+        <li>Enabled deeper care journey analytics.</li>
+        <li>Standardized pipeline for future modeling and analytics.</li>
+      </ul>
+    </section>
 
-        <h4><span class="icon">📝</span> Overview</h4>
-        <p>
-          As part of USAA’s Data Strategy team, I supported the execution, measurement, and infrastructure development of omni-channel marketing campaigns for banking products such as credit cards and deposit accounts. The focus was on delivering personalized and compliant marketing experiences through scalable, cloud-based data solutions.
-        </p>
+    <!-- UNT Experience -->
+    <section class="job-entry">
+      <h2>📌 University of North Texas</h2>
+      <h3>📝 Overview</h3>
+      <ul>
+        <li>Completed MS in Data Science and contributed to multiple academic projects using Python, SQL, Tableau, and machine learning frameworks.</li>
+      </ul>
+    </section>
 
-        <h4><span class="icon">⚙️</span> Challenge & Context</h4>
-        <p>
-          While campaign goals and audience criteria were set by business teams, our responsibility was to operationalize those strategies using accurate, compliant, and efficient data pipelines. This included validating campaign audiences, enabling robust reporting, and ensuring that the data environment supported performance tracking across marketing channels.
-        </p>
+    <!-- TCS Experience -->
+    <section class="job-entry">
+      <h2>📌 Tata Consultancy Services (Client: Pharmaceutical Company)</h2>
+      <h3>📝 Overview</h3>
+      <ul>
+        <li>Supported data analytics team for client’s pharma supply chain and regulatory metrics reporting.</li>
+      </ul>
+    </section>
 
-        <h4><span class="icon">🔍</span> My Approach</h4>
-        <ul>
-          <li><strong>Data Infrastructure & Modeling:</strong> Developed and maintained a cloud-based marketing data warehouse. Co-designed optimized data models and enabled the flow of attributes from raw to reporting layers in collaboration with engineering teams using Snowflake.</li>
-          <li><strong>Audience Validation & Compliance:</strong> Implemented SQL rules for the Audience Generation Process (AGP) and analyzed pre/post-campaign audience data to ensure compliance by excluding ineligible members during execution.</li>
-          <li><strong>Campaign Reporting:</strong> Partnered with the BBIA reporting team to optimize SQL powering Tableau dashboards, significantly improving performance. Built reports to monitor credit card transactions and campaign engagement.</li>
-          <li><strong>Documentation & Agile Collaboration:</strong> Drafted technical requirement documents, created user stories, and tracked deliverables in JIRA while collaborating across IT and business teams.</li>
-          <li><strong>Data Quality:</strong> Analyzed gaps between source systems and target environments to improve data validation processes and reporting accuracy.</li>
-        </ul>
+    <!-- Cytel Experience -->
+    <section class="job-entry">
+      <h2>📌 Cytel Statistical Software & Services</h2>
+      <h3>📝 Overview</h3>
+      <ul>
+        <li>Delivered clinical data analytics support for Phase 2 and Phase 3 trials using SAS.</li>
+      </ul>
+    </section>
 
-        <h4><span class="icon">🎯</span> Impact</h4>
-        <ul>
-          <li>Improved campaign compliance by validating audience eligibility and optimizing execution rules.</li>
-          <li>Boosted reporting speed and reliability through efficient SQL and data model improvements.</li>
-          <li>Acted as a bridge between business stakeholders, analysts, and engineers to translate marketing goals into measurable outcomes.</li>
-        </ul>
-      </div>
-
-      <div class="job-entry">
-        <h3>📌 Data & Analytics Engineer</h3>
-        <p class="company">Porter (Contract) – Data & Analytics Enablement for Healthcare E-Commerce</p>
-        <p class="location">United States</p>
-        <p><strong>Tools:</strong> SQL • Python • HCPCS/ICD Codes • AWS Athena • S3 • Freshpaint • Mixpanel • Azure DevOps • Supply Chain KPIs</p>
-
-        <h4><span class="icon">📝</span> Overview</h4>
-        <p>
-          Porter is a healthcare e-commerce platform focused on delivering durable medical equipment (DME) to patients through a drop-shipping model supported by Healthsphere. The goal was to enhance data analytics, streamline ordering workflows, and provide greater visibility into customer journeys and supplier performance.
-        </p>
-
-        <h4><span class="icon">⚙️</span> Challenge & Context</h4>
-        <p>
-          Porter's raw medical claims and order data were siloed across systems like AWS Athena and Ultra Commerce, with limited tracking of digital user events or supply chain visibility. The team needed centralized analytics to enable operational metrics and future data warehousing initiatives.
-        </p>
-
-        <h4><span class="icon">🔍</span> My Approach</h4>
-        <ul>
-          <li><strong>Claims Data Analysis:</strong> Preprocessed and performed gap analysis on medical claims using SQL and Python; queried data from S3 via Athena and validated HCPCS, ICD, and principal diagnosis codes.</li>
-          <li><strong>Event Tracking & Analytics:</strong> Supported tagging/testing of customer journey events using Freshpaint and developed Mixpanel dashboards to monitor product views, purchases, and conversions.</li>
-          <li><strong>Agile Collaboration:</strong> Authored user stories and coordinated tasks using Azure DevOps across engineering, operations, and analytics teams.</li>
-          <li><strong>Supplier Coordination:</strong> Participated in supplier meetings to define integration needs and facilitate order fulfillment communication.</li>
-          <li><strong>Supply Chain KPIs:</strong> Analyzed order data and contributed to defining metrics like perfect order rate, on-time delivery, and damage-free delivery.</li>
-          <li><strong>Integration & Scalability:</strong> Worked with engineers integrating vendor and order data via Ultra Commerce, supporting future data warehouse initiatives.</li>
-        </ul>
-
-        <h4><span class="icon">🎯</span> Impact</h4>
-        <ul>
-          <li>Enabled efficient claims data access through Athena and improved code-level validation coverage for DME analysis.</li>
-          <li>Increased visibility into customer behavior using Mixpanel dashboards for leadership review.</li>
-          <li>Improved supply chain communication and KPI tracking for order processing and vendor coordination.</li>
-          <li>Established foundational analytics workflows supporting future growth in data warehousing and reporting automation.</li>
-        </ul>
-      </div>
-
-      <div class="job-entry">
-        <h3>📌 Data Engineer</h3>
-        <p class="company">Gathi Analytics (an Apexon Company) – Data Analytics Enablement Program</p>
-        <p class="location">United States</p>
-        <p><strong>Domain:</strong> Data Analytics • Data Engineering • Business Analysis</p>
-        <p><strong>Tools:</strong> Data Warehousing • SQL • Python • Tableau • Snowflake • AWS</p>
-
-        <h4><span class="icon">📝</span> Overview</h4>
-        <p>
-          Completed an intensive, multi-phase training program designed to simulate real-world business data analytics and engineering challenges. The program emphasized technical proficiency, business storytelling, and cross-functional communication, formally evaluated by senior leadership and the CEO.
-        </p>
-
-        <h4><span class="icon">⚙️</span> Challenge & Context</h4>
-        <p>
-          The training aimed to provide practical experience across the analytics lifecycle—from data modeling and querying to visualization and cloud deployment—through hands-on assessments and performance reviews. Each phase tested real-world problem-solving, technical execution, and the ability to convey actionable insights to stakeholders.
-        </p>
-
-        <h4><span class="icon">🔍</span> My Approach</h4>
-        <ul>
-          <li>Designed logical data models for real-world datasets, applying data warehousing best practices.</li>
-          <li>Built and optimized SQL and Python-based analytics queries to extract meaningful insights and track KPIs.</li>
-          <li>Created an interactive Tableau dashboard with multiple visualizations highlighting business trends.</li>
-          <li>Worked on AWS and Snowflake deployment tasks, simulating enterprise-scale analytics workflows.</li>
-          <li>Delivered a business presentation and data storytelling pitch to senior leadership and an evaluation panel.</li>
-        </ul>
-
-        <h4><span class="icon">🎯</span> Impact</h4>
-        <ul>
-          <li>Gained practical experience across the data analytics lifecycle—from data extraction and modeling to reporting and presentation.</li>
-          <li>Enhanced technical proficiency in SQL, Python, Tableau, Snowflake, and AWS.</li>
-          <li>Successfully presented a business case and received formal endorsement from senior leaders and the CEO.</li>
-        </ul>
-      </div>
-
-      <div class="job-entry">
-        <h3>📌 Graduate Student</h3>
-        <p class="company">University of North Texas</p>
-        <p class="location">United States</p>
-        <ul>
-          <li><a href="projects.html" title="Project Portfolio">Click here to explore my Projects</a></li>
-        </ul>
-      </div>
-
-      <div class="job-entry">
-        <h3>📌 Business Process Lead</h3>
-        <p class="company">Tata Consultancy Services (Client: Pharmaceutical Company)</p>
-        <p><strong>Domain:</strong> Clinical Data Analytics • Pharmaceuticals and Clinical Research • Healthcare and Medical Research • Quality Control (QC) • Quality Assurance (QA)</p>
-        <p><strong>Tools:</strong> SAS • SDTM • OpenCDISC Validator • Clinical Data Management • Quality Assurance</p>
-
-        <h4><span class="icon">📝</span> Overview</h4>
-        <p>
-          Supported clinical trial data analytics for Phase 2 and Phase 3 studies, focusing on ensuring high-quality, regulatory-compliant datasets. The project involved transforming raw clinical data into standardized SDTM datasets for regulatory submission, enabling the client to meet strict CDISC guidelines and FDA requirements. The role required data validation, specification creation, and close collaboration with clinical teams to uphold data integrity.
-        </p>
-
-        <h4><span class="icon">⚙️</span> Challenge & Context</h4>
-        <p>
-          Clinical trial data often comes in complex, raw formats that must be meticulously standardized according to CDISC guidelines for regulatory review. Ensuring this transformation is accurate and compliant is critical, as any inconsistencies can delay regulatory approvals. The project demanded rigorous quality control, adherence to protocol, and seamless coordination among cross-functional teams.
-        </p>
-
-        <h4><span class="icon">🔍</span> My Approach</h4>
-        <ul>
-          <li>Efficiently processed and analyzed clinical datasets using SAS to generate key insights for safety and efficacy assessments.</li>
-          <li>Reviewed study protocols and meticulously annotated Case Report Forms (CRFs) to ensure alignment with clinical and regulatory standards.</li>
-          <li>Collaborated with project leads and managers to support and oversee client-developed SDTM transformation workflows, ensuring accuracy and compliance.</li>
-          <li>Led quality control initiatives using OpenCDISC Validator and internal QA tools to identify and correct data issues, minimizing risks for regulatory submission.</li>
-          <li>Maintained ongoing communication with clients, providing updates and promptly addressing analytic requirements to meet project milestones.</li>
-        </ul>
-
-        <h4><span class="icon">🎯</span> Impact</h4>
-        <ul>
-          <li>Contributed to the successful delivery of high-quality, compliant clinical datasets that supported regulatory submissions.</li>
-          <li>Improved data quality and minimized errors through proactive quality control and validation processes.</li>
-          <li>Strengthened client trust by ensuring timely delivery and transparent communication throughout the clinical data lifecycle.</li>
-        </ul>
-      </div>
-
-      <div class="job-entry">
-        <h3>📌 Statistical Programmer Trainee</h3>
-        <p class="company">Cytel Statistical Software & Services</p>
-        <p><strong>Domain:</strong> Clinical Data Analytics • Pharmaceuticals and Clinical Research • Healthcare and Medical Research • Quality Control (QC) • Quality Assurance (QA)</p>
-        <p><strong>Tools:</strong> SAS • SDTM • ADaM overview • Clinical Data Management</p>
-
-        <h4><span class="icon">📝</span> Overview</h4>
-        <p>
-          Supported clinical data analytics training focused on developing skills in SAS programming, clinical protocol interpretation, and standardized data management. Engaged in hands-on projects to prepare for real-world clinical trial data processing and reporting.
-        </p>
-
-        <h4><span class="icon">⚙️</span> Challenge & Context</h4>
-        <p>
-          The training program simulated clinical trial workflows requiring accurate interpretation of clinical study protocols, annotation of Case Report Forms (CRFs), and creation of SDTM datasets compliant with CDISC guidelines. The goal was to build competence in transforming raw clinical data into validated, standardized formats for downstream analysis and regulatory submission readiness.
-        </p>
-
-        <h4><span class="icon">🔍</span> My Approach</h4>
-        <ul>
-          <li>Developed SAS programming skills through practical assignments and project work involving clinical data.</li>
-          <li>Interpreted clinical protocols and carefully annotated CRFs to ensure precision in data capture.</li>
-          <li>Assisted in creating and validating SDTM datasets per CDISC Implementation Guide 3.2 standards.</li>
-          <li>Generated Tables, Listings, and Figures (TLFs) using SAS to support clinical decision-making processes.</li>
-          <li>Collaborated in clinical analytics projects delivering accurate and timely data outputs reflecting study progress.</li>
-        </ul>
-
-        <h4><span class="icon">🎯</span> Impact</h4>
-        <ul>
-          <li>Gained foundational expertise in clinical data standards and regulatory requirements.</li>
-          <li>Developed practical skills in SAS programming and clinical data management through hands-on projects.</li>
-          <li>Built strong understanding of data quality and compliance processes essential for clinical research.</li>
-          <li>Prepared to contribute effectively to clinical analytics teams with solid training in data validation and reporting.</li>
-        </ul>
-      </div>
-
-      <div class="job-entry">
-        <h3>📌 Analyst</h3>
-        <p class="company">Marico Ltd.</p>
-        <p><strong>Domain:</strong> Supply Chain Analytics • Field Sales Optimization • Order Management • Retail & Channel Insights</p>
-        <p><strong>Tools:</strong> MIDAS (Marico Industry Distributed Automated Software) • MS Excel • Retailer Survey</p>
-
-        <h4><span class="icon">📝</span> Overview</h4>
-        <p>
-          At Marico, I contributed to supply chain and retail analytics initiatives aimed at improving telecalling-based order management, distributor performance tracking, and outlet-level visibility. 
-          The focus was on evaluating Marico’s existing order fulfillment workflows and designing standardized procedures supported by actionable data insights.
-        </p>
-
-        <h4><span class="icon">⚙️</span> Challenge & Context</h4>
-        <p>
-          Marico’s traditional order management system heavily relied on field sales representatives (FSRs), resulting in inefficiencies, delayed tracking, and inconsistent communication. 
-          The company sought to introduce structured telecalling operations via a web portal and enhance distributor accountability, sales visibility, and service levels through data-backed decision-making.
-        </p>
-
-        <h4><span class="icon">🔍</span> My Approach</h4>
-        <ul>
-          <li><strong>Supply Chain Analytics:</strong> Analyzed sales and supply chain data using MIDAS to identify underperforming outlets, stock availability issues, and operational gaps.</li>
-          <li><strong>Distributor Support:</strong> Worked closely with 7 Marico distributors to deliver actionable insights and support the implementation of SOP-based telecalling and order processing.</li>
-          <li><strong>Retailer Research:</strong> Conducted structured telephonic surveys and interviews with retailers to assess satisfaction levels, understand order delays, and gather improvement suggestions.</li>
-          <li><strong>SOP Creation:</strong> Designed two key SOPs for standard telecalling and web portal usage to streamline distributor workflows.</li>
-          <li><strong>Cross-Functional Coordination:</strong> Partnered with area sales managers and channel teams to promote consistent reporting, improve data accuracy, and monitor FSR performance.</li>
-          <li><strong>Quantitative & Qualitative Research:</strong> Conducted distributor and retailer research to identify gaps and benchmark FSR vs. telecalling performance using SPSS.</li>
-          <li><strong>Reporting & Insights:</strong> Created final reports with visualizations, findings, and actionable recommendations to optimize order cycles and outlet engagement.</li>
-        </ul>
-
-        <h4><span class="icon">🎯</span> Impact</h4>
-        <ul>
-          <li>Contributed to a <strong>2% sales increase</strong> across supported distributors by enhancing order accuracy and telecalling coordination.</li>
-          <li>Improved outlet-level visibility and order tracking using MIDAS and survey insights.</li>
-          <li>Helped standardize distributor processes for web-portal-based telecalling and reporting.</li>
-          <li>Strengthened operational effectiveness across 7 distributors through improved SOPs and data-backed decision-making.</li>
-          <li>Acquired hands-on experience with outlet programs, retail operations, and cross-functional analytics in an FMCG environment.</li>
-        </ul>
-      </div>
-
+    <!-- Marico Experience -->
+    <section class="job-entry">
+      <h2>📌 Marico Limited</h2>
+      <h3>📝 Overview</h3>
+      <ul>
+        <li>Worked on supply chain analytics and optimization of production KPIs.</li>
+      </ul>
     </section>
   </main>
 
-  <footer>
-    <p>Connect with me:</p>
-    <a href="mailto:your-email@example.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-    <a href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+  <footer class="footer">
+    <p>Connect with me:
+      <a href="mailto:amrutag7@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+      <a href="https://www.linkedin.com/in/amrutagandhe/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+    </p>
   </footer>
 </body>
 </html>
