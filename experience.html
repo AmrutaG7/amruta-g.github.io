@@ -4,211 +4,99 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Professional Experience - Amruta Gandhe</title>
-
-  <!-- Font Awesome CDN for social icons -->
+  
+  <!-- Font Awesome for icons -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    integrity="sha512-pO6Z1Zxm3YfnK2yUEOcM8y9QHxsFb9aDQzqHwtkR6UHXo6yMnNN53PV5lfzp7Y/Np5g5EcfU66BdXDfuKMrw4g=="
+    integrity="sha512-pVHwXyoztnv6Vbj9v6OWsXmDcqqbn8V5RUi9wXyFa7z3p7R43N+WUyhA0B4+a49fTfYlzXl+o5BpjI5P+6f2Vw=="
     crossorigin="anonymous"
     referrerpolicy="no-referrer"
   />
-
+  
   <style>
-    /* Root pastel colors */
-    :root {
-      --bg-color: #faf9f9;           /* Background */
-      --header-color: #AFEEEE;       /* Light pastel teal for header/nav */
-      --card-bg: #E0FFFF;            /* Card background pastel cyan */
-      --primary-color: #333;         /* Main text color */
-      --accent-color: #AFEEEE;       /* Accent color for borders, highlights */
-      --light-gray: #f0f0f0;         /* Footer background */
-    }
-
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: var(--bg-color);
-      color: var(--primary-color);
-      margin: 0;
-      padding: 0;
       line-height: 1.6;
+      margin: 0;
+      padding: 20px;
+      background: #fefefe;
+      color: #333;
     }
-
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #222;
+    }
+    .experience-section {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .job-entry {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 20px 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    .job-entry h3 {
+      font-size: 1.3rem;
+      margin-bottom: 6px;
+      color: #1a1a1a; /* darker font for company name and role */
+    }
+    .job-entry p.company {
+      font-weight: 700;
+      color: #222; /* darker font for company */
+      margin: 0 0 8px 0;
+      font-size: 1.1rem;
+    }
+    .job-entry p.location {
+      font-style: italic;
+      color: #666;
+      margin: 0 0 12px 0;
+    }
+    .job-entry p {
+      margin: 8px 0;
+    }
+    .job-entry ul {
+      padding-left: 20px;
+      margin: 8px 0 16px 0;
+    }
+    .job-entry ul li {
+      margin-bottom: 6px;
+    }
+    h4 {
+      margin-top: 18px;
+      margin-bottom: 10px;
+      font-weight: 600;
+      color: #444;
+    }
+    .icon {
+      margin-right: 8px;
+      font-size: 1.1rem;
+    }
     a {
-      color: var(--primary-color);
+      color: #2a7ae2;
       text-decoration: none;
     }
     a:hover {
       text-decoration: underline;
     }
-
-    header {
-      background-color: var(--header-color);
-      padding: 1rem 2rem;
-      color: var(--primary-color);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    nav {
-      max-width: 900px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    nav a {
-      color: var(--primary-color);
-      font-weight: 600;
-      margin-left: 1.5rem;
-      font-size: 1rem;
-      text-decoration: none;
-    }
-
-    nav a:first-child {
-      margin-left: 0;
-      font-size: 1.2rem;
-      font-weight: 700;
-    }
-
-    nav a:hover {
-      color: #666;
-    }
-
-    main {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-    }
-
-    h1 {
-      font-size: 2.4rem;
-      color: var(--primary-color);
-      margin-bottom: 1rem;
-      text-align: center;
-      font-weight: 700;
-    }
-
-    .experience-section {
-      margin-top: 2rem;
-    }
-
-    .job-entry {
-      background-color: var(--card-bg);
-      border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      margin-bottom: 2rem;
-      padding: 1.8rem 2rem;
-      border-left: 6px solid var(--accent-color);
-      transition: box-shadow 0.3s ease;
-    }
-    .job-entry:hover {
-      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
-    }
-
-    .job-entry h3 {
-      margin-top: 0;
-      color: var(--primary-color);
-      font-weight: 700;
-      font-size: 1.5rem;
-    }
-
-    .job-entry p.company {
-      font-weight: 600;
-      color: var(--accent-color);
-      margin-bottom: 0.2rem;
-      font-size: 1.1rem;
-    }
-
-    .job-entry p.location {
-      font-style: italic;
-      color: #666;
-      margin-top: 0;
-      margin-bottom: 0.8rem;
-    }
-
-    .job-entry ul {
-      list-style-type: none;
-      padding-left: 0;
-      margin-top: 0;
-    }
-
-    .job-entry ul li {
-      margin-bottom: 0.6rem;
-      padding-left: 1.4rem;
-      position: relative;
-      color: var(--primary-color);
-    }
-    .job-entry ul li::before {
-      content: "•";
-      color: var(--accent-color);
-      position: absolute;
-      left: 0;
-      font-weight: 700;
-      font-size: 1.2rem;
-      line-height: 1;
-      top: 0.15rem;
-    }
-
-    h4 {
-      color: var(--primary-color);
-      margin-bottom: 0.5rem;
-      margin-top: 1.4rem;
-      font-weight: 700;
-      font-size: 1.2rem;
-      display: flex;
-      align-items: center;
-    }
-
-    .icon {
-      display: inline-block;
-      margin-right: 8px;
-      font-size: 1.3rem;
-      color: var(--accent-color);
-      vertical-align: middle;
-    }
-
     footer {
-      background-color: var(--light-gray);
       text-align: center;
-      padding: 1.5rem 1rem;
-      margin-top: 4rem;
+      margin: 40px 0 20px 0;
+      color: #888;
       font-size: 0.9rem;
-      color: #777;
-    }
-
-    footer .social-icons a {
-      color: var(--primary-color);
-      margin: 0 0.8rem;
-      font-size: 1.4rem;
-      transition: color 0.3s ease;
-    }
-
-    footer .social-icons a:hover {
-      color: var(--accent-color);
     }
   </style>
 </head>
 <body>
-  <header>
-    <nav>
-      <a href="index.html" aria-label="Home">Amruta Gandhe</a>
-      <div>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="projects.html">Projects</a>
-        <a href="experience.html" aria-current="page">Professional Experience</a>
-        <a href="contact.html">Contact</a>
-      </div>
-    </nav>
-  </header>
-
   <main>
     <h1>Professional Experience</h1>
 
     <section class="experience-section">
+
       <!-- USAA -->
       <div class="job-entry">
         <h3>📌 Data & Analytics Engineer</h3>
@@ -280,7 +168,7 @@
         </ul>
       </div>
 
-      <!-- Gathi Analytics -->
+      <!-- Gathi -->
       <div class="job-entry">
         <h3>📌 Data Engineer</h3>
         <p class="company">Gathi Analytics (an Apexon Company) – Data Analytics Enablement Program</p>
@@ -362,61 +250,77 @@
       <!-- Cytel -->
       <div class="job-entry">
         <h3>📌 Statistical Programmer Trainee</h3>
-        <p class="company">Cytel, Bangalore, India</p>
-        <p>Domain: Biostatistics • Clinical Trials • Statistical Programming • SAS</p>
+        <p class="company">Cytel Statistical Software & Services</p>
+        <!-- Location line removed as requested -->
+        <p>Domain: Clinical Data Analytics • Pharmaceuticals and Clinical Research • Healthcare and Medical Research • Quality Control (QC) • Quality Assurance (QA)</p>
+        <p>Tools: SAS • SDTM • ADaM overview • Clinical Data Management</p>
 
         <h4><span class="icon">📝</span> Overview</h4>
         <p>
-          Completed a rigorous SAS programming training program focused on statistical programming for clinical trials. Gained expertise in data manipulation, validation, and reporting within the clinical research domain.
+          Supported clinical data analytics training focused on developing skills in SAS programming, clinical protocol interpretation, and standardized data management. Engaged in hands-on projects to prepare for real-world clinical trial data processing and reporting.
         </p>
 
         <h4><span class="icon">⚙️</span> Challenge & Context</h4>
         <p>
-          The program provided foundational knowledge in statistical programming with real-world clinical trial datasets, emphasizing accuracy, regulatory compliance, and programming best practices.
+          The training program simulated clinical trial workflows requiring accurate interpretation of clinical study protocols, annotation of Case Report Forms (CRFs), and creation of SDTM datasets compliant with CDISC guidelines. The goal was to build competence in transforming raw clinical data into validated, standardized formats for downstream analysis and regulatory submission readiness.
         </p>
 
         <h4><span class="icon">🔍</span> My Approach</h4>
         <ul>
-          <li>Developed SAS programs for data cleaning, transformation, and analysis in clinical trial contexts.</li>
-          <li>Participated in hands-on projects involving clinical trial data and standard CDISC formats.</li>
-          <li>Collaborated with peers and mentors to refine programming techniques and ensure regulatory compliance.</li>
+          <li>Developed SAS programming skills through practical assignments and project work involving clinical data.</li>
+          <li>Interpreted clinical protocols and carefully annotated CRFs to ensure precision in data capture.</li>
+          <li>Assisted in creating and validating SDTM datasets per CDISC Implementation Guide 3.2 standards.</li>
+          <li>Generated Tables, Listings, and Figures (TLFs) using SAS to support clinical decision-making processes.</li>
+          <li>Collaborated in clinical analytics projects delivering accurate and timely data outputs reflecting study progress.</li>
         </ul>
 
         <h4><span class="icon">🎯</span> Impact</h4>
         <ul>
-          <li>Built a solid foundation in SAS programming aligned with industry standards.</li>
-          <li>Prepared to support statistical programming needs in clinical research projects.</li>
+          <li>Gained foundational expertise in clinical data standards and regulatory requirements.</li>
+          <li>Developed practical skills in SAS programming and clinical data management through hands-on projects.</li>
+          <li>Built strong understanding of data quality and compliance processes essential for clinical research.</li>
+          <li>Prepared to contribute effectively to clinical analytics teams with solid training in data validation and reporting.</li>
         </ul>
       </div>
 
       <!-- Marico -->
       <div class="job-entry">
-        <h3>📌 Business Analyst - Supply Chain</h3>
-        <p class="company">Marico Limited, Mumbai, India</p>
-        <p>Domain: Supply Chain Management • Business Analysis • Data Analytics</p>
-        <p>Tools: Excel • VBA • PowerPoint • Data Visualization</p>
+        <h3>📌 Analyst</h3>
+        <p class="company">Marico Ltd.</p>
+        <!-- Location line removed as requested -->
+        <p>Domain: Supply Chain Analytics • Field Sales Optimization • Order Management • Retail & Channel Insights</p>
+        <p>Tools: MIDAS (Marico Industry Distributed Automated Software) • MS Excel • Retailer Survey</p>
 
         <h4><span class="icon">📝</span> Overview</h4>
         <p>
-          Worked in the supply chain analytics team supporting inventory management, demand forecasting, and process improvements for Marico's FMCG business. Delivered actionable insights to optimize supply chain operations.
+          At Marico, I contributed to supply chain and retail analytics initiatives aimed at improving telecalling-based order management, distributor performance tracking, and outlet-level visibility. 
+          The focus was on evaluating Marico’s existing order fulfillment workflows and designing standardized procedures supported by actionable data insights.
         </p>
 
         <h4><span class="icon">⚙️</span> Challenge & Context</h4>
         <p>
-          Managing large volumes of supply chain data and coordinating across multiple business units to improve forecast accuracy and reduce inventory costs.
+          Marico’s traditional order management system heavily relied on field sales representatives (FSRs), resulting in inefficiencies, delayed tracking, and inconsistent communication. 
+          The company sought to introduce structured telecalling operations via a web portal and enhance distributor accountability, sales visibility, and service levels through data-backed decision-making.
         </p>
 
         <h4><span class="icon">🔍</span> My Approach</h4>
         <ul>
-          <li>Developed and maintained complex Excel models and VBA macros for demand forecasting and inventory optimization.</li>
-          <li>Collaborated with cross-functional teams to understand business needs and translate them into data-driven solutions.</li>
-          <li>Prepared detailed reports and presentations to communicate findings and recommendations to senior management.</li>
+          <li><strong>Supply Chain Analytics:</strong> Analyzed sales and supply chain data using MIDAS to identify underperforming outlets, stock availability issues, and operational gaps.</li>
+          <li><strong>Distributor Support:</strong> Worked closely with 7 Marico distributors to deliver actionable insights and support the implementation of SOP-based telecalling and order processing.</li>
+          <li><strong>Retailer Research:</strong> Conducted structured telephonic surveys and interviews with retailers to assess satisfaction levels, understand order delays, and gather improvement suggestions.</li>
+          <li><strong>SOP Creation:</strong> Designed two key SOPs for standard telecalling and web portal usage to streamline distributor workflows.</li>
+          <li><strong>Cross-Functional Coordination:</strong> Partnered with area sales managers and channel teams to promote consistent reporting, improve data accuracy, and monitor FSR performance.</li>
+          <li><strong>Quantitative & Qualitative Research:</strong> Conducted distributor and retailer research to identify gaps and benchmark FSR vs. telecalling performance using SPSS.</li>
+          <li><strong>Reporting & Insights:</strong> Created final reports with visualizations, findings, and actionable recommendations to optimize order cycles and outlet engagement.</li>
         </ul>
 
         <h4><span class="icon">🎯</span> Impact</h4>
         <ul>
-          <li>Improved forecast accuracy, contributing to lower inventory costs and better supply chain responsiveness.</li>
-          <li>Enhanced data reporting processes, reducing manual effort and increasing efficiency.</li>
+          <li>Contributed to a <strong>2% sales increase</strong> across supported distributors by enhancing order accuracy and telecalling coordination.</li>
+          <li>Improved outlet-level visibility and order tracking using MIDAS and survey insights.</li>
+          <li>Helped standardize distributor processes for web-portal-based telecalling and reporting.</li>
+          <li>Strengthened operational effectiveness across 7 distributors through improved SOPs and data-backed decision-making.</li>
+          <li>Acquired hands-on experience with outlet programs, retail operations, and cross-functional analytics in an FMCG environment.</li>
         </ul>
       </div>
 
@@ -424,12 +328,11 @@
   </main>
 
   <footer>
-    <div class="social-icons">
-      <a href="mailto:amruta.gandhe@example.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-      <a href="https://linkedin.com/in/amrutagandhe" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-      <a href="https://github.com/amrutag7" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
-    </div>
-    <p>&copy; 2025 Amruta Gandhe. All rights reserved.</p>
+    <p>© 2025 Amruta Gandhe. All rights reserved.</p>
+    <p>
+      <a href="mailto:your.email@example.com" title="Email Me"><i class="fas fa-envelope"></i> Email</a> |
+      <a href="https://www.linkedin.com/in/your-linkedin" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i> LinkedIn</a>
+    </p>
   </footer>
 </body>
 </html>
