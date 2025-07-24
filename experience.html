@@ -1,202 +1,111 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Professional Experience - Amruta Gandhe</title>
 
-  <!-- Font Awesome CDN for social icons -->
+  <!-- Font Awesome CDN -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    integrity="sha512-pO6Z1Zxm3YfnK2yUEOcM8y9QHxsFb9aDQzqHwtkR6UHXo6yMnNN53PV5lfzp7Y/Np5g5EcfU66BdXDfuKMrw4g=="
+    integrity="sha512-papPjHnBwjN6T0c1C3oA+NqRjNuOdNFlD2bkHZzTpZbcvMZfbzTJuBWDW3wXk2rZL2C+yV9Qo10ykpr8tFgh1g=="
     crossorigin="anonymous"
     referrerpolicy="no-referrer"
   />
 
   <style>
-    /* Root pastel colors */
     :root {
-      --primary-color:  #AFEEEE;
-      --secondary-color: #ffafcc; /* pastel pink */
-      --background-color: #faf9f9;
-      --text-color: #333;
-      --heading-color: #3a3a3a;
-      --accent-color: #6c63ff; /* pastel purple */
-      --light-gray: #f0f0f0;
-    }
-	
-	header a,
-     nav a {
-      color: var(--primary-color);
+      --bg-color: #faf9f9;
+      --header-color: #AFEEEE;
+      --card-bg: #E0FFFF;
+      --primary-color: #333;
+      --accent-color: #AFEEEE;
     }
 
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: var(--background-color);
-      color: var(--text-color);
+      background-color: var(--bg-color);
+      color: var(--primary-color);
       margin: 0;
       padding: 0;
-      line-height: 1.6;
-    }
-
-    a {
-      color: var(--primary-color);
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
     }
 
     header {
-      background-color: var(--primary-color);
+      background-color: var(--header-color);
       padding: 1rem 2rem;
-      color: white;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    nav {
-      max-width: 900px;
-      margin: 0 auto;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      flex-wrap: wrap;
     }
 
     nav a {
-      color: white;
-      font-weight: 600;
-      margin-left: 1.5rem;
-      font-size: 1rem;
+      margin-right: 20px;
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: 500;
     }
 
-    nav a:first-child {
-      margin-left: 0;
-      font-size: 1.2rem;
-      font-weight: 700;
+    nav a:hover {
+      color: var(--accent-color);
     }
 
-    main {
-      max-width: 900px;
+    .container {
+      max-width: 1000px;
       margin: 2rem auto;
       padding: 0 1rem;
     }
 
-    h1 {
-      font-size: 2.4rem;
-      color: var(--heading-color);
-      margin-bottom: 1rem;
-      text-align: center;
-      font-weight: 700;
-    }
-
-    .experience-section {
-      margin-top: 2rem;
-    }
-
     .job-entry {
-      background-color: white;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(108, 99, 255, 0.15);
+      background-color: var(--card-bg);
+      padding: 1.5rem;
       margin-bottom: 2rem;
-      padding: 1.8rem 2rem;
-      border-left: 6px solid var(--primary-color);
-      transition: box-shadow 0.3s ease;
-    }
-    .job-entry:hover {
-      box-shadow: 0 6px 12px rgba(108, 99, 255, 0.3);
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     }
 
-    .job-entry h3 {
-      margin-top: 0;
-      color: var(--primary-color);
-      font-weight: 700;
-      font-size: 1.5rem;
-    }
-
-    .job-entry p.company {
-      font-weight: 600;
-      color: var(--accent-color);
-      margin-bottom: 0.2rem;
-      font-size: 1.1rem;
-    }
-
-    .job-entry p.location {
-      font-style: italic;
-      color: #666;
-      margin-top: 0;
-      margin-bottom: 0.8rem;
-    }
-
-    .job-entry ul {
-      list-style-type: none;
-      padding-left: 0;
-      margin-top: 0;
-    }
-
-    .job-entry ul li {
-      margin-bottom: 0.6rem;
-      padding-left: 1.4rem;
-      position: relative;
-      color: var(--text-color);
-    }
-    .job-entry ul li::before {
-      content: "•";
-      color: var(--primary-color);
-      position: absolute;
-      left: 0;
-      font-weight: 700;
+    .job-title {
       font-size: 1.2rem;
-      line-height: 1;
-      top: 0.15rem;
-    }
-
-    h4 {
-      color: var(--primary-color);
+      font-weight: bold;
       margin-bottom: 0.5rem;
-      margin-top: 1.4rem;
-      font-weight: 700;
-      font-size: 1.2rem;
-      display: flex;
-      align-items: center;
+      color: var(--primary-color);
     }
 
-    .icon {
-      display: inline-block;
-      margin-right: 8px;
-      font-size: 1.3rem;
+    .section-heading {
+      font-size: 1rem;
+      font-weight: bold;
+      margin-top: 1rem;
       color: var(--primary-color);
-      vertical-align: middle;
+    }
+
+    ul {
+      padding-left: 1.2rem;
     }
 
     footer {
-      background-color: var(--light-gray);
+      background-color: var(--header-color);
+      padding: 1rem;
       text-align: center;
-      padding: 1.5rem 1rem;
-      margin-top: 4rem;
-      font-size: 0.9rem;
-      color: #777;
+      margin-top: 3rem;
     }
 
-    footer .social-icons a {
+    .footer-icons a {
+      margin: 0 10px;
       color: var(--primary-color);
-      margin: 0 0.8rem;
-      font-size: 1.4rem;
-      transition: color 0.3s ease;
+      font-size: 1.5rem;
     }
 
-    footer .social-icons a:hover {
-      color: var(--secondary-color);
+    .footer-icons a:hover {
+      color: var(--accent-color);
     }
   </style>
 </head>
+
 <body>
   <header>
     <nav>
-      <a href="index.html" aria-label="Home">Amruta Gandhe</a>
+      <a href="index.html" aria-label="Home"><strong>Amruta Gandhe</strong></a>
       <div>
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
@@ -207,7 +116,7 @@
     </nav>
   </header>
 
-  <main>
+ <main>
     <h1>Professional Experience</h1>
 
     <section class="experience-section">
@@ -442,14 +351,15 @@
         </ul>
       </div>
     </section>
-  </main>
+    </main>
 
-  <footer>
+    <footer>
     <div class="social-icons">
       <a href="mailto:amruta.gandhe@example.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
       <a href="https://www.linkedin.com/in/amrutagandhe" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
     </div>
     <p>© 2025 Amruta Gandhe</p>
-  </footer>
-</body>
-</html>
+    </footer>
+    </body>
+    </html>
+    
