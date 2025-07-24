@@ -1,114 +1,197 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Professional Experience - Amruta Gandhe</title>
 
-  <!-- Font Awesome CDN -->
+  <!-- Font Awesome CDN for social icons -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    integrity="sha512-papPjHnBwjN6T0c1C3oA+NqRjNuOdNFlD2bkHZzTpZbcvMZfbzTJuBWDW3wXk2rZL2C+yV9Qo10ykpr8tFgh1g=="
+    integrity="sha512-pO6Z1Zxm3YfnK2yUEOcM8y9QHxsFb9aDQzqHwtkR6UHXo6yMnNN53PV5lfzp7Y/Np5g5EcfU66BdXDfuKMrw4g=="
     crossorigin="anonymous"
     referrerpolicy="no-referrer"
   />
 
   <style>
+    /* Root pastel colors */
     :root {
-      --bg-color: #faf9f9;
-      --header-color: #AFEEEE;
-      --card-bg: #E0FFFF;
-      --primary-color: #333;
-      --accent-color: #AFEEEE;
+      --primary-color: #6c63ff; /* pastel purple */
+      --secondary-color: #ffafcc; /* pastel pink */
+      --background-color: #faf9f9;
+      --text-color: #333;
+      --heading-color: #3a3a3a;
+      --accent-color: #82c0cc; /* pastel teal */
+      --light-gray: #f0f0f0;
     }
 
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: var(--bg-color);
-      color: var(--primary-color);
+      background-color: var(--background-color);
+      color: var(--text-color);
       margin: 0;
       padding: 0;
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--primary-color);
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
     }
 
     header {
-      background-color: var(--header-color);
+      background-color: var(--primary-color);
       padding: 1rem 2rem;
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav {
+      max-width: 900px;
+      margin: 0 auto;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      flex-wrap: wrap;
     }
 
     nav a {
-      margin-right: 20px;
-      color: var(--primary-color);
-      text-decoration: none;
-      font-weight: 500;
+      color: white;
+      font-weight: 600;
+      margin-left: 1.5rem;
+      font-size: 1rem;
     }
 
-    nav a:hover {
-      color: var(--accent-color);
+    nav a:first-child {
+      margin-left: 0;
+      font-size: 1.2rem;
+      font-weight: 700;
     }
 
-    .container {
-      max-width: 1000px;
+    main {
+      max-width: 900px;
       margin: 2rem auto;
       padding: 0 1rem;
-      text-align: center;
     }
 
+    h1 {
+      font-size: 2.4rem;
+      color: var(--heading-color);
+      margin-bottom: 1rem;
+      text-align: center;
+      font-weight: 700;
+    }
+
+    .experience-section {
+      margin-top: 2rem;
+    }
 
     .job-entry {
-      background-color: var(--card-bg);
-      padding: 1.5rem;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(108, 99, 255, 0.15);
       margin-bottom: 2rem;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-      text-align: left;
+      padding: 1.8rem 2rem;
+      border-left: 6px solid var(--primary-color);
+      transition: box-shadow 0.3s ease;
+    }
+    .job-entry:hover {
+      box-shadow: 0 6px 12px rgba(108, 99, 255, 0.3);
     }
 
-    .job-title {
-      font-size: 1.2rem;
-      font-weight: bold;
-      margin-bottom: 0.5rem;
+    .job-entry h3 {
+      margin-top: 0;
       color: var(--primary-color);
-    }
-
-    .section-heading {
-      font-size: 1rem;
-      font-weight: bold;
-      margin-top: 1rem;
-      color: var(--primary-color);
-    }
-
-    ul {
-      padding-left: 1.2rem;
-    }
-
-    footer {
-      background-color: var(--header-color);
-      padding: 1rem;
-      text-align: center;
-      margin-top: 3rem;
-    }
-
-    .footer-icons a {
-      margin: 0 10px;
-      color: var(--primary-color);
+      font-weight: 700;
       font-size: 1.5rem;
     }
 
-    .footer-icons a:hover {
+    .job-entry p.company {
+      font-weight: 600;
       color: var(--accent-color);
+      margin-bottom: 0.2rem;
+      font-size: 1.1rem;
+    }
+
+    .job-entry p.location {
+      font-style: italic;
+      color: #666;
+      margin-top: 0;
+      margin-bottom: 0.8rem;
+    }
+
+    .job-entry ul {
+      list-style-type: none;
+      padding-left: 0;
+      margin-top: 0;
+    }
+
+    .job-entry ul li {
+      margin-bottom: 0.6rem;
+      padding-left: 1.4rem;
+      position: relative;
+      color: var(--text-color);
+    }
+    .job-entry ul li::before {
+      content: "•";
+      color: var(--primary-color);
+      position: absolute;
+      left: 0;
+      font-weight: 700;
+      font-size: 1.2rem;
+      line-height: 1;
+      top: 0.15rem;
+    }
+
+    h4 {
+      color: var(--primary-color);
+      margin-bottom: 0.5rem;
+      margin-top: 1.4rem;
+      font-weight: 700;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+    }
+
+    .icon {
+      display: inline-block;
+      margin-right: 8px;
+      font-size: 1.3rem;
+      color: var(--primary-color);
+      vertical-align: middle;
+    }
+
+    footer {
+      background-color: var(--light-gray);
+      text-align: center;
+      padding: 1.5rem 1rem;
+      margin-top: 4rem;
+      font-size: 0.9rem;
+      color: #777;
+    }
+
+    footer .social-icons a {
+      color: var(--primary-color);
+      margin: 0 0.8rem;
+      font-size: 1.4rem;
+      transition: color 0.3s ease;
+    }
+
+    footer .social-icons a:hover {
+      color: var(--secondary-color);
     }
   </style>
 </head>
-
 <body>
   <header>
     <nav>
-      <a href="index.html" aria-label="Home"><strong>Amruta Gandhe</strong></a>
+      <a href="index.html" aria-label="Home">Amruta Gandhe</a>
       <div>
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
@@ -119,7 +202,7 @@
     </nav>
   </header>
 
- <main>
+  <main>
     <h1>Professional Experience</h1>
 
     <section class="experience-section">
@@ -207,6 +290,12 @@
         <h4><span class="icon">📝</span> Overview</h4>
         <p>
          <section class="experience-section">
+  <div class="job-entry">
+    <h3>Data Analytics Trainee</h3>
+    <p class="company">Gathi Analytics (an Apexon Company) – Data Analytics Enablement Program</p>
+    <p class="location">United States</p>
+    <p>Domain: Data Analytics • Data Engineering • Business Analysis</p>
+    <p>Tools: Data Warehousing • SQL • Python • Tableau • Snowflake • AWS</p>
 
     <h4>Overview</h4>
     <p>
@@ -235,10 +324,33 @@
       <li>Enhanced technical proficiency in SQL, Python, Tableau, Snowflake, and AWS.</li>
       <li>Successfully presented a business case and received formal endorsement from senior leaders and the CEO.</li>
     </ul>
-    </div>
-     </section>
+  </div>
+</section>
 
-        
+        </p>
+
+        <h4><span class="icon">⚙️</span> Challenge & Context</h4>
+        <p>
+          The training aimed to provide practical experience across the analytics lifecycle—from data modeling and querying to visualization and cloud deployment—through hands-on assessments and performance reviews. Each phase tested real-world problem-solving, technical execution, and the ability to convey actionable insights to stakeholders.
+        </p>
+
+        <h4><span class="icon">🔍</span> My Approach</h4>
+        <ul>
+          <li>Designed logical data models for real-world datasets, applying data warehousing best practices.</li>
+          <li>Built and optimized SQL and Python-based analytics queries to extract meaningful insights and track KPIs.</li>
+          <li>Created an interactive Tableau dashboard with multiple visualizations highlighting business trends.</li>
+          <li>Worked on AWS and Snowflake deployment tasks, simulating enterprise-scale analytics workflows.</li>
+          <li>Delivered a business presentation and data storytelling pitch to senior leadership and an evaluation panel.</li>
+        </ul>
+
+        <h4><span class="icon">🎯</span> Impact</h4>
+        <ul>
+          <li>Gained practical experience across the data analytics lifecycle—from data extraction and modeling to reporting and presentation.</li>
+          <li>Enhanced technical proficiency in SQL, Python, Tableau, Snowflake, and AWS.</li>
+          <li>Successfully presented a business case and received formal endorsement from senior leaders and the CEO.</li>
+        </ul>
+      </div>
+
       <div class="job-entry">
         <h3>📌 Graduate Student</h3>
         <p class="company">University of North Texas</p>
@@ -318,6 +430,7 @@
       <div class="job-entry">
         <h3>📌 Analyst</h3>
         <p class="company">Marico Ltd.</p>
+        <p class="location">India</p>
         <p>Domain: Supply Chain Analytics • Field Sales Optimization • Order Management • Retail & Channel Insights</p>
         <p>Tools: MIDAS (Marico Industry Distributed Automated Software) • MS Excel • Retailer Survey</p>
 
@@ -354,15 +467,14 @@
         </ul>
       </div>
     </section>
-    </main>
+  </main>
 
-    <footer>
+  <footer>
     <div class="social-icons">
       <a href="mailto:amruta.gandhe@example.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
       <a href="https://www.linkedin.com/in/amrutagandhe" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
     </div>
     <p>© 2025 Amruta Gandhe</p>
-    </footer>
-    </body>
-    </html>
-    
+  </footer>
+</body>
+</html>
