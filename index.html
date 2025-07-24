@@ -13,17 +13,17 @@
   />
   <style>
     :root {
-      --bg-color: #eaf9f5;
-      --primary-color: #6c8c84;
-      --secondary-color: #f4a261;
-      --accent-color: #b5ead7;
-      --text-color: #333;
+      --bg-color: #faf9f9;
+      --header-color: #AFEEEE;
+      --card-bg: #E0FFFF;
+      --primary-color: #333;
+      --accent-color: #AFEEEE;
     }
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: var(--bg-color);
-      color: var(--text-color);
+      color: var(--primary-color);
       line-height: 1.6;
       padding-bottom: 100px;
     }
@@ -32,7 +32,7 @@
       top: 0;
       left: 0;
       right: 0;
-      background-color: var(--bg-color);
+      background-color: var(--header-color);
       border-bottom: 1px solid var(--accent-color);
       padding: 10px 20px;
       display: flex;
@@ -58,7 +58,7 @@
       transition: color 0.3s ease;
     }
     nav a:hover {
-      color: var(--secondary-color);
+      color: #666;
     }
     .hero {
       text-align: center;
@@ -71,10 +71,9 @@
     }
     .hero p {
       font-size: 1.2rem;
-      color: var(--text-color);
+      color: var(--primary-color);
       margin-bottom: 0;
     }
-    /* Project grid styles */
     .project-grid {
       display: flex;
       flex-wrap: wrap;
@@ -87,8 +86,8 @@
     .project-card {
       flex: 1 1 140px;
       max-width: 160px;
-      background-color: var(--accent-color);
-      color: var(--text-color);
+      background-color: var(--card-bg);
+      color: var(--primary-color);
       padding: 20px;
       border-radius: 12px;
       font-weight: 600;
@@ -108,15 +107,8 @@
       font-size: 3rem;
       color: inherit;
     }
-    /* Pastel background colors for each category */
-    .tableau { background-color: #d0f4de; color: #2f8f7c; }
-    .database { background-color: #cce2cb; color: #3d6b35; }
-    .warehouse { background-color: #ffcbf2; color: #a24c80; }
-    .python { background-color: #ffebd6; color: #de7a2f; }
-    .data-mining { background-color: #fde2e4; color: #d46a6a; }
-    
     footer {
-      background: var(--bg-color);
+      background: var(--header-color);
       border-top: 1px solid var(--accent-color);
       padding: 20px;
       text-align: center;
@@ -143,7 +135,7 @@
       gap: 6px;
     }
     footer a:hover {
-      color: var(--secondary-color);
+      color: #666;
     }
     footer svg {
       width: 20px;
@@ -174,44 +166,42 @@
     <p>Welcome to my Business Analytics portfolio.</p>
   </div>
 
-  <!-- Professional Experience Section -->
   <section id="experience">
     <h2 style="text-align:center; color: var(--primary-color); font-size: 2rem;">Professional Experience</h2>
     <p style="text-align:center; font-size: 1rem; margin-bottom: 40px;">
       Versatile Business Data Analyst experience in data analytics, business intelligence, and data interpretation across banking, healthcare, and supply chain sectors. Adept at delivering actionable insights through data storytelling, SQL/Python scripting, and visualization tools. Experienced in cloud platforms including AWS and Snowflake, and highly skilled in collaborating across cross-functional teams to build scalable analytics solutions. SAS Certified Base Programmer with strong analytical, communication, and problem-solving abilities.
     </p>
     <div class="project-grid">
-      <a href="experience.html" class="project-card python">
+      <a href="experience.html" class="project-card">
         <i class="fas fa-briefcase"></i>
         <h3>View Full Experience</h3>
       </a>
     </div>
   </section>
 
-  <!-- Projects Section -->
   <section id="projects">
     <h2 style="text-align:center; color: var(--primary-color); font-size: 2rem;">Explore My Projects</h2>
     <p style="text-align:center; margin-bottom: 40px; font-size: 1rem;">
       Click a category below to explore related projects and view project reports.
     </p>
     <div class="project-grid">
-      <a href="projects.html" class="project-card tableau">
+      <a href="projects.html" class="project-card">
         <i class="fas fa-chart-bar"></i>
         <h3>Tableau</h3>
       </a>
-      <a href="projects.html" class="project-card database">
+      <a href="projects.html" class="project-card">
         <i class="fas fa-server"></i>
-        <h3>Database Management </h3>
+        <h3>Database Management</h3>
       </a>
-      <a href="projects.html" class="project-card warehouse">
+      <a href="projects.html" class="project-card">
         <i class="fas fa-warehouse"></i>
-        <h3>Data Warehouse </h3>
+        <h3>Data Warehouse</h3>
       </a>
-       <a href="projects.html" class="project-card python">
+      <a href="projects.html" class="project-card">
         <i class="fab fa-python"></i>
-        <h3>Python </h3>
-      </a>      
-      <a href="projects.html" class="project-card data-mining">
+        <h3>Python</h3>
+      </a>
+      <a href="projects.html" class="project-card">
         <i class="fas fa-database"></i>
         <h3>Data Mining</h3>
       </a>
