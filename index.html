@@ -29,8 +29,15 @@
       border-bottom: 1px solid var(--accent-color);
       padding: 10px 20px;
       display: flex;
-      justify-content: center;
+      justify-content: space-between; /* changed from center */
+      align-items: center; /* vertically center name and nav */
       z-index: 1000;
+    }
+    .nav-name {
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: #2F4F4F;
+      user-select: none;
     }
     nav ul {
       margin: 0;
@@ -38,6 +45,9 @@
       list-style: none;
       display: flex;
       gap: 30px;
+      justify-content: center;
+      flex-grow: 1;
+      max-width: 700px; /* optional: keeps nav links nicely centered */
     }
     nav li {
       display: flex;
@@ -181,6 +191,7 @@
 </head>
 <body>
   <nav>
+    <div class="nav-name">Amruta Gandhe</div>
     <ul>
       <li>
         <a href="index.html" aria-label="Home">
@@ -233,7 +244,7 @@
   </nav>
 
   <div class="hero">
-    <h1>Amruta Gandhe</h1>
+    <!-- Removed the h1 Amruta Gandhe as requested -->
     <p>Welcome to my Business Analytics portfolio.</p>
   </div>
 
