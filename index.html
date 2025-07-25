@@ -28,26 +28,37 @@
       background-color: var(--header-color);
       border-bottom: 1px solid var(--accent-color);
       padding: 10px 20px;
+
+      /* NEW styles for layout */
       display: flex;
-      justify-content: space-between; /* changed from center */
-      align-items: center; /* vertically center name and nav */
+      justify-content: space-between;
+      align-items: center;
+
       z-index: 1000;
     }
     .nav-name {
       font-weight: 700;
       font-size: 1.1rem;
       color: #2F4F4F;
+      width: 150px; /* fixed width */
       user-select: none;
     }
+    .nav-links-wrapper {
+      flex-grow: 1;
+      max-width: 700px; /* max width for nav links */
+      display: flex;
+      justify-content: center;
+    }
+    .nav-spacer {
+      width: 150px; /* same width as .nav-name */
+    }
+
     nav ul {
       margin: 0;
       padding: 0;
       list-style: none;
       display: flex;
       gap: 30px;
-      justify-content: center;
-      flex-grow: 1;
-      max-width: 700px; /* optional: keeps nav links nicely centered */
     }
     nav li {
       display: flex;
@@ -192,59 +203,62 @@
 <body>
   <nav>
     <div class="nav-name">Amruta Gandhe</div>
-    <ul>
-      <li>
-        <a href="index.html" aria-label="Home">
-          <svg viewBox="0 0 24 24" >
-            <path d="M3 12L12 3l9 9" />
-            <path d="M9 21V12h6v9" />
-          </svg>
-          Home
-        </a>
-      </li>
-      <li>
-        <a href="about.html" aria-label="About">
-          <svg viewBox="0 0 24 24" >
-            <circle cx="12" cy="7" r="4" />
-            <path d="M5.5 21c1.5-4 11.5-4 13 0" />
-          </svg>
-          About
-        </a>
-      </li>
-      <li>
-        <a href="experience.html" aria-label="Professional Experience">
-          <svg viewBox="0 0 24 24" >
-            <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
-            <path d="M16 3H8v4h8V3z" />
-          </svg>
-          Professional Experience
-        </a>
-      </li>
-      <li>
-        <a href="projects.html" aria-label="Project Portfolio">
-          <svg viewBox="0 0 24 24" >
-            <rect x="3" y="3" width="7" height="7" rx="1.5" />
-            <rect x="14" y="3" width="7" height="7" rx="1.5" />
-            <rect x="14" y="14" width="7" height="7" rx="1.5" />
-            <rect x="3" y="14" width="7" height="7" rx="1.5" />
-          </svg>
-          Project Portfolio
-        </a>
-      </li>
-      <li>
-        <a href="contact.html" aria-label="Contact">
-          <svg viewBox="0 0 24 24" >
-            <path d="M21 10.5V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v4.5" />
-            <path d="M3 10.5V18a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7.5l-9 5-9-5z" />
-          </svg>
-          Contact
-        </a>
-      </li>
-    </ul>
+    <div class="nav-links-wrapper">
+      <ul>
+        <li>
+          <a href="index.html" aria-label="Home">
+            <svg viewBox="0 0 24 24" >
+              <path d="M3 12L12 3l9 9" />
+              <path d="M9 21V12h6v9" />
+            </svg>
+            Home
+          </a>
+        </li>
+        <li>
+          <a href="about.html" aria-label="About">
+            <svg viewBox="0 0 24 24" >
+              <circle cx="12" cy="7" r="4" />
+              <path d="M5.5 21c1.5-4 11.5-4 13 0" />
+            </svg>
+            About
+          </a>
+        </li>
+        <li>
+          <a href="experience.html" aria-label="Professional Experience">
+            <svg viewBox="0 0 24 24" >
+              <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+              <path d="M16 3H8v4h8V3z" />
+            </svg>
+            Professional Experience
+          </a>
+        </li>
+        <li>
+          <a href="projects.html" aria-label="Project Portfolio">
+            <svg viewBox="0 0 24 24" >
+              <rect x="3" y="3" width="7" height="7" rx="1.5" />
+              <rect x="14" y="3" width="7" height="7" rx="1.5" />
+              <rect x="14" y="14" width="7" height="7" rx="1.5" />
+              <rect x="3" y="14" width="7" height="7" rx="1.5" />
+            </svg>
+            Project Portfolio
+          </a>
+        </li>
+        <li>
+          <a href="contact.html" aria-label="Contact">
+            <svg viewBox="0 0 24 24" >
+              <path d="M21 10.5V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v4.5" />
+              <path d="M3 10.5V18a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7.5l-9 5-9-5z" />
+            </svg>
+            Contact
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="nav-spacer"></div>
   </nav>
 
   <div class="hero">
-    <!-- Removed the h1 Amruta Gandhe as requested -->
+    <!-- REMOVED the h1 "Amruta Gandhe" here as requested -->
     <p>Welcome to my Business Analytics portfolio.</p>
   </div>
 
