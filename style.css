@@ -110,7 +110,7 @@ ul {
 
 .connect ul {
   display: flex;
-  justify-content: center;
+  justify-content: left;
   gap: 40px;
   margin: 0 auto 1.5rem;
 }
