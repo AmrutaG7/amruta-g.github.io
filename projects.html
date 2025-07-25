@@ -3,135 +3,314 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Professional Experience - Amruta Gandhe</title>
+  <title>Projects - Amruta Gandhe</title>
+
+  <!-- Font Awesome CDN -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-papb3QKJ9X2XQ7tGzq3lV8kZQ9fU6Qtmrq/N2P5yfL6Lsp6u+7O9aSOTc7R0V4xj5cg6+o1VnjYlfKN3kf0Kzw=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
 
   <style>
     :root {
-      --page-bg: #faf9f9;
-      --nav-footer-bg: #AFEEEE;
-      --primary-color: #2F4F4F;
-      --accent-color: #4682B4;
-      --text-color: #2F4F4F;
+      --bg-color: ##faf9f9;
+      --primary-color: #2c3e50;
+      --secondary-color: #f4a261;
+      --accent-color: #AFEEEE;
+      --text-color: #333;
+
+      /* Pastel category colors from your home page */
+      --python-bg: #F5F5DC;
+      --python-color: #de7a2f;
+
+      --tableau-bg: #FAD6D6;;
+      --tableau-color: #2f8f7c;
+
+      --datamining-bg: #F0F8FF;
+      --datamining-color: #d46a6a;
+
+      --dbmanagement-bg:#fcf6d7;
+      --dbmanagement-color: #3d6b35;
+
+      --datawarehouse-bg: #efe3ff;
+      --datawarehouse-color: #a24c80;
     }
 
+    /* General page styles */
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: var(--page-bg);
-      color: var(--text-color);
       margin: 0;
-      padding-bottom: 80px; /* space for fixed footer */
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+      padding-bottom: 100px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
 
+    a {
+      color: var(--primary-color);
+      text-decoration: none;
+    }
+    a:hover {
+      color: var(--secondary-color);
+    }
+
+    /* Navigation */
     nav {
-      background-color: var(--nav-footer-bg);
-      border-bottom: 1px solid var(--accent-color);
-      padding: 10px 20px;
-      display: flex;
-      justify-content: center;
       position: fixed;
       top: 0;
       left: 0;
       right: 0;
+      background-color: #AFEEEE;
+      border-bottom: 1px solid var(--accent-color);
+      padding: 10px 20px;
+      display: flex;
+      justify-content: center;
       z-index: 1000;
     }
-
     nav ul {
+      margin: 0;
+      padding: 0;
       list-style: none;
       display: flex;
       gap: 30px;
-      margin: 0;
-      padding: 0;
     }
-
+    nav li {
+      display: flex;
+      align-items: center;
+    }
     nav a {
       color: var(--primary-color);
       text-decoration: none;
-      font-weight: bold;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: color 0.3s ease;
       display: flex;
       align-items: center;
       gap: 6px;
-      transition: color 0.3s ease;
+    }
+    nav a:hover,
+    nav a[aria-current="page"] {
+      color: var(--secondary-color);
     }
 
-    nav a:hover {
-      color: var(--accent-color);
-    }
-
-    nav svg {
-      width: 18px;
-      height: 18px;
-      stroke: currentColor;
-      fill: none;
-      stroke-width: 2;
-    }
-
-    main {
+    /* Content container */
+    main.content {
       max-width: 900px;
-      margin: 80px auto 40px; /* below fixed nav */
-      padding: 20px;
+      margin: 100px auto 60px; /* account for fixed nav */
+      padding: 0 20px;
+      flex-grow: 1;
     }
 
     h1 {
-      color: #82c0cc;
       text-align: center;
-      margin-bottom: 30px;
+      color: #82c0cc;
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
     }
 
-    section.job-entry {
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      padding: 25px;
-      margin-bottom: 25px;
+    /* Expand/Collapse Buttons */
+    .controls {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
     }
-
-    section.job-entry h2 {
-      color: var(--accent-color);
-      margin-top: 0;
-      margin-bottom: 10px;
-      font-weight: 700;
-    }
-
-    section.job-entry h3 {
-      margin: 0 0 10px;
+    .btn {
+      background-color: var(--primary-color);
+      border: none;
+      color: var(--bg-color);
+      padding: 0.6rem 1.2rem;
+      border-radius: 25px;
       font-weight: 600;
-      color: var(--primary-color);
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.95rem;
+    }
+    .btn:hover {
+      background-color: var(--secondary-color);
     }
 
-    section.job-entry .job-duration {
-      font-style: italic;
-      color: #555;
-      margin-bottom: 15px;
+    /* Project category container */
+    .project-category {
+      margin-bottom: 2rem;
+      border-radius: 12px;
+      background-color: var(--bg-color);
+      border: 1px solid var(--accent-color);
+      box-shadow: 0 2px 6px rgb(0 0 0 / 0.1);
+      overflow: hidden;
     }
 
-    section.job-entry ul {
-      padding-left: 20px;
-      margin-top: 0;
-      margin-bottom: 0;
-      list-style-type: disc;
-      color: var(--primary-color);
+    /* Header with toggle icon */
+    .project-header {
+      cursor: pointer;
+      padding: 1rem 1.5rem;
+      font-size: 1.3rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      user-select: none;
+      border-radius: 12px;
+      transition: background-color 0.3s ease;
+      background-color: var(--primary-color);
+      color: var(--bg-color);
     }
 
-    section.job-entry ul li {
-      margin-bottom: 8px;
+    /* Category icon in header */
+    .project-header i.category-icon {
+      font-size: 1.6rem;
+      margin-right: 0.8rem;
     }
 
-    footer {
-      background-color: var(--nav-footer-bg);
+    /* Individual colors for icons matching home page text colors */
+    .project-header.python {
+      background-color: var(--python-bg);
+      color: var(--python-color);
+    }
+    .project-header.tableau {
+      background-color: var(--tableau-bg);
+      color: var(--tableau-color);
+    }
+    .project-header.datamining {
+      background-color: var(--datamining-bg);
+      color: var(--datamining-color);
+    }
+    .project-header.dbmanagement {
+      background-color: var(--dbmanagement-bg);
+      color: var(--dbmanagement-color);
+    }
+    .project-header.datawarehouse {
+      background-color: var(--datawarehouse-bg);
+      color: var(--datawarehouse-color);
+    }
+
+    /* Arrow toggle icon */
+    .toggle-icon {
+      transition: transform 0.3s ease;
+      font-size: 1.2rem;
+    }
+    .project-header.active .toggle-icon {
+      transform: rotate(90deg);
+    }
+
+    /* Project content hidden/shown */
+    .project-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+      padding: 0 1.5rem;
+      background-color: var(--bg-color);
       border-top: 1px solid var(--accent-color);
-      padding: 15px 20px;
+    }
+    .project-content.open {
+      max-height: 3000px; /* big enough */
+      padding: 1rem 1.5rem 1.5rem;
+    }
+
+    /* Project item */
+    .project-item {
+      border-bottom: 1px solid var(--accent-color);
+      padding: 1rem 0;
+    }
+    .project-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    /* Project title and timeframe badge */
+    .project-title {
+      font-weight: 700;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .timeframe {
+      background-color: var(--secondary-color);
+      color: var(--bg-color);
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 2px 10px;
+      border-radius: 20px;
+      margin-left: auto;
+      white-space: nowrap;
+    }
+
+    /* Project description */
+    .project-desc {
+      margin: 0.3rem 0 0 0;
+    }
+
+    /* iframe wrapper */
+    .iframe-wrapper {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%; /* 16:9 aspect */
+      margin-top: 8px;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 6px rgb(0 0 0 / 0.15);
+    }
+    .iframe-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* Category-specific colors for icons and text in project items */
+    .project-item.python .project-title,
+    .project-item.python i.category-icon {
+      color: var(--python-color);
+    }
+    .project-item.tableau .project-title,
+    .project-item.tableau i.category-icon {
+      color: var(--tableau-color);
+    }
+    .project-item.datamining .project-title,
+    .project-item.datamining i.category-icon {
+      color: var(--datamining-color);
+    }
+    .project-item.dbmanagement .project-title,
+    .project-item.dbmanagement i.category-icon {
+      color: var(--dbmanagement-color);
+    }
+    .project-item.datawarehouse .project-title,
+    .project-item.datawarehouse i.category-icon {
+      color: var(--datawarehouse-color);
+    }
+
+    /* Footer */
+    footer {
+      background: #AFEEEE;
+      border-top: 1px solid var(--accent-color);
+      padding: 10px 0;
       text-align: center;
       font-size: 0.9rem;
       color: var(--primary-color);
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
+      position: static;
       display: flex;
       justify-content: center;
+    }
+
+    footer .social-links {
+      display: flex;
+      gap: 20px;
       align-items: center;
-      gap: 15px;
-      flex-wrap: wrap;
     }
 
     footer a {
@@ -140,45 +319,45 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      transition: color 0.3s ease;
+      font-weight: 600;
     }
 
     footer a:hover {
-      color: var(--accent-color);
+      color: var(--secondary-color);
     }
 
-    footer svg {
-      width: 20px;
-      height: 20px;
-      stroke: currentColor;
-      fill: none;
-      stroke-width: 2;
+    /* Responsive */
+    @media (max-width: 600px) {
+      main.content {
+        margin: 80px 10px 60px;
+      }
+      .project-header {
+        font-size: 1.1rem;
+        padding: 0.75rem 1rem;
+      }
+      .btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+      }
+      footer {
+        flex-direction: column;
+        gap: 10px;
+      }
     }
   </style>
- </head>
- <body>
+</head>
+<body>
 
+  <!-- Navigation (exactly like index.html) -->
   <nav>
     <ul>
-      <li><a href="index.html">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2v-4H9v4a2 2 0 0 1-2 2H3z"/></svg>
-        Home</a></li>
-      <li><a href="about.html">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="8"/></svg>
-        About</a></li>
-      <li><a href="experience.html">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 7h18"/><path d="M6 7V4h12v3"/><rect x="3" y="7" width="18" height="13" rx="2"/></svg>
-        Professional Experience</a></li>
-      <li><a href="projects.html">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 8h10M7 12h4m-4 4h10"/><path d="M4 6h16v12H4z"/></svg>
-        Project Portfolio</a></li>
-      <li><a href="contact.html">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        Contact</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="experience.html">Professional Experience</a></li>
+      <li><a href="projects.html" aria-current="page"> Project Portfolio</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
-
- 
 
   <main class="content" role="main">
     <h1>Projects</h1>	
