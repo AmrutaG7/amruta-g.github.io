@@ -123,14 +123,15 @@
     }
 
     footer {
-      background-color: var(--header-color);
-      padding: 1rem;
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-      margin-top: 3rem;
-      align-items: center; /* vertically centers text and icons */
-    }
+     background-color: var(--header-color);
+     padding: 1rem;
+     display: flex;
+     justify-content: center;
+     gap: 0.75rem;  /* smaller gap since icon and text are together */
+     margin-top: 3rem;
+     align-items: center; /* vertically center icon and text */
+}
+
 
     .footer-icon {
       width: 24px;
@@ -223,13 +224,13 @@
   </main>
 
   <footer>
-    <div>© Amruta Gandhe</div>
-    <a href="https://www.linkedin.com/in/yourprofile/" target="_blank" aria-label="LinkedIn">
-      <svg class="footer-icon" viewBox="0 0 24 24">
-        <rect x="4" y="4" width="16" height="16" rx="2" stroke-width="1.5"/>
-        <path d="M8 11v5M8 8v.01M12 11v5m0-3a2 2 0 0 1 4 0v3" stroke-width="1.5"/>
-      </svg>
-    </a>
-  </footer>
+  <a href="https://www.linkedin.com/in/yourprofile/" target="_blank" aria-label="LinkedIn">
+    <svg class="footer-icon" viewBox="0 0 24 24">
+      <rect x="4" y="4" width="16" height="16" rx="2" stroke-width="1.5"/>
+      <path d="M8 11v5M8 8v.01M12 11v5m0-3a2 2 0 0 1 4 0v3" stroke-width="1.5"/>
+    </svg>
+  </a>
+  <div>© Amruta Gandhe</div>
+</footer>
 </body>
 </html>
