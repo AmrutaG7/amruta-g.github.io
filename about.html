@@ -10,19 +10,18 @@
 
   <style>
     :root {
-      --bg-color: #faf9f9;
-      --primary-color: #4682B4;
-      --secondary-color: #AFEEEE;
-      --accent-color: #AFEEEE;
-      --header-color: #AFEEEE; /* Header text color matching index.html */
-      --text-color: #333;
+      --page-bg: #faf9f9;
+      --primary-color: #2F4F4F;
+      --accent-color: #4682B4;
+      --nav-footer-bg: #AFEEEE;
+      --section-bg: #ffffff;
     }
 
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-color);
+      background-color: var(--page-bg);
+      color: var(--primary-color);
       line-height: 1.6;
       padding-bottom: 100px;
     }
@@ -32,7 +31,7 @@
       top: 0;
       left: 0;
       right: 0;
-      background-color: #AFEEEE;
+      background-color: var(--nav-footer-bg);
       border-bottom: 1px solid var(--accent-color);
       padding: 10px 20px;
       display: flex;
@@ -59,7 +58,7 @@
     }
 
     nav a:hover {
-      color: var(--secondary-color);
+      color: var(--accent-color);
     }
 
     nav svg {
@@ -97,17 +96,18 @@
     }
 
     h1.hero {
-      color: var(--header-color);
+      color: var(--primary-color);
+      text-align: center;
     }
 
     h1 i.fa-lightbulb {
-      color: var(--secondary-color);
+      color: var(--accent-color);
       font-size: 22px;
       margin-right: 10px;
     }
 
     section {
-      background-color: #fff;
+      background-color: var(--section-bg);
       border-radius: 16px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.04);
       padding: 24px;
@@ -126,7 +126,6 @@
       gap: 40px;
       padding-left: 0;
       margin: 0 auto 1.5rem;
-      list-style: none;
     }
 
     .connect ul li {
@@ -136,16 +135,16 @@
     }
 
     a {
-      color: var(--primary-color);
+      color: var(--accent-color);
       text-decoration: none;
     }
 
     a:hover {
-      color: var(--secondary-color);
+      color: var(--primary-color);
     }
 
     footer {
-      background: #AFEEEE;
+      background-color: var(--nav-footer-bg);
       border-top: 1px solid var(--accent-color);
       padding: 20px;
       text-align: center;
@@ -171,7 +170,7 @@
     }
 
     footer a:hover {
-      color: var(--secondary-color);
+      color: var(--accent-color);
     }
 
     footer svg {
@@ -198,7 +197,7 @@
 <main>
   <img src="assets/profile.jpg" alt="Amruta Gandhe" class="profile-pic" />
   <h1 class="hero"><i class="fas fa-lightbulb"></i> Amruta Gandhe</h1>
-  <p><strong>Data Analytics &amp; BI | Data Strategy &amp; Omnichannel Insights | SQL • Tableau | Cloud: Snowflake</strong></p>
+  <p style="text-align: center;"><strong>Data Analytics &amp; BI | Data Strategy &amp; Omnichannel Insights | SQL • Tableau | Cloud: Snowflake</strong></p>
 
   <section class="bio">
     <h2>👩‍💻 About Me</h2>
@@ -263,9 +262,5 @@
   <div>© Amruta Gandhe</div>
 </footer>
 
-<script src="https://unpkg.com/feather-icons"></script>
-<script>
-  feather.replace();
-</script>
 </body>
 </html>
