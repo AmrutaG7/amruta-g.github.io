@@ -86,7 +86,7 @@
     .project-card {
       flex: 1 1 140px;
       max-width: 160px;
-      background-color: var(--card-bg);
+	  background-color: var(--card-bg);
       color: var(--primary-color);
       padding: 20px;
       border-radius: 12px;
@@ -99,14 +99,38 @@
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
       transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
+
     .project-card:hover {
       transform: translateY(-5px);
       box-shadow: 0 8px 16px rgba(0,0,0,0.15);
     }
+
     .project-card i {
       font-size: 3rem;
       color: inherit;
     }
+
+/* 🌈 Add category-specific colors here */
+    .project-card.tableau {
+      background-color: #FAD6D6;
+    }
+
+    .project-card.database {
+      background-color: #fcf6d7;
+    }
+
+    .project-card.warehouse {
+      background-color: #efe3ff;
+    }
+
+    .project-card.python {
+      background-color: #F5F5DC;
+    }
+
+    .project-card.mining {
+      background-color: #F0F8FF;
+    }
+
     footer {
       background: var(--header-color);
       border-top: 1px solid var(--accent-color);
@@ -185,23 +209,23 @@
       Click a category below to explore related projects and view project reports.
     </p>
     <div class="project-grid">
-      <a href="projects.html" class="project-card">
+      <a href="projects.html" class="project-card tableau">
         <i class="fas fa-chart-bar"></i>
         <h3>Tableau</h3>
       </a>
-      <a href="projects.html" class="project-card">
+      <a href="projects.html" class="project-card database">
         <i class="fas fa-server"></i>
         <h3>Database Management</h3>
       </a>
-      <a href="projects.html" class="project-card">
+      <a href="projects.html" class="project-card warehouse">
         <i class="fas fa-warehouse"></i>
         <h3>Data Warehouse</h3>
       </a>
-      <a href="projects.html" class="project-card">
+      <a href="projects.html" class="project-card python">
         <i class="fab fa-python"></i>
         <h3>Python</h3>
       </a>
-      <a href="projects.html" class="project-card">
+      <a href="projects.html" class="project-card mining">
         <i class="fas fa-database"></i>
         <h3>Data Mining</h3>
       </a>
