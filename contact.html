@@ -3,129 +3,127 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contact - Amruta Gandhe</title>
+  <title>Contact – Amruta Gandhe</title>
 
-  <!-- Styles -->
   <style>
     :root {
-      --bg-color: #faf9f9;
+      --page-bg: #faf9f9;
+      --nav-footer-bg: #AFEEEE;
+      --accent-color: #4682B4;
       --primary-color: #2F4F4F;
-      --secondary-color: #AFEEEE;
-      --text-color: #333;
-      --footer-color: #AFEEEE;
-      --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      --text-color: #2F4F4F;
     }
-
     body {
       margin: 0;
-      font-family: var(--font-family);
-      background-color: var(--bg-color);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--page-bg);
       color: var(--text-color);
+      padding-bottom: 80px;
     }
-
+    /* ——— Match about.html nav styling ——— */
     nav {
-      background-color: var(--secondary-color);
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background-color: var(--nav-footer-bg);
+      border-bottom: 1px solid var(--accent-color);
       padding: 10px 0;
       text-align: center;
       box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      z-index: 1000;
     }
-
     nav ul {
-      list-style-type: none;
-      padding: 0;
       margin: 0;
+      padding: 0;
+      list-style: none;
       display: flex;
       justify-content: center;
-      flex-wrap: wrap;
       gap: 30px;
+      flex-wrap: wrap;
     }
-
-    nav li {
-      display: inline;
-    }
-
+    nav li { display: inline; }
     nav a {
-      text-decoration: none;
-      color: var(--text-color);
-      font-weight: bold;
       display: flex;
       flex-direction: column;
       align-items: center;
+      text-decoration: none;
+      color: var(--primary-color);
+      font-weight: bold;
       font-size: 0.95rem;
       transition: color 0.3s ease;
     }
-
-    nav a:hover {
-      color: #555;
-    }
-
+    nav a:hover { color: #555; }
     nav svg {
       width: 24px;
       height: 24px;
+      fill: var(--primary-color);
       margin-bottom: 4px;
-      fill: var(--text-color);
     }
-
-    main {
-      padding: 40px 20px;
+    /* ——— contact section and styles ——— */
+    .contact-section {
       max-width: 800px;
-      margin: 0 auto;
-      text-align: center;
+      margin: 80px auto 40px;
+      padding: 20px;
+      background-color: var(--page-bg);
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
-
-    h1 {
-      color: var(--primary-color);
+    h2 {
+      text-align: center;
+      color: #82c0cc;
       margin-bottom: 20px;
     }
-
     p {
+      text-align: center;
+      color: #82c0cc;
       font-size: 1.1rem;
+      margin-top: -10px;
       margin-bottom: 30px;
     }
-
-    .contact-icons {
+    iframe {
+      width: 100%;
+      height: 800px;
+      border: none;
+    }
+    footer {
+      background-color: var(--nav-footer-bg);
+      border-top: 1px solid var(--accent-color);
+      padding: 15px 20px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--primary-color);
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
       display: flex;
       justify-content: center;
-      gap: 40px;
-      font-size: 1.5rem;
+      align-items: center;
+      gap: 15px;
+      flex-wrap: wrap;
     }
-
-    .contact-icons a {
+    footer a {
       color: var(--primary-color);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
       transition: color 0.3s ease;
     }
-
-    .contact-icons a:hover {
-      color: #666;
-    }
-
-    footer {
-      background-color: var(--footer-color);
-      text-align: center;
-      padding: 20px 0;
-      font-size: 0.9rem;
-      margin-top: 60px;
-    }
-
-    footer .social-icons {
-      margin-top: 10px;
-    }
-
-    footer a {
-      margin: 0 10px;
-      color: var(--text-color);
-      text-decoration: none;
-      font-size: 1.2rem;
-    }
-
-    footer a:hover {
-      color: #666;
+    footer a:hover { color: var(--accent-color); }
+    footer svg {
+      width: 20px;
+      height: 20px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
     }
   </style>
 </head>
 <body>
 
-  <!-- Navigation -->
+  <!-- Navigation (SVG icons like About page) -->
   <nav>
     <ul>
       <li><a href="index.html">
@@ -151,34 +149,28 @@
     </ul>
   </nav>
 
-  <!-- Main Content -->
-  <main>
-    <h1>Get in Touch</h1>
-    <p>If you'd like to connect professionally or collaborate on a project, feel free to reach out via the channels below:</p>
-    <div class="contact-icons">
-      <a href="mailto:amruta.gandhe@gmail.com" title="Email">
-        <i class="fas fa-envelope"></i>
-      </a>
-      <a href="https://www.linkedin.com/in/amruta-gandhe/" target="_blank" title="LinkedIn">
-        <i class="fab fa-linkedin"></i>
-      </a>
-    </div>
-  </main>
+  <!-- Contact section (same embed form) -->
+  <div class="contact-section">
+    <h2>Let’s Connect</h2>
+    <p>Have a question or opportunity? Send me a message.</p>
+    <iframe
+      src="https://docs.google.com/forms/d/e/1FAIpQLSdadkCjnwp7ql4F6vtQuWHrjX0St3QeZFCArF6CwV89nafhrA/viewform?embedded=true"
+      frameborder="0" marginheight="0" marginwidth="0">
+      Loading…
+    </iframe>
+  </div>
 
   <!-- Footer -->
   <footer>
-    <div>© 2025 Amruta Gandhe</div>
-    <div class="social-icons">
-      <a href="mailto:amruta.gandhe@gmail.com" title="Email">
-        <i class="fas fa-envelope"></i>
-      </a>
-      <a href="https://www.linkedin.com/in/amruta-gandhe/" target="_blank" title="LinkedIn">
-        <i class="fab fa-linkedin"></i>
-      </a>
-    </div>
+    <a href="https://www.linkedin.com/in/amruta-gandhe-1b1013207/" target="_blank" rel="noopener noreferrer">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <rect x="2" y="2" width="20" height="20" rx="2" ry="2"/>
+        <path d="M6 9h3v9H6zM7.5 7a1.5 1.5 0 110-3 1.5 1.5 0 010 3zM13 9h3v1.5h.04a3.3 3.3 0 013‑1.5c3.21 0 3.8 2.11 3.8 4.85V18h‑3v‑4.4c0‑1.05‑.02‑2.4‑1.46‑2.4‑1.46 0‑1.68 1.14‑1.68 2.32V18h‑3z"/>
+      </svg>
+      LinkedIn
+    </a>
+    <div>© Amruta Gandhe</div>
   </footer>
 
-  <!-- Font Awesome for contact icons -->
-  <script src="https://kit.fontawesome.com/your-kit-id.js" crossorigin="anonymous"></script>
 </body>
 </html>
