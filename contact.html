@@ -7,8 +7,8 @@
   <style>
     :root {
       --bg-color: #faf9f9;
-      --primary-color: #333;
-      --accent-color: #AFEEEE;;
+      --primary-color: #AFEEEE;
+      --accent-color: #4682B4;
       --text-color: #333;
     }
     body {
@@ -20,7 +20,7 @@
     }
     nav {
       background-color: var(--bg-color);
-      border-bottom: 1px solid #ccc;
+      border-bottom: 1px solid var(--accent-color);
       padding: 10px 20px;
       display: flex;
       justify-content: center;
@@ -41,6 +41,10 @@
       color: var(--primary-color);
       text-decoration: none;
       font-weight: bold;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: var(--accent-color);
     }
     .contact-section {
       max-width: 800px;
@@ -54,6 +58,13 @@
       text-align: center;
       color: var(--primary-color);
       margin-bottom: 20px;
+    }
+    p {
+      text-align: center;
+      color: #555;
+      font-size: 1.1rem;
+      margin-top: -10px;
+      margin-bottom: 30px;
     }
     iframe {
       width: 100%;
@@ -83,6 +94,7 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
+      transition: color 0.3s ease;
     }
     footer a:hover {
       color: var(--accent-color);
@@ -110,7 +122,7 @@
 
   <div class="contact-section">
     <h2>Let’s Connect</h2>
-    <p style="text-align: center; color: #555; font-size: 1.1rem; margin-top: -10px; margin-bottom: 30px;">
+    <p>
       Have a question or opportunity? Send me a message.
     </p>
     <iframe 
@@ -122,13 +134,16 @@
     </iframe>
   </div>
 
-<footer>
-  <a href="https://www.linkedin.com/in/amruta-gandhe-1b1013207/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2">
-      <rect x="2" y="2" width="20" height="20" rx="2" ry="2"/>
-      <path d="M6 9h3v9H6zM7.5 7a1.5 1.5 0 110-3 1.5 1.5 0 010 3zM13 9h3v1.5h.04a3.3 3.3 0 013-1.5c3.21 0 3.8 2.11 3.8 4.85V18h-3v-4.4c0-1.05-.02-2.4-1.46-2.4-1.46 0-1.68 1.14-1.68 2.32V18h-3z"/>
-    </svg>
-    LinkedIn
-  </a>
-  <div>© Amruta Gandhe</div>
-</footer>
+  <footer>
+    <a href="https://www.linkedin.com/in/amruta-gandhe-1b1013207/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2">
+        <rect x="2" y="2" width="20" height="20" rx="2" ry="2"/>
+        <path d="M6 9h3v9H6zM7.5 7a1.5 1.5 0 110-3 1.5 1.5 0 010 3zM13 9h3v1.5h.04a3.3 3.3 0 013-1.5c3.21 0 3.8 2.11 3.8 4.85V18h-3v-4.4c0-1.05-.02-2.4-1.46-2.4-1.46 0-1.68 1.14-1.68 2.32V18h-3z"/>
+      </svg>
+      LinkedIn
+    </a>
+    <div>© Amruta Gandhe</div>
+  </footer>
+
+</body>
+</html>
