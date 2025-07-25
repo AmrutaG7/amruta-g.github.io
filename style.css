@@ -85,17 +85,18 @@ main {
 }
 
 img.profile-pic {
-  width: 120px; /* slightly smaller */
-  height: 120px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   object-fit: cover;
   object-position: center top;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
   border: 2px solid #ddd;
   display: block;
   margin: 0 auto 20px;
   background-color: #fff;
 }
+
 
 /* Sections */
 section {
@@ -173,23 +174,40 @@ footer svg {
   stroke-width: 2;
 }
 
-@media (max-width: 600px) {
+@media screen and (max-width: 768px) {
   main {
-    padding: 100px 16px 80px;
-    font-size: 0.95rem;
+    padding: 80px 20px 40px;
+    text-align: center;
   }
 
   img.profile-pic {
-    width: 100px;
-    height: 100px;
+    width: 110px;
+    height: 110px;
+  }
+
+  h1.hero {
+    font-size: 1.5rem;
+  }
+
+  section {
+    padding: 16px;
+    font-size: 0.95rem;
   }
 
   nav ul {
-    gap: 20px;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+  }
+
+  nav ul li {
+    margin: 5px 0;
   }
 
   footer {
-    font-size: 0.8rem;
-    padding: 15px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
   }
 }
