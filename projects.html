@@ -5,155 +5,360 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Projects - Amruta Gandhe</title>
 
-  <!-- Font Awesome CDN for social icons -->
+  <!-- Font Awesome CDN -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    integrity="sha512-papb+4MJ8AiPxrS1mqUk7P2iYURCxB3cqU6/+qNGBkqZtYs3ijr1xkEj9nFTv/Dr0O8v5hNHz65aVcx4tPY1Rw=="
+    integrity="sha512-papb3QKJ9X2XQ7tGzq3lV8kZQ9fU6Qtmrq/N2P5yfL6Lsp6u+7O9aSOTc7R0V4xj5cg6+o1VnjYlfKN3kf0Kzw=="
     crossorigin="anonymous"
     referrerpolicy="no-referrer"
   />
 
-    <style>
+  <style>
     :root {
-      --color-primary: #2c3e50;
-      --color-accent: #AFEEEE;
-      --color-bg-main: #faf9f9;
-      --color-text: #333;
-      --color-link: #1a5276;
-      --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      --bg-color: #eaf9f5;
+      --primary-color: #6c8c84;
+      --secondary-color: #f4a261;
+      --accent-color: #b5ead7;
+      --text-color: #333;
+
+      /* Pastel category colors from your home page */
+      --python-bg: #ffebd6;
+      --python-color: #de7a2f;
+
+      --tableau-bg: #d0f4de;
+      --tableau-color: #2f8f7c;
+
+      --datamining-bg: #fde2e4;
+      --datamining-color: #d46a6a;
+
+      --dbmanagement-bg: #cce2cb;
+      --dbmanagement-color: #3d6b35;
+
+      --datawarehouse-bg: #ffcbf2;
+      --datawarehouse-color: #a24c80;
     }
 
+    /* General page styles */
     body {
       margin: 0;
-      font-family: var(--font-family);
-      background-color: var(--color-bg-main);
-      color: var(--color-text);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
       line-height: 1.6;
+      padding-bottom: 100px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
 
+    a {
+      color: var(--primary-color);
+      text-decoration: none;
+    }
+    a:hover {
+      color: var(--secondary-color);
+    }
+
+    /* Navigation */
     nav {
-      background-color: var(--color-accent);
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-weight: 600;
-      font-size: 1rem;
-      position: sticky;
+      position: fixed;
       top: 0;
+      left: 0;
+      right: 0;
+      background-color: var(--bg-color);
+      border-bottom: 1px solid var(--accent-color);
+      padding: 10px 20px;
+      display: flex;
+      justify-content: center;
       z-index: 1000;
     }
+    nav ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+    nav li {
+      display: flex;
+      align-items: center;
+    }
     nav a {
-      color: var(--color-primary);
+      color: var(--primary-color);
       text-decoration: none;
-      margin-left: 1.5rem;
+      font-size: 0.9rem;
+      font-weight: 600;
       transition: color 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 6px;
     }
-    nav a:first-child {
-      margin-left: 0;
-    }
-    nav a:hover {
-      color: var(--color-link);
+    nav a:hover,
+    nav a[aria-current="page"] {
+      color: var(--secondary-color);
     }
 
-    main {
+    /* Content container */
+    main.content {
       max-width: 900px;
-      margin: 2rem auto 4rem;
-      background-color: var(--color-bg-main);
-      padding: 1rem 2rem;
-      border-radius: 6px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      margin: 100px auto 60px; /* account for fixed nav */
+      padding: 0 20px;
+      flex-grow: 1;
     }
 
     h1 {
-      color: var(--color-primary);
+      text-align: center;
+      color: var(--primary-color);
       font-size: 2.5rem;
-      border-bottom: 3px solid var(--color-accent);
-      padding-bottom: 0.3rem;
-      margin-bottom: 1rem;
+      margin-bottom: 2rem;
     }
 
-    /* Expand/Collapse buttons container */
-    .toggle-buttons {
-      margin-bottom: 1rem;
-      text-align: right;
+    /* Expand/Collapse Buttons */
+    .controls {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
     }
-    .toggle-buttons button {
-      background-color: var(--color-accent);
+    .btn {
+      background-color: var(--primary-color);
       border: none;
-      padding: 0.4rem 1rem;
-      margin-left: 0.5rem;
-      border-radius: 6px;
+      color: var(--bg-color);
+      padding: 0.6rem 1.2rem;
+      border-radius: 25px;
       font-weight: 600;
       cursor: pointer;
-      color: var(--color-primary);
       transition: background-color 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.95rem;
     }
-    .toggle-buttons button:hover {
-      background-color: #8fdde5;
+    .btn:hover {
+      background-color: var(--secondary-color);
     }
 
-    /* Project section */
-    .project-section {
-      border: 1px solid var(--color-accent);
-      border-radius: 8px;
-      margin-bottom: 1rem;
+    /* Project category container */
+    .project-category {
+      margin-bottom: 2rem;
+      border-radius: 12px;
+      background-color: var(--bg-color);
+      border: 1px solid var(--accent-color);
+      box-shadow: 0 2px 6px rgb(0 0 0 / 0.1);
       overflow: hidden;
     }
 
+    /* Header with toggle icon */
     .project-header {
-      background-color: #E0F7FA;
       cursor: pointer;
-      padding: 1rem 1.2rem;
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: var(--color-primary);
+      padding: 1rem 1.5rem;
+      font-size: 1.3rem;
+      font-weight: 600;
       display: flex;
       align-items: center;
       justify-content: space-between;
       user-select: none;
-      border-bottom: 1px solid var(--color-accent);
+      border-radius: 12px;
       transition: background-color 0.3s ease;
-    }
-    .project-header:hover, .project-header.active {
-      background-color: #B2EBF2;
-    }
-    .project-header:focus {
-      outline: 2px solid var(--color-link);
-      outline-offset: 2px;
+      background-color: var(--primary-color);
+      color: var(--bg-color);
     }
 
-    /* Arrow icon for toggle */
-    .project-header i.toggle-arrow {
-      transition: transform 0.3s ease;
+    /* Category icon in header */
+    .project-header i.category-icon {
+      font-size: 1.6rem;
+      margin-right: 0.8rem;
     }
-    .project-header.active i.toggle-arrow {
+
+    /* Individual colors for icons matching home page text colors */
+    .project-header.python {
+      background-color: var(--python-bg);
+      color: var(--python-color);
+    }
+    .project-header.tableau {
+      background-color: var(--tableau-bg);
+      color: var(--tableau-color);
+    }
+    .project-header.datamining {
+      background-color: var(--datamining-bg);
+      color: var(--datamining-color);
+    }
+    .project-header.dbmanagement {
+      background-color: var(--dbmanagement-bg);
+      color: var(--dbmanagement-color);
+    }
+    .project-header.datawarehouse {
+      background-color: var(--datawarehouse-bg);
+      color: var(--datawarehouse-color);
+    }
+
+    /* Arrow toggle icon */
+    .toggle-icon {
+      transition: transform 0.3s ease;
+      font-size: 1.2rem;
+    }
+    .project-header.active .toggle-icon {
       transform: rotate(90deg);
     }
 
+    /* Project content hidden/shown */
     .project-content {
-      padding: 1rem 1.2rem;
-      background-color: #faf9f9;
-      display: none; /* hidden by default */
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+      padding: 0 1.5rem;
+      background-color: var(--bg-color);
+      border-top: 1px solid var(--accent-color);
     }
     .project-content.open {
-      display: block;
+      max-height: 3000px; /* big enough */
+      padding: 1rem 1.5rem 1.5rem;
+    }
+
+    /* Project item */
+    .project-item {
+      border-bottom: 1px solid var(--accent-color);
+      padding: 1rem 0;
+    }
+    .project-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    /* Project title and timeframe badge */
+    .project-title {
+      font-weight: 700;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .timeframe {
+      background-color: var(--secondary-color);
+      color: var(--bg-color);
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 2px 10px;
+      border-radius: 20px;
+      margin-left: auto;
+      white-space: nowrap;
+    }
+
+    /* Project description */
+    .project-desc {
+      margin: 0.3rem 0 0 0;
+    }
+
+    /* iframe wrapper */
+    .iframe-wrapper {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%; /* 16:9 aspect */
+      margin-top: 8px;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 6px rgb(0 0 0 / 0.15);
+    }
+    .iframe-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* Category-specific colors for icons and text in project items */
+    .project-item.python .project-title,
+    .project-item.python i.category-icon {
+      color: var(--python-color);
+    }
+    .project-item.tableau .project-title,
+    .project-item.tableau i.category-icon {
+      color: var(--tableau-color);
+    }
+    .project-item.datamining .project-title,
+    .project-item.datamining i.category-icon {
+      color: var(--datamining-color);
+    }
+    .project-item.dbmanagement .project-title,
+    .project-item.dbmanagement i.category-icon {
+      color: var(--dbmanagement-color);
+    }
+    .project-item.datawarehouse .project-title,
+    .project-item.datawarehouse i.category-icon {
+      color: var(--datawarehouse-color);
+    }
+
+    /* Footer */
+    footer {
+      background: var(--bg-color);
+      border-top: 1px solid var(--accent-color);
+      padding: 10px 0;
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--primary-color);
+      position: static;
+      display: flex;
+      justify-content: center;
+    }
+
+    footer .social-links {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    footer a {
+      color: var(--primary-color);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 600;
+    }
+
+    footer a:hover {
+      color: var(--secondary-color);
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      main.content {
+        margin: 80px 10px 60px;
+      }
+      .project-header {
+        font-size: 1.1rem;
+        padding: 0.75rem 1rem;
+      }
+      .btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+      }
+      footer {
+        flex-direction: column;
+        gap: 10px;
+      }
     }
   </style>
 </head>
 <body>
+
+  <!-- Navigation (exactly like index.html) -->
   <nav>
-    <div><strong>Amruta Gandhe</strong></div>
-    <div>
-      <a href="https://amrutag7.github.io/index.html">Home</a>
-      <a href="https://amrutag7.github.io/about.html">About</a>
-      <a href="https://amrutag7.github.io/projects.html" aria-current="page">Projects</a>
-      <a href="https://amrutag7.github.io/experience.html">Professional Experience</a>
-      <a href="https://amrutag7.github.io/contact.html">Contact</a>
-    </div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="experience.html">Professional Experience</a></li>
+      <li><a href="projects.html" aria-current="page"> Project Portfolio</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
   </nav>
-  
+
   <main class="content" role="main">
     <h1>Projects</h1>	
 	<p class="description">
@@ -356,17 +561,15 @@
   </main>
 
   <footer>
-    <p>
-      <a href="mailto:amruta@example.com" aria-label="Send email to Amruta">
-        <i class="fas fa-envelope"></i>
+    <div class="social-links">
+      <a href="mailto:asgandhe@hotmail.com" aria-label="Send email to Amruta Gandhe">
+        <i class="fas fa-envelope"></i> Email Me
       </a>
-      &nbsp;|&nbsp;
-      <a href="https://linkedin.com/in/amrutagandhe" target="_blank" rel="noopener" aria-label="Visit LinkedIn profile">
-        <i class="fab fa-linkedin"></i>
+      <a href="https://www.linkedin.com/in/amruta-gandhe-1b1013207/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile of Amruta Gandhe">
+        <i class="fab fa-linkedin"></i> LinkedIn
       </a>
-      <br />
-      &copy; 2025 Amruta Gandhe
-    </p>
+      <span>© 2025 Amruta Gandhe</span>
+    </div>
   </footer>
 
   <script>
@@ -424,5 +627,6 @@
       });
     });
   </script>
+
 </body>
 </html>
