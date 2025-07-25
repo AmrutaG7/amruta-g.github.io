@@ -5,188 +5,180 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Contact - Amruta Gandhe</title>
 
-  <!-- Font Awesome CDN for icons -->
-  <link
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    rel="stylesheet"
-  />
-
+  <!-- Styles -->
   <style>
     :root {
-      --page-bg: #faf9f9;
-      --nav-footer-bg: #AFEEEE;
+      --bg-color: #faf9f9;
       --primary-color: #2F4F4F;
-      --accent-color: #4682B4;
-      --text-color: #2F4F4F;
+      --secondary-color: #AFEEEE;
+      --text-color: #333;
+      --footer-color: #AFEEEE;
+      --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: var(--page-bg);
-      color: var(--text-color);
       margin: 0;
-      padding-bottom: 80px;
+      font-family: var(--font-family);
+      background-color: var(--bg-color);
+      color: var(--text-color);
     }
 
     nav {
-      background-color: var(--nav-footer-bg);
-      border-bottom: 1px solid var(--accent-color);
-      padding: 10px 20px;
-      display: flex;
-      justify-content: center;
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 1000;
+      background-color: var(--secondary-color);
+      padding: 10px 0;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     }
 
     nav ul {
-      list-style: none;
-      display: flex;
-      gap: 30px;
-      margin: 0;
+      list-style-type: none;
       padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    nav li {
+      display: inline;
     }
 
     nav a {
-      color: var(--primary-color);
       text-decoration: none;
+      color: var(--text-color);
       font-weight: bold;
-      transition: color 0.3s ease;
       display: flex;
+      flex-direction: column;
       align-items: center;
-      gap: 6px;
-    }
-
-    nav a i {
-      font-size: 1.1rem;
+      font-size: 0.95rem;
+      transition: color 0.3s ease;
     }
 
     nav a:hover {
-      color: var(--accent-color);
+      color: #555;
     }
 
-    .contact-section {
+    nav svg {
+      width: 24px;
+      height: 24px;
+      margin-bottom: 4px;
+      fill: var(--text-color);
+    }
+
+    main {
+      padding: 40px 20px;
       max-width: 800px;
-      margin: 80px auto 40px;
-      padding: 20px;
-      background-color: var(--page-bg);
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin: 0 auto;
+      text-align: center;
     }
 
-    h2 {
-      text-align: center;
-      color: #82c0cc;
+    h1 {
+      color: var(--primary-color);
       margin-bottom: 20px;
     }
 
     p {
-      text-align: center;
-      color: #82c0cc;
       font-size: 1.1rem;
-      margin-top: -10px;
       margin-bottom: 30px;
     }
 
-    iframe {
-      width: 100%;
-      height: 800px;
-      border: none;
-    }
-
-    footer {
-      background-color: var(--nav-footer-bg);
-      border-top: 1px solid var(--accent-color);
-      padding: 15px 20px;
-      text-align: center;
-      font-size: 0.9rem;
-      color: var(--primary-color);
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
+    .contact-icons {
       display: flex;
       justify-content: center;
-      align-items: center;
-      gap: 15px;
-      flex-wrap: wrap;
+      gap: 40px;
+      font-size: 1.5rem;
     }
 
-    footer a {
+    .contact-icons a {
       color: var(--primary-color);
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
       transition: color 0.3s ease;
     }
 
-    footer a:hover {
-      color: var(--accent-color);
+    .contact-icons a:hover {
+      color: #666;
     }
 
-    footer svg {
-      width: 20px;
-      height: 20px;
-      stroke: currentColor;
-      fill: none;
-      stroke-width: 2;
+    footer {
+      background-color: var(--footer-color);
+      text-align: center;
+      padding: 20px 0;
+      font-size: 0.9rem;
+      margin-top: 60px;
+    }
+
+    footer .social-icons {
+      margin-top: 10px;
+    }
+
+    footer a {
+      margin: 0 10px;
+      color: var(--text-color);
+      text-decoration: none;
+      font-size: 1.2rem;
+    }
+
+    footer a:hover {
+      color: #666;
     }
   </style>
 </head>
 <body>
 
+  <!-- Navigation -->
   <nav>
-  <ul>
-    <li><a href="index.html">
-      <svg viewBox="0 0 24 24"><path d="M3 12 L12 3 L21 12 V21 H15 V15 H9 V21 H3 Z" /></svg>
-      Home
-    </a></li>
-    <li><a href="about.html">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" /><path d="M6 20c0-3.33 5.34-5 6-5s6 1.67 6 5" /></svg>
-      About
-    </a></li>
-    <li><a href="experience.html">
-      <svg viewBox="0 0 24 24"><path d="M3 4h18v16H3z" /></svg>
-      Professional Experience
-    </a></li>
-    <li><a href="projects.html">
-      <svg viewBox="0 0 24 24"><path d="M3 7h6l2 3h10v9H3z" /></svg>
-      Project Portfolio
-    </a></li>
-    <li><a href="contact.html">
-      <svg viewBox="0 0 24 24"><path d="M3 8l9 6 9-6" /><rect x="3" y="8" width="18" height="10" rx="2" ry="2" /></svg>
-      Contact
-    </a></li>
-  </ul>
-</nav>
+    <ul>
+      <li><a href="index.html">
+        <svg viewBox="0 0 24 24"><path d="M3 12 L12 3 L21 12 V21 H15 V15 H9 V21 H3 Z" /></svg>
+        Home
+      </a></li>
+      <li><a href="about.html">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" /><path d="M6 20c0-3.33 5.34-5 6-5s6 1.67 6 5" /></svg>
+        About
+      </a></li>
+      <li><a href="experience.html">
+        <svg viewBox="0 0 24 24"><path d="M3 4h18v16H3z" /></svg>
+        Professional Experience
+      </a></li>
+      <li><a href="projects.html">
+        <svg viewBox="0 0 24 24"><path d="M3 7h6l2 3h10v9H3z" /></svg>
+        Project Portfolio
+      </a></li>
+      <li><a href="contact.html">
+        <svg viewBox="0 0 24 24"><path d="M3 8l9 6 9-6" /><rect x="3" y="8" width="18" height="10" rx="2" ry="2" /></svg>
+        Contact
+      </a></li>
+    </ul>
+  </nav>
 
+  <!-- Main Content -->
+  <main>
+    <h1>Get in Touch</h1>
+    <p>If you'd like to connect professionally or collaborate on a project, feel free to reach out via the channels below:</p>
+    <div class="contact-icons">
+      <a href="mailto:amruta.gandhe@gmail.com" title="Email">
+        <i class="fas fa-envelope"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/amruta-gandhe/" target="_blank" title="LinkedIn">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </div>
+  </main>
 
-  <div class="contact-section">
-    <h2>Let’s Connect</h2>
-    <p>Have a question or opportunity? Send me a message.</p>
-    <iframe 
-      src="https://docs.google.com/forms/d/e/1FAIpQLSdadkCjnwp7ql4F6vtQuWHrjX0St3QeZFCArF6CwV89nafhrA/viewform?embedded=true"
-      frameborder="0"
-      marginheight="0"
-      marginwidth="0"
-    >
-      Loading…
-    </iframe>
-  </div>
-
+  <!-- Footer -->
   <footer>
-    <a href="https://www.linkedin.com/in/amruta-gandhe-1b1013207/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2">
-        <rect x="2" y="2" width="20" height="20" rx="2" ry="2"/>
-        <path d="M6 9h3v9H6zM7.5 7a1.5 1.5 0 110-3 1.5 1.5 0 010 3zM13 9h3v1.5h.04a3.3 3.3 0 013-1.5c3.21 0 3.8 2.11 3.8 4.85V18h-3v-4.4c0-1.05-.02-2.4-1.46-2.4-1.46 0-1.68 1.14-1.68 2.32V18h-3z"/>
-      </svg>
-      LinkedIn
-    </a>
-    <div>© Amruta Gandhe</div>
+    <div>© 2025 Amruta Gandhe</div>
+    <div class="social-icons">
+      <a href="mailto:amruta.gandhe@gmail.com" title="Email">
+        <i class="fas fa-envelope"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/amruta-gandhe/" target="_blank" title="LinkedIn">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </div>
   </footer>
 
+  <!-- Font Awesome for contact icons -->
+  <script src="https://kit.fontawesome.com/your-kit-id.js" crossorigin="anonymous"></script>
 </body>
 </html>
