@@ -129,12 +129,207 @@
     </div>
   </header>
 
-  <main>
-    <!-- Your existing project categories and Google Docs embeds go here -->
-    <h2>Project Portfolio</h2>
-    <p>Browse projects by category: Python, Tableau, Data Mining, etc.</p>
-    <!-- You can insert your category sections and viewers here -->
+  <main class="content" role="main">
+    <h1>Projects</h1>	
+	<p class="description">
+      A curated portfolio of academic and applied projects completed throughout my Master of Science at the University of North Texas, reflecting a strong foundation in data analysis and practical application..
+    </p>
+
+    <div class="controls">
+      <button id="expandAllBtn" class="btn" aria-label="Expand all projects"><i class="fas fa-plus-square"></i> Expand All</button>
+      <button id="collapseAllBtn" class="btn" aria-label="Collapse all projects"><i class="fas fa-minus-square"></i> Collapse All</button>
+    </div>
+
+    <!-- Tableau Projects -->
+    <section class="project-category" data-category="tableau" aria-expanded="false" tabindex="0">
+      <header class="project-header tableau" role="button" aria-controls="tableau-content" aria-expanded="false" tabindex="0">
+        <span><i class="fas fa-chart-bar category-icon"></i> Tableau Dashboards</span>
+        <i class="fas fa-chevron-right toggle-icon"></i>
+      </header>
+      <div id="tableau-content" class="project-content" hidden>
+        <article class="project-item tableau">
+          <div class="project-title">
+            Police Arrests in Dallas, Texas - Tableau Report
+            <span class="timeframe" aria-label="Timeframe">May 2020 - June 2020</span>
+          </div>
+          <p class="project-desc">Tableau 2019.4 was used to study the police arrests in different areas of Texas that have maximum police arrests from the year 2014 to Spring 2020 and to gain understanding of different locations and time susceptible to crime.
+		   This report focused on visualization of police arrests in different areas of Texas , including dashboards and story during the years 2014 to Spring 2020.</p>
+          <p>
+            <a href="https://public.tableau.com/app/profile/amruta.gandhe/viz/Project_Amruta_Gandhe/Figure1-YearwiseArrestTrend" target="_blank" rel="noopener noreferrer">
+              Visit Police Arrests Dashboard
+            </a>
+          </p>
+		  <div class="iframe-wrapper" style="margin-top: 1em;">
+		<iframe src="https://amrutag7.github.io/reports/tableau/tableau-report1.html" title="Police Arrests Tableau Report" width="100%" height="800px" style="border: none;">
+		</iframe>
+		</div>
+
+        </article>
+
+        <article class="project-item tableau">
+          <div class="project-title">My Tableau Public Profile</div>
+          <p class="project-desc">Explore more dashboards and visualizations on my Tableau Public profile.</p>
+          <p>
+            <a href="https://public.tableau.com/app/profile/amruta.gandhe/vizzes" target="_blank" rel="noopener noreferrer">
+              Visit Tableau Public Profile
+            </a>
+          </p>
+        </article>
+      </div>
+    </section>
+	
+	 <!-- Database Management -->
+    <section class="project-category" data-category="dbmanagement" aria-expanded="false" tabindex="0">
+      <header class="project-header dbmanagement" role="button" aria-controls="dbmanagement-content" aria-expanded="false" tabindex="0">
+        <span><i class="fas fa-server category-icon"></i> Database Management/SQL </span>
+        <i class="fas fa-chevron-right toggle-icon"></i>
+      </header>
+      <div id="dbmanagement-content" class="project-content" hidden>
+        <article class="project-item dbmanagement">
+          <div class="project-title">
+            Designed a relational database for a consulting firm capturing details of the ongoing projects.
+            <span class="timeframe" aria-label="Timeframe">Jan 2021 - Apr 2021</span>
+          </div>
+          <p class="project-desc">SR Consulting (SRC) is a firm that creates custom software for its clients. 
+		  When a client comes to SRC about a job, the managers at SRC determine the staffing needs in terms of the number of consultants needed and the required skills of the consultants. 
+		  They then locate the available consultants with the necessary skills and assign them to the project. One of the consultants is assigned to be the project manager. 
+		  When the project is completed the project manager evaluates all of the other consultants who worked on the project, and all of the project consultants evaluate the project manager. A project can be subdivided into multiple projects.
+		  Technical Specifications:
+		  1. Designed an ER diagram using Forward Engineering in MySQL workbench by analyzing the requirements to identify business rules, entities and relationship. 
+		  2. Created a database with Oracle APEX based on the logical design by writing SQL queries for creating tables and inserting records. 
+		  3. Developed SQL queries to pull out the data from the database for tracking number of projects, consultants assigned to projects, calculating the number of hours spent on particular projects, etc.
+		  </p>
+          <div class="iframe-wrapper">
+            <iframe src="https://amrutag7.github.io/reports/databasemanagement/databasemanagement-report1.html" aria-label="Database management report"></iframe>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Data Warehouse -->
+    <section class="project-category" data-category="datawarehouse" aria-expanded="false" tabindex="0">
+      <header class="project-header datawarehouse" role="button" aria-controls="datawarehouse-content" aria-expanded="false" tabindex="0">
+        <span><i class="fas fa-warehouse category-icon"></i> Data Warehouse</span>
+        <i class="fas fa-chevron-right toggle-icon"></i>
+      </header>
+      <div id="datawarehouse-content" class="project-content" hidden>
+        <article class="project-item datawarehouse">
+          <div class="project-title">
+            Designed a relational database for online portal (Fiverr) and generated frontend , backend in QlikView and Tableau
+            <span class="timeframe" aria-label="Timeframe">Mar 2021 - Jun 2021</span>
+          </div>
+          <p class="project-desc">. Designed an ER Model and Dimensional Model using Forward Engineering in MySQL workbench for an online portal (Fiverr). 
+		  MySQL workbench was connected to BI tools QlikView and Tableau to build dashboards / reporting and data was visualized for capturing customer and sales details.</p>
+          <div class="iframe-wrapper">
+            <iframe src="https://amrutag7.github.io/reports/datawarehouse/datawarehouse-report1.html" aria-label="Data warehouse report"></iframe>
+          </div>
+		  <p>
+            <a href="https://public.tableau.com/app/profile/amruta.gandhe/viz/Tableau-Fiverr_AG/Dashboard-Fiverr_AG" target="_blank" rel="noopener noreferrer">
+              Fiverr Dashboard
+            </a>
+        </article>
+		
+	  <article class="project-item datawarehouse">
+          <div class="project-title">
+            Logical Data Model of Amazon Cell Phone Reviews
+            <span class="timeframe" aria-label="Timeframe">Feb 2022 – March 2022</span>
+          </div>
+          <p class="project-desc">
+          Created a logical data model for Amazon Cell Phone Reviews. Backend in Tableau
+          </p>
+          <div class="iframe-wrapper">
+            <iframe src="https://amrutag7.github.io/reports/datawarehouse/datawarehouse-report1.html"aria-label="Data warehouse report on Amazon cell phone reviews"> </iframe>
+          </div>
+           <p>
+          <a href="https://public.tableau.com/app/profile/amruta.gandhe/viz/ProjectPhase3-AmazonCellPhoneReviews-ByAmrutaGandhe/Title"
+          target="_blank" rel="noopener noreferrer">
+          Amazon Cell Phone Reviews
+          </a>
+          </p>
+          </article>
+
+          </div>
+          </section>
+	
+	 <!-- Python Projects -->
+    <section class="project-category" data-category="python" aria-expanded="false" tabindex="0">
+      <header class="project-header python" role="button" aria-controls="python-content" aria-expanded="false" tabindex="0">
+        <span><i class="fab fa-python category-icon"></i> Python Projects</span>
+        <i class="fas fa-chevron-right toggle-icon"></i>
+      </header>
+      <div id="python-content" class="project-content" hidden>
+        <article class="project-item python">
+          <div class="project-title">
+            Loan analysis of crowd funding platform Kiva.org using Python
+            <span class="timeframe" aria-label="Timeframe">Sept 2021 - Dec 2021</span>
+          </div>
+          <p class="project-desc">Kiva.org is a 501(c)(3) non-profit based in San Francisco, dedicated to expanding financial access by connecting underserved entrepreneurs and students with lenders through online microfinance. 
+		  Borrowers submit loan applications that require funding before expiration, following approval by the organization.
+		  The goal of this project was to identify key factors influencing loan repayment and to predict whether a loan application would be funded. 
+		  Logistic Regression and Decision Tree classifiers were developed, trained, and evaluated using K-fold cross-validation, classification reports, and confusion matrices. 
+		  The Decision Tree model demonstrated superior performance.
+		  </p>
+          <div class="iframe-wrapper">
+            <iframe src="https://amrutag7.github.io/reports/python/python-report1.html"aria-label="Loan analysis report"></iframe>
+          </div>
+        </article>
+
+        <article class="project-item python">
+          <div class="project-title">
+            Walmart Sales Forecasting using Python
+            <span class="timeframe" aria-label="Timeframe">Oct 2021</span>
+          </div>
+          <p class="project-desc">Walmart Sales Forecasting: Implemented and compared ML models (XGBoost, Random Forest, Linear Regression) to predict weekly sales using Kaggle data.</p>
+          <div class="iframe-wrapper">
+            <iframe src="https://docs.google.com/viewer?url=https://amrutag7.github.io/reports/python/python-report2.pdf&embedded=true"aria-label="Walmart sales forecasting report"></iframe>
+          </div>
+        </article>
+
+        <article class="project-item python">
+          <div class="project-title">
+            Loan Analysis: Understanding The Client And Business using Python
+            <span class="timeframe" aria-label="Timeframe">May 2020 - June 2020</span>
+          </div>
+          <p class="project-desc"> A second hand dataset from Kaggle was used to analyze loan behavior using logistic regression.
+		  Machine learning model was trained to predict loan repayment.
+		  To determine the loan eligibility criteria, bank adds weightage for parameters collected from sources such as customers, credit rating agencies, to understand their impact in the final decision making process. Banks use this information to check if an applicant is eligible for loan.
+		  To get better result, two weightage list were created .Model 1 and Model 2 tables had some parameters that a bank collects, in their order of priority, along with the granted weightage and and models were developed on each of them. 
+		  Process Maps were developed for both models (model 1 and model 2).
+		  Machine Learning model was evaluated via K-fold classification technique, confusion matrix and correlation matrix. Feature Importance was performed to identify the most useful features in the dataset.
+		  By comparing these different models' output , important parameter / factors for loan approval decision making process was determined.
+		  .</p>
+          <div class="iframe-wrapper">
+            <iframe src="https://docs.google.com/viewer?url=https://amrutag7.github.io/reports/python/python-report3.pdf&embedded=true" aria-label="Loan analysis client and business report"></iframe>
+          </div>
+        </article>
+      </div>
+    </section>
+
+
+    <!-- Data Mining -->
+    <section class="project-category" data-category="datamining" aria-expanded="false" tabindex="0">
+      <header class="project-header datamining" role="button" aria-controls="datamining-content" aria-expanded="false" tabindex="0">
+        <span><i class="fas fa-database category-icon"></i> Data Mining</span>
+        <i class="fas fa-chevron-right toggle-icon"></i>
+      </header>
+      <div id="datamining-content" class="project-content" hidden>
+        <article class="project-item datamining">
+          <div class="project-title">
+            Prediction of New Car Prices Using SAS Enterprise Miner 15.1
+            <span class="timeframe" aria-label="Timeframe">Sept 2020 - Dec 2020</span>
+          </div>
+          <p class="project-desc">Data Mining was done using SAS Enterprise Miner to develop machine learning techniques like linear regression, decision tree, random forest 
+		  and gradient boost algorithms were used to predict car prices.</p>
+          <div class="iframe-wrapper">
+            <iframe src="https://amrutag7.github.io/reports/datamining/datamining-report1.html" aria-label="Data mining report"></iframe>
+          </div>
+        </article>
+      </div>
+    </section>
+
+
   </main>
+
 
   <footer>
     <a href="mailto:your-email@example.com" aria-label="Email">
