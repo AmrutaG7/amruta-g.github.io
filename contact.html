@@ -24,7 +24,17 @@
 
     header {
       background-color: var(--header-color);
-      padding: 1rem 0;
+      padding: 1rem 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .header-name {
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: var(--text-color);
+      margin-left: 0;
     }
 
     nav {
@@ -106,45 +116,45 @@
     }
 
     footer {
-    background-color: var(--header-color);
-    padding: 1rem;
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    margin-top: 3rem;
-    align-items: center; /* vertically centers text and icons */
-  }
+      background-color: var(--header-color);
+      padding: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 3rem;
+      align-items: center; /* vertically centers text and icons */
+    }
 
-  .footer-icon {
-    width: 24px;
-    height: 24px;
-    stroke: var(--icon-color);
-    fill: none;
-    stroke-width: 1.5;
-  }
+    .footer-icon {
+      width: 24px;
+      height: 24px;
+      stroke: var(--icon-color);
+      fill: none;
+      stroke-width: 1.5;
+    }
 
-  footer div {
-    font-weight: 500;
-    color: var(--icon-color);
-    font-size: 1rem;
-  }
+    footer div {
+      font-weight: 500;
+      color: var(--icon-color);
+      font-size: 1rem;
+    }
 
-  .contact-section iframe {
-    width: 100%;
-    min-height: 600px;
-    border: none;
- }
+    .contact-section iframe {
+      width: 100%;
+      min-height: 600px;
+      border: none;
+    }
 
- .contact-section h2,
- .contact-section p {
-    color: #82c0cc;
-}
-
+    .contact-section h2,
+    .contact-section p {
+      color: #82c0cc;
+    }
   </style>
 </head>
 
 <body>
   <header>
+    <div class="header-name">Amruta Gandhe</div>
     <nav>
       <a href="index.html">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -186,32 +196,32 @@
     </nav>
   </header>
 
- <main>
-  <div class="contact-section">
-    <h2>Let’s Connect</h2>
-    <p style="text-align: center; color: #82c0cc; font-size: 1.1rem; margin-top: -10px; margin-bottom: 30px;">
-      Have a question or opportunity? Send me a message.
-    </p>
-    <iframe
-      src="https://docs.google.com/forms/d/e/1FAIpQLSdadkCjnwp7ql4F6vtQuWHrjX0St3QeZFCArF6CwV89nafhrA/viewform?embedded=true"
-      frameborder="0"
-      marginheight="0"
-      marginwidth="0"
-      style="width:100%; min-height:600px; border:none;">
-      Loading…
-    </iframe>
-  </div>
-</main>
+  <main>
+    <div class="contact-section">
+      <h2>Let’s Connect</h2>
+      <p style="text-align: center; color: #82c0cc; font-size: 1.1rem; margin-top: -10px; margin-bottom: 30px;">
+        Have a question or opportunity? Send me a message.
+      </p>
+      <iframe
+        src="https://docs.google.com/forms/d/e/1FAIpQLSdadkCjnwp7ql4F6vtQuWHrjX0St3QeZFCArF6CwV89nafhrA/viewform?embedded=true"
+        frameborder="0"
+        marginheight="0"
+        marginwidth="0"
+        style="width:100%; min-height:600px; border:none;">
+        Loading…
+      </iframe>
+    </div>
+  </main>
 
- <footer>
-  <div>© Amruta Gandhe</div>
-  <a href="https://www.linkedin.com/in/yourprofile/" target="_blank" aria-label="LinkedIn">
-    <svg class="footer-icon" viewBox="0 0 24 24">
-      <rect x="4" y="4" width="16" height="16" rx="2" stroke-width="1.5"/>
-      <path d="M8 11v5M8 8v.01M12 11v5m0-3a2 2 0 0 1 4 0v3" stroke-width="1.5"/>
-    </svg>
-  </a>
-</footer>
+  <footer>
+    <div>© Amruta Gandhe</div>
+    <a href="https://www.linkedin.com/in/yourprofile/" target="_blank" aria-label="LinkedIn">
+      <svg class="footer-icon" viewBox="0 0 24 24">
+        <rect x="4" y="4" width="16" height="16" rx="2" stroke-width="1.5"/>
+        <path d="M8 11v5M8 8v.01M12 11v5m0-3a2 2 0 0 1 4 0v3" stroke-width="1.5"/>
+      </svg>
+    </a>
+  </footer>
 
 </body>
 </html>
