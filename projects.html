@@ -332,13 +332,24 @@
     footer {
       background: var(--header-footer-color);
       border-top: 1px solid var(--accent-color);
-      padding: 10px 0;
-      text-align: center;
+      padding: 10px 20px;
       font-size: 0.9rem;
       color: var(--primary-color);
       position: static;
       display: flex;
       justify-content: center;
+	  align-items: center;
+	  gap: 20px;
+    }
+	
+	.footer-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
     }
 
     footer .social-links {
@@ -642,16 +653,21 @@
   </main>
 
   <footer>
-  <div class="social-links">
-    <a href="mailto:asgandhe@hotmail.com" aria-label="Email">
-      <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M2 4a2 2 0 012-2h16a2 2 0 012 2v16a2 2 0 01-2 2H4a2 2 0 01-2-2V4zm2 0v.511l8 5.333 8-5.333V4H4zm0 2.489V20h16V6.489l-8 5.333-8-5.333z"/></svg>
-    </a>
-    <a href="https://www.linkedin.com/in/amruta-gandhe-1b1013207/" target="_blank" aria-label="LinkedIn">
-      <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 002.5 6c0 1.38 1.12 2.5 2.48 2.5S7.5 7.38 7.5 6a2.5 2.5 0 00-2.52-2.5zM3 9h4v12H3V9zm6.5 0H14v1.637h.055c.628-1.186 2.164-2.137 4.445-2.137C21.077 8.5 22 10.03 22 13.057V21h-4v-6.635c0-1.58-.028-3.617-2.5-3.617-2.5 0-2.885 1.753-2.885 3.5V21H9.5V9z"/></svg>
-    </a>
+  <div class="footer-content">
+    <div class="social-links">
+      <a href="mailto:asgandhe@hotmail.com" aria-label="Send email">
+        <!-- email svg -->
+        <span>Email</span>
+      </a>
+      <a href="https://www.linkedin.com/in/amruta-gandhe-1b1013207/" target="_blank" aria-label="LinkedIn">
+        <!-- linkedin svg -->
+        <span>LinkedIn</span>
+      </a>
+    </div>
+    <div class="copyright">© 2025 Amruta Gandhe</div>
   </div>
-  <p>&copy; 2025 Amruta Gandhe</p>
-</footer>
+  </footer>
+
 
 
   <script>
