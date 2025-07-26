@@ -18,7 +18,7 @@
     :root {
       --bg-color: #faf9f9;
       --primary-color: #2c3e50;
-      --secondary-color: #AFEEEE /* Removed #f4a261 */ 
+      --secondary-color: #AFEEEE; /* Removed #f4a261 */ 
       --header-color: #AFEEEE;
       --accent-color: #AFEEEE;
       --text-color: #333;
@@ -330,65 +330,67 @@
 
     /* Footer */
     footer {
-      background-color: var(--header-color);
-      border-top: 1px solid var(--accent-color);
-      padding: 10px 20px;
-      font-size: 0.9rem;
-      color: var(--primary-color);
-      position: static;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 20px;
-    }
-	
-	.footer-content {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 20px;
-      width: 100%;
-      max-width: 900px;
-      margin: 0 auto;
+     background: var(--header-color); /* e.g., #AFEEEE */
+     border-top: 1px solid var(--accent-color);
+     padding: 10px 20px;
+     font-size: 0.9rem;
+     color: var(--primary-color);
+     display: flex;
+     justify-content: center;
     }
 
-    footer .social-links {
+    .footer-content {
       display: flex;
-      gap: 20px;
+      flex-direction: column;
       align-items: center;
+      gap: 10px;
+      text-align: center;
     }
 
-    footer a {
-      color: var(--primary-color);
+    .footer-content .social-links {
+      display: flex;
+      gap: 15px;
+    }
+
+    .footer-content .social-links a {
       text-decoration: none;
-      display: inline-flex;
+      color: var(--primary-color);
+      display: flex;
       align-items: center;
-      gap: 6px;
-      font-weight: 600;
+      gap: 5px;
     }
 
-    footer a:hover {
-      color: var(--secondary-color);
+    .footer-content .social-links svg {
+      width: 20px;
+      height: 20px;
+      stroke: var(--primary-color);
+      fill: none;
+      stroke-width: 2;
     }
 
     /* Responsive */
     @media (max-width: 600px) {
       main.content {
-        margin: 80px 10px 60px;
-      }
-      .project-header {
-        font-size: 1.1rem;
-        padding: 0.75rem 1rem;
-      }
-      .btn {
-        padding: 0.5rem 1rem;
-        font-size: 0.9rem;
-      }
-      footer {
-        flex-direction: column;
-        gap: 10px;
-      }
+      margin: 80px 10px 60px;
     }
+
+    .project-header {
+      font-size: 1.1rem;
+      padding: 0.75rem 1rem;
+    }
+
+    .btn {
+      padding: 0.5rem 1rem;
+      font-size: 0.9rem;
+    }
+
+  .footer-content {
+     flex-direction: column;
+     gap: 10px;
+     align-items: center;
+     text-align: center;
+    }
+   }
 
   </style>
 </head>
@@ -653,7 +655,7 @@
   </main>
 
   <footer>
-    <DIV CLASS = "footer-content"
+  <div class="footer-content">
     <div class="social-links">
       <a href="mailto:asgandhe@hotmail.com" aria-label="Send email">
         <svg viewBox="0 0 24 24">
@@ -671,7 +673,9 @@
       </a>
     </div>
     <div>© Amruta Gandhe</div>
+  </div> <!
   </footer>
+
 
   <script>
     // Toggle project categories
